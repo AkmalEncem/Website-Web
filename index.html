@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LMS Platform</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+    <nav class="navbar">
+        <h2 class="logo">LMS</h2>
+
+        <div class="menu">
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="#courses">COURSES</a></li>
+                <li><a href="#instructors">INSTRUCTORS</a></li>
+                <li><a href="#testimonials">TESTIMONIALS</a></li>
+                <li><a href="forum.html">FORUM</a></li>
+            </ul>
+        </div>
+
+        <div class="profile-wrapper">
+            <div class="profile-trigger" onclick="toggleProfile()">
+            <div class="profile-chip">
+                <div id="navAvatar" class="chip-avatar">?</div>
+                <span id="navName" class="chip-name">User</span>
+                <span id="courseBadge" class="course-badge"></span>
+            </div>
+        </div>
+
+            <div class="profile-dropdown" id="profileDropdown">
+
+                <div class="profile-header">
+                    <div id="mainAvatar" class="profile-avatar">?</div>
+                    <h4 id="studentName">User</h4>
+                    <p id="studentId">CI250026</p>
+                </div>
+
+                <div class="profile-menu">
+                    <a href="progress.html">Course Progress</a>
+                    <span id="courseBadge" class="course-badge"></span>
+                    <a href="payment.html" id="paymentMenu">Payment</a>
+                    <a href="#" class="logout" onclick="logout()">Logout</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+     <div class="hero">
+        <div class="hero-text">
+            <h1>Improve Your Skills <br> Anytime, Anywhere</h1>
+            <p class="par">Access quality learning materials and upgrade your knowledge wherever you are.</p>
+        </div>
+    </div>
+
+    </header>
+
+    <section class="courses" id="courses">
+        <h2>Featured Courses</h2>
+        <div class="course-container">
+            <div class="course-card">
+                <h3>Creativity and Innovation</h3>
+                <p>Develop creative thinking and innovative<br>problem-solving skills.</p>
+            </div>
+            <div class="course-card">
+                <h3>Fundamentals of Web Technology</h3>
+                <p>Understand the basic technologies behind<br>websites and web applications.</p>
+            </div>
+            <div class="course-card">
+                <h3>Human Computer Interaction</h3>
+                <p>Learn how users interact with systems to<br>design user-friendly interfaces.</p>
+            </div>
+        </div>
+
+        <div class="view-all">
+            <a href="course.html" class="browse-btn">Browse Courses</a>
+        </div>
+    </section>
+
+    <section class="instructors" id="instructors">
+        <h2>Instructors</h2>
+        <div class="instructor-container">
+            <div class="instructor-card">
+                <img src="Dr. Syazwani.jpg">
+                <h3>Dr. Syazwani</h3>
+                <p>Human Computer Interaction</p>
+            </div>
+            <div class="instructor-card">
+                <img src="Dr. Yusliza.jpg">
+                <h3>Dr. Yusliza</h3>
+                <p>Fundamentals of Web Technology</p>
+            </div>
+            <div class="instructor-card">
+                <img src="Dr. Ezak.jpg">
+                <h3>Dr. Ezak</h3>
+                <p>Creativity and Innovation</p>
+            </div>
+        </div>
+
+        <div class="view-all">
+            <a href="instructors.html" class="browse-btn">See More</a>
+        </div>
+    </section>
+
+    <section class="testimonials" id="testimonials">
+        <h2>What Students Say</h2>
+        <div class="testimony-box">
+            <p>"This LMS helped me build my first website and get career ready!"</p>
+            <h4>- Aiman</h4>
+        </div>
+
+        <div class="view-all">
+            <a href="testimonials.html" class="browse-btn">See More</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 LMS Platform. All Rights Reserved.</p>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+</html>

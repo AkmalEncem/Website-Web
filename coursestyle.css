@@ -1,0 +1,514 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body{
+    background: #0e0e1a;
+    color: #fff;
+}
+
+/* ================= NAVBAR ================= */
+.navbar{
+    width: 90%;
+    height: 65px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo{
+    font-size: 35px;
+    color: #d1d9ff;
+}
+
+.menu ul{
+    display: flex;
+    gap: 40px;
+}
+
+.menu ul li{
+    list-style: none;
+}
+
+.menu ul li a{
+     color: #d1d9ff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    transition: .3s;
+}
+
+.menu ul li a:hover{
+    color: #5672ff;
+}
+
+/* ================= AUTH ================= */
+.auth-buttons{
+    display: flex;
+    gap: 15px;
+}
+
+.profile-wrapper {
+    position: relative;
+    user-select: none;
+}
+
+/* Base Avatar Styling (Shared) */
+.chip-avatar, .profile-avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+/* Navbar Avatar (Small) */
+.chip-avatar {
+    width: 36px;
+    height: 36px;
+    font-size: 14px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Dropdown Avatar (Large) */
+.profile-avatar {
+    width: 72px;
+    height: 72px;
+    font-size: 28px;
+    margin: 0 auto 12px auto;
+    border: 3px solid #6c63ff;
+    box-shadow: 0 0 15px rgba(108, 99, 255, 0.3);
+}
+
+.profile-chip {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 5px 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.profile-chip:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.chip-name {
+    font-size: 14px;
+    font-weight: 500;
+    color: #d1d9ff;
+}
+
+/* Dropdown Container */
+.profile-dropdown {
+    position: absolute;
+    right: 0;
+    top: 70px;
+    width: 260px;
+    background: #1c1c2e;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    display: none;
+    overflow: hidden;
+    z-index: 1000;
+}
+
+/* Dropdown Header */
+.profile-header {
+    padding: 25px 20px;
+    text-align: center;
+    background: #18182a;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.profile-header h4 {
+    font-size: 16px;
+    color: #ffffff;
+    margin-bottom: 3px;
+}
+
+.profile-header p {
+    font-size: 12px;
+    color: #94a3b8;
+}
+
+/* Dropdown Menu Items */
+.profile-menu {
+    padding: 8px 0;
+}
+
+.profile-menu a {
+    display: block;
+    padding: 12px 20px;
+    font-size: 14px;
+    color: #e5e9f2;
+    text-decoration: none;
+    transition: 0.2s ease;
+}
+
+.profile-menu a:hover {
+    background: rgba(108, 99, 255, 0.1);
+    padding-left: 25px; /* Subtle slide effect */
+}
+
+.profile-menu .logout {
+    color: #ff6b6b;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    margin-top: 5px;
+}
+
+/* NAMA – IKUT NAVBAR */
+.chip-name {
+    font-size: 14px;
+    font-weight: 500;
+    color: #d1d9ff;
+}
+
+.course-badge{
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    background: red;
+    color: white;
+    font-size: 11px;
+    padding: 2px 6px;
+    border-radius: 50%;
+    display: none;
+}
+
+.profile-chip{
+    position: relative;
+}
+
+.profile-dropdown {
+    position: absolute;
+    right: 0;
+    top: 65px;
+    width: 260px;
+    background: #1c1c2e;
+    border: 1px solid #2e2e4d;
+    border-radius: 14px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.55);
+    display: none;
+    overflow: hidden;
+}
+
+/* HEADER DROPDOWN */
+.profile-header {
+    padding: 22px;
+    text-align: center;
+    background: #18182a;
+    border-bottom: 1px solid #2e2e4d;
+}
+
+.profile-avatar {
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    border: 3px solid #6c63ff;
+}
+
+.profile-header h4 {
+    font-size: 15px;
+    color: #ffffff;
+    margin-bottom: 3px;
+}
+
+.profile-header p {
+    font-size: 13px;
+    color: #bdbdbd;
+}
+
+.profile-menu a {
+    display: block;
+    padding: 13px 20px;
+    font-size: 14px;
+    color: #e5e9f2;
+    text-decoration: none;
+    transition: 0.2s ease;
+}
+
+.profile-menu a:hover {
+    background: rgba(108,99,255,0.12); /* accent hover */
+}
+
+.profile-menu .logout {
+    color: #ff6b6b;
+}
+
+/* ================= TITLE ================= */
+.page-title{
+    text-align: center;
+    margin-top: 80px;
+}
+
+.page-title h1{
+    font-size: 40px;
+    color: #d1d9ff;
+}
+
+.page-title p{
+    margin-top: 10px;
+    color: #aaa;
+}
+
+/* ================= FILTER ================= */
+.filters{
+    text-align: center;
+    margin-top: 40px;
+}
+
+.filter-options{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.filter-options select{
+    padding: 12px 20px;
+    border-radius: 30px;
+    border: 2px solid #5672ff;
+    background: #1a1a2e;
+    color: #fff;
+}
+
+.search-bar{
+    width: 60%;
+    padding: 12px 20px;
+    border-radius: 30px;
+    border: 2px solid #5672ff;
+    background: #1a1a2e;
+    color: #fff;
+}
+
+/* ================= COURSE GRID ================= */
+.course-list{
+    width: 90%;
+    margin: 60px auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 35px;
+}
+
+/* ================= COURSE CARD ================= */
+.course-card{
+    background: #1a1a2e;
+    padding: 30px;
+    border-radius: 15px;
+    animation: fadeIn 0.3s ease;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.course-card:hover{
+    transform: translateY(-6px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+}
+
+.course-card h3{
+    color: #5672ff;
+    margin-bottom: 15px;
+}
+
+.details-btn{
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #5672ff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 20px;
+    transition: all 0.3s;
+}
+
+.details-btn:hover{
+    background: #8fa2ff;
+    transform: scale(1.05);
+}
+
+.course-card.hide{
+    display: none;
+}
+
+/* ================= POPUP ================= */
+.popup-overlay{
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.65);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup-box{
+    background: #1a1a2e;
+    padding: 30px;
+    width: 420px;
+    border-radius: 15px;
+    position: relative;
+    transform: translateY(30px) scale(0.95);
+    opacity: 0;
+    transition: all 0.35s ease;
+}
+
+.popup-box.show{
+    transform: translateY(0) scale(1);
+    opacity: 1;
+}
+
+.popup-box h2{
+    color: #8fa2ff;
+}
+
+.popup-box p{
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+/* ================= INPUTS ================= */
+.popup-box input{
+    width: 70px;
+    padding: 6px 10px;
+    border-radius: 20px;
+    border: 1px solid #5672ff;
+    background: #0f3460;
+    color: #fff;
+    font-size: 13px;
+    text-align: center;
+}
+
+.popup-box input::placeholder{
+    font-size: 12px;
+    color: #aaa;
+}
+
+.popup-box select{
+    padding: 6px 12px;
+    border-radius: 20px;
+    border: 1px solid #5672ff;
+    background: #0f3460;
+    color: #fff;
+}
+
+/* ================= SECTION ROW (UPDATED) ================= */
+.section-row{
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 6px;
+}
+
+.section-hint{
+    display: block;
+    margin-top: 4px;
+    font-size: 12px;
+    color: #aaa;
+}
+
+/* ================= TIMETABLE BUTTON ================= */
+.timetable-btn{
+    padding: 6px 14px;
+    background: #0f3460;
+    border: 1px solid #5672ff;
+    border-radius: 20px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 13px;
+    transition: all 0.3s;
+}
+
+.timetable-btn:hover{
+    background: #5672ff;
+    transform: translateY(-2px);
+}
+
+/* ================= ENROLL ================= */
+.enroll-btn{
+    margin-top: 20px;
+    width: 100%;
+    padding: 12px;
+    border-radius: 30px;
+    background: #5672ff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.enroll-btn:hover{
+    background: #8fa2ff;
+    transform: scale(1.05);
+}
+
+/* ================= CLOSE ================= */
+.close-btn{
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #aaa;
+}
+
+.close-btn:hover{
+    color: #fff;
+}
+
+/* ================= NO RESULT ================= */
+#noResults{
+    display: none;
+    text-align: center;
+    margin-top: 40px;
+    color: #aaa;
+}
+
+/* ================= FOOTER ================= */
+footer{
+    background: #000;
+    color: #aaa;
+    padding: 15px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+/* ================= ANIMATION ================= */
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+        transform: translateY(5px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ================= POPUP ROW ================= */
+.popup-row{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 12px 0;
+}
+
+/* kecilkan sedikit input supaya kemas */
+.popup-row input{
+    width: 70px;
+}

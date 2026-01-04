@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Payment - LMS</title>
+    <link rel="stylesheet" href="payment.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <h2 class="logo">LMS</h2>
+
+    <div class="menu">
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="course.html">COURSES</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- PAYMENT SECTION -->
+<section class="payment-container">
+
+    <!-- LEFT : COURSE SUMMARY -->
+    <div class="course-summary">
+        <h2>Course Summary</h2>
+
+        <div id="courseSummary"></div>
+            <div class="total-box">
+            Total: RM <span id="totalPrice">0</span>
+        </div>
+
+    </div>
+    
+    <!-- RIGHT : PAYMENT FORM -->
+     <div class="payment-form">
+        <h2>Payment Details</h2>
+
+        <form id="paymentForm">
+
+            <!-- (1) USER INFO -->
+            <label>Full Name</label>
+            <input type="text" id="fullName" placeholder="Enter your name">
+
+            <label>Email</label>
+            <input type="email" id="email" placeholder="Enter your email">
+
+            <!-- (2) PAYMENT METHOD -->
+            <label>Payment Method</label>
+            <select id="paymentMethod">
+                <option value="">Select Method</option>
+                <option value="card">Credit / Debit Card</option>
+                <option value="qr">QR Pay</option>
+            </select>
+
+            <!-- CARD (DUMMY AUTO FILL) -->
+            <div id="cardSection" style="display:none;">
+                <input type="text" value="4111 1111 1111 1111" readonly>
+                <div class="row">
+                    <input type="text" value="12/30" readonly>
+                    <input type="password" value="123" readonly>
+                </div>
+            </div>
+
+            <!-- QR -->
+            <div id="qrSection" style="display:none; text-align:center;">
+                <img src="qr.png" width="180">
+                <p style="margin-top:10px;">Scan to Pay</p>
+            </div>
+
+            <button type="submit" id="payNow" disabled>Pay Now</button>
+        </form>
+
+        <!-- SUCCESS -->
+        <div id="successBox" class="receipt-box" style="display:none;">
+            <h2>🧾 Payment Successful</h2>
+            <p class="receipt-sub">Thank you for your enrollment</p>
+
+            <p><strong>Receipt ID:</strong> <span id="receiptId"></span></p>
+            <p><strong>Date:</strong> <span id="receiptDate"></span></p>
+
+            <div id="receiptDetails"></div>
+
+            <div class="receipt-total">
+                <span>Total Paid</span>
+                <strong>RM <span id="receiptTotal">0</span></strong>
+            </div>
+
+            <button id="doneBtn" class="done-btn">Done & Go to Course</button>
+        </div>
+    </div>
+    <!-- RECEIPT OVERLAY -->
+    <div class="receipt-overlay" id="receiptOverlay">
+        <div class="receipt-card">
+            <h2>Payment Receipt</h2>
+            <p><strong>Receipt No:</strong> <span id="receiptNo"></span></p>
+            <p><strong>Name:</strong> <span id="rName"></span></p>
+            <p><strong>Email:</strong> <span id="rEmail"></span></p>
+            <hr>
+
+        <div class="receipt-info" id="receiptCourses"></div>
+        <hr>
+        <p><strong>Total Paid:</strong> RM <span id="rTotal"></span></p>
+        
+        </div>
+    </div>
+
+</section>
+
+<script src="payment.js"></script>
+
+</body>
+</html>

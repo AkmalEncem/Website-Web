@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimonials | LMS Platform</title>
+    <link rel="stylesheet" href="testimonialstyle.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <h2 class="logo">LMS</h2>
+
+        <div class="menu">
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="course.html">COURSES</a></li>
+                <li><a href="instructors.html">INSTRUCTORS</a></li>
+                <li><a href="testimonials.html" class="active">TESTIMONIALS</a></li>
+                <li><a href="forum.html">FORUM</a></li>
+            </ul>
+        </div>
+
+        <div class="profile-wrapper">
+            <div class="profile-trigger" onclick="toggleProfile()">
+                <div class="profile-chip">
+                    <div id="navAvatar" class="chip-avatar">?</div>
+                    <span id="navName" class="chip-name">User</span>
+                    <span id="courseBadge" class="course-badge"></span>
+                </div>
+            </div>
+
+            <div class="profile-dropdown" id="profileDropdown">
+                <div class="profile-header">
+                    <div id="mainAvatar" class="profile-avatar">?</div>
+                    <h4 id="studentName">User</h4>
+                    <p id="studentId">CI250026</p>
+                </div>
+
+                <div class="profile-menu">
+                    <a href="progress.html">Course Progress</a>
+                    <a href="payment.html" id="paymentMenu">Payment</a>
+                    <a href="#" class="logout" onclick="logout()">Logout</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="page">
+        <section class="hero-section">
+            <h1>Academic Excellence & Reviews</h1>
+            <p>Verified testimonials from students regarding our course delivery, interface, and learning outcomes.</p>
+        </section>
+
+        <div class="dashboard-grid">
+            <aside class="left-panel">
+                <div class="stats-card">
+                    <h2 id="averageRating">0.0 ★</h2>
+                    <p>Average Rating</p>
+                </div>
+
+                <div class="review-form">
+                    <h3>Write Your Review</h3>
+                    
+                    <select id="courseSelect">
+                        <option value="">Select Course</option>
+                        <option>Web Technology</option>
+                        <option>Human Computer Interaction</option>
+                        <option>Creativity and Innovation</option>
+                        <option>English Communication</option>
+                        <option>Creativity and Innovation</option>
+                        <option>Professional Ethics and Occupational</option>
+                        <option>Integrity and Anti-Corruption</option>
+                    </select>
+
+                    <div class="star-rating" id="starInput">
+                        <span class="star" data-value="1">★</span>
+                        <span class="star" data-value="2">★</span>
+                        <span class="star" data-value="3">★</span>
+                        <span class="star" data-value="4">★</span>
+                        <span class="star" data-value="5">★</span>
+                    </div>
+
+                    <textarea id="reviewText" placeholder="Share your learning experience..."></textarea>
+                    <button id="submitReviewBtn">Submit Review</button>
+                </div>
+            </aside>
+
+            <section class="right-panel">
+                <h2>All Feedback</h2>
+                <div id="testimonialList" class="reviews-list">
+                    </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="testimonials.js"></script>
+</body>
+</html>

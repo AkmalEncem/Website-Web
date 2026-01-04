@@ -1,0 +1,184 @@
+/* ================= RESET & BASE ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #0e0e1a;
+    color: #fff;
+}
+
+/* ================= NAVBAR (FROM INDEX STYLE) ================= */
+/* ================= NAVBAR (FIXED) ================= */
+/* ================= NAVBAR (STATIC/NON-STICKY) ================= */
+.navbar {
+    width: 90%;
+    height: 65px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* Ubah position dari fixed kepada absolute atau relative */
+    position: absolute; 
+    top: 0; 
+    left: 5%;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 35px;
+    color: #d1d9ff;
+}
+
+.menu ul {
+    display: flex;
+    gap: 40px;
+}
+
+.menu ul li {
+    list-style: none;
+}
+
+.menu ul li a {
+    color: #d1d9ff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    transition: .3s;
+}
+
+.menu ul li a:hover, .menu ul li a.active {
+    color: #5672ff;
+}
+
+/* ================= PROFILE DROPDOWN (FROM INDEX STYLE) ================= */
+.profile-wrapper {
+    position: relative;
+}
+
+.profile-chip {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 5px 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.chip-avatar, .profile-avatar {
+    width: 36px;
+    height: 36px;
+    background: #6c63ff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+}
+
+.chip-name {
+    font-size: 14px;
+    font-weight: 500;
+    color: #d1d9ff;
+}
+
+.profile-dropdown {
+    position: absolute;
+    right: 0;
+    top: 70px;
+    width: 260px;
+    background: #1c1c2e;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    display: none;
+    overflow: hidden;
+    z-index: 1000;
+}
+
+.profile-header {
+    padding: 25px 20px;
+    text-align: center;
+    background: #18182a;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.profile-avatar {
+    width: 72px;
+    height: 72px;
+    font-size: 28px;
+    margin: 0 auto 12px auto;
+    border: 3px solid #6c63ff;
+}
+
+.profile-menu a {
+    display: block;
+    padding: 13px 20px;
+    font-size: 14px;
+    color: #e5e9f2;
+    text-decoration: none;
+    transition: 0.2s ease;
+}
+
+.profile-menu a:hover {
+    background: rgba(108, 99, 255, 0.12);
+}
+
+.logout {
+    color: #ff6b6b !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.course-badge {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    background: red;
+    color: white;
+    font-size: 11px;
+    padding: 2px 6px;
+    border-radius: 50%;
+    display: none;
+}
+
+/* ================= TESTIMONIALS CONTENT ================= */
+.page { max-width: 1100px; margin: 100px auto 50px; padding: 0 20px; }
+
+.hero-section { text-align: center; margin-bottom: 50px; }
+.hero-section h1 { font-size: 40px; color: #d1d9ff; margin-bottom: 10px; }
+
+.dashboard-grid { display: grid; grid-template-columns: 320px 1fr; gap: 40px; }
+
+.stats-card, .review-form {
+    background: #1a1a2e; padding: 25px; border-radius: 15px; margin-bottom: 25px;
+}
+.stats-card h2 { font-size: 45px; color: #5672ff; }
+
+.review-form select, .review-form textarea {
+    width: 100%; margin-top: 15px; padding: 12px;
+    border-radius: 8px; border: none; background: #0e0e1a; color: #fff;
+}
+.review-form button {
+    width: 100%; margin-top: 15px; padding: 12px;
+    background: #5672ff; color: white; border: none; border-radius: 8px;
+    font-weight: bold; cursor: pointer; transition: 0.3s;
+}
+
+.star-rating { font-size: 30px; margin: 15px 0; display: flex; justify-content: center; gap: 5px; }
+.star { cursor: pointer; color: #444; }
+.star.active, .star.filled { color: #fbbf24; }
+
+.rating-card { background: #1a1a2e; padding: 20px; border-radius: 12px; margin-bottom: 20px; border-left: 5px solid #5672ff; }
+.rating-card h4 { color: #5672ff; margin-bottom: 5px; }
+.review-user { font-size: 13px; color: #aaa; margin-bottom: 10px; }
+.review-text { line-height: 1.5; color: #e5e9f2; font-style: italic; }
+
+@media (max-width: 850px) {
+    .dashboard-grid { grid-template-columns: 1fr; }
+}

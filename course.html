@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Courses Catalog - LMS</title>
+    <link rel="stylesheet" href="coursestyle.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <h2 class="logo">LMS</h2>
+
+        <div class="menu">
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="course.html">COURSES</a></li>
+                <li><a href="instructors.html">INSTRUCTORS</a></li>
+                <li><a href="testimonials.html">TESTIMONIALS</a></li>
+                <li><a href="forum.html">FORUM</a></li>
+            </ul>
+        </div>
+
+        <div class="profile-wrapper">
+            <div class="profile-trigger" onclick="toggleProfile()">
+            <div class="profile-chip">
+                <div id="navAvatar" class="chip-avatar">?</div>
+                <span id="navName" class="chip-name">User</span>
+                <span id="courseBadge" class="course-badge"></span>
+            </div>
+        </div>
+
+            <div class="profile-dropdown" id="profileDropdown">
+
+                <div class="profile-header">
+                    <div id="mainAvatar" class="profile-avatar">?</div>
+                    <h4 id="studentName">User</h4>
+                    <p id="studentId">CI250026</p>
+                </div>
+
+                <div class="profile-menu">
+                    <a href="progress.html">Course Progress</a>
+                    <span id="courseBadge" class="course-badge"></span>
+                    <a href="payment.html" id="paymentMenu">Payment</a>
+                    <a href="#" class="logout" onclick="logout()">Logout</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- TITLE -->
+    <header class="page-title">
+        <h1>Browse Courses</h1>
+        <p>Find the course that matches your goals.</p>
+    </header>
+
+    <!-- SEARCH & FILTER -->
+    <section class="filters">
+        <input type="text" id="searchInput" class="search-bar" placeholder="Search courses...">
+
+        <div class="filter-options">
+            <select id="courseFilter">
+                <option value="all">All Courses</option>
+                <option value="BIW">Program Courses</option>
+                <option value="BIC">Faculty General Courses</option>
+                <option value="UNI">University General Courses</option>
+            </select>
+
+            <select id="instructorFilter">
+                <option value="all">All Instructors</option>
+            </select>
+        </div>
+    </section>
+
+    <!-- COURSE LIST -->
+    <section class="course-list">
+
+        <div class="course-card" data-code="BIW">
+            <h3>Fundamentals of Web Technology</h3>
+            <p>Understand the basic technologies behind websites.</p>
+            <p><strong>Course Code:</strong> BIW 10103</p>
+            <p><strong>Credit:</strong> 3</p>
+            <a href="#" class="details-btn">View Details</a>
+        </div>
+
+        <div class="course-card" data-code="BIC">
+            <h3>Human Computer Interaction</h3>
+            <p>Design user-friendly interfaces and systems.</p>
+            <p><strong>Course Code:</strong> BIC 22003</p>
+            <p><strong>Credit:</strong> 3</p>
+            <a href="#" class="details-btn">View Details</a>
+        </div>
+
+        <div class="course-card" data-code="BIC">
+            <h3>Creativity and Innovation</h3>
+            <p>Develop creative and innovative thinking skills.</p>
+            <p><strong>Course Code:</strong> BIC 31502</p>
+            <p><strong>Credit:</strong> 2</p>
+            <a href="#" class="details-btn">View Details</a>
+        </div>
+
+        <div class="course-card" data-code="BIC">
+            <h3>Professional Ethics and Occupational</h3>
+            <p>Apply ethical principles in professional environments.</p>
+            <p><strong>Course Code:</strong> BIC 21102</p>
+            <p><strong>Credit:</strong> 2</p>
+            <a href="#" class="details-btn">View Details</a>
+        </div>
+
+        <div class="course-card" data-code="UNI">
+            <h3>Integrity and Anti-Corruption</h3>
+            <p>Promote integrity and prevent corruption.</p>
+            <p><strong>Course Code:</strong> UQU 11202</p>
+            <p><strong>Credit:</strong> 2</p>
+            <a href="#" class="details-btn">View Details</a>
+        </div>
+
+        <div class="course-card" data-code="UNI">
+            <h3>English for General Communication</h3>
+            <p>Improve daily English communication skills.</p>
+            <p><strong>Course Code:</strong> UHB 13102</p>
+            <p><strong>Credit:</strong> 2</p>
+            <a href="#" class="details-btn">View Details</a>
+        </div>
+
+        <div class="course-card" data-code="UNI">
+            <h3>Islamic Studies</h3>
+            <p>Understand Islamic principles and values.</p>
+            <p><strong>Course Code:</strong> UQI 10102</p>
+            <p><strong>Credit:</strong> 2</p>
+            <a href="#" class="details-btn">View Details</a>
+        </div>
+
+    </section>
+
+    <p id="noResults">Sorry, no results found!</p>
+
+    <!-- POPUP -->
+    <div id="coursePopup" class="popup-overlay">
+        <div class="popup-box">
+            <span id="closePopup" class="close-btn">&times;</span>
+
+            <h2></h2>
+            <p class="popup-desc"></p>
+            <p class="popup-code"></p>
+            <p class="popup-credit"></p>
+
+            <div class="popup-row">
+                <strong>View Timetable:</strong>
+                <button id="viewTimetableBtn" class="timetable-btn">GO</button>
+            </div>
+
+            <div class="popup-row">
+                <strong>Section:</strong>
+                <input type="text" id="sectionInput" placeholder="S12">
+                <span class="section-hint">e.g. S12</span>
+            </div>
+
+            <p>
+                <strong>Instructor:</strong>
+                <select id="instructorSelect"></select>
+            </p>
+
+            <p><strong>Price:</strong> <span id="priceValue">RM0</span></p>
+
+            <button type="button" id="proceedPayment" class="enroll-btn" onclick="handleProceed()">
+                Proceed
+            </button>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 LMS Platform. All rights reserved.</p>
+    </footer>
+
+    <script src="course.js"></script>
+</body>
+</html>

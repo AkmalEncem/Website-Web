@@ -1,0 +1,112 @@
+/* ================= PAGE TITLE ================= */
+.page-header {
+    text-align: center;
+    margin-top: 80px;
+}
+
+.page-header h1 {
+    font-size: 40px;
+    color: #d1d9ff;
+}
+
+.page-header p {
+    margin-top: 10px;
+    color: #aaa;
+}
+
+/* ================= FILTER ================= */
+.filter-section {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.filter-section select {
+    padding: 12px 20px;
+    border-radius: 30px;
+    border: 2px solid #5672ff;
+    background: #1a1a2e;
+    color: #fff;
+    margin: 0 10px;
+}
+
+/* ================= INSTRUCTOR PHOTO ================= */
+.instructor-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 12px;
+    border: 3px solid #5672ff;
+    box-shadow: 0 0 15px rgba(86,114,255,0.35);
+}
+
+.instructor-card .instructor-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #5672ff;
+    box-shadow: 0 0 15px rgba(86,114,255,0.35);
+    display: block;
+    margin: 0 auto 12px;
+}
+
+/* ================= INSTRUCTOR GRID ================= */
+.card-container {
+    width: 90%;
+    margin: 60px auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 35px;
+}
+
+/* ================= INSTRUCTOR CARD ================= */
+.instructor-card {
+    background: #1a1a2e;
+    padding: 30px;
+    border-radius: 15px;
+    animation: fadeIn 0.3s ease;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.instructor-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+}
+
+.instructor-card h3 {
+    color: #5672ff;
+    margin-bottom: 10px;
+}
+
+.instructor-card p {
+    margin: 6px 0;
+    font-size: 14px;
+    color: #e5e9f2;
+}
+
+/* ================= SUBJECT TAG ================= */
+.subject-tag {
+    display: inline-block;
+    margin-top: 12px;
+    margin-right: 6px;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    background: #0f3460;
+    border: 1px solid #5672ff;
+    color: #fff;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 1000px) {
+    .card-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .card-container {
+        grid-template-columns: 1fr;
+    }
+}

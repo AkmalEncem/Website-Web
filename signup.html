@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account | Modern LMS</title>
+    <link rel="stylesheet" href="Login&Signup.css">
+</head>
+<body>
+
+<div class="auth-container animate-fade">
+    <div class="auth-content">
+        <div class="image-section">
+            <div class="brand-logo">
+  		  <img src="Lmsicon.webp" alt="LMS Icon" class="logo-mega">
+	    </div>
+            <h3>Join the Community</h3>
+            <p>Create your account today and start your journey toward mastering new skills with our premium digital resources.</p>
+        </div>
+
+        <div class="form-section">
+            <h2>Create Account</h2>
+            <p class="subtitle">Join thousands of students achieving their goals.</p>
+            
+            <form onsubmit="handleSignup(event)">
+                <div class="input-box">
+ 		   <label for="fullName">Full Name</label>
+  		   <input type="text" id="fullName" placeholder="e.g. Haris Bin Ahmad" required>
+		</div>
+
+                <div class="input-box">
+                    <label for="matricNum">Matric Number</label>
+                    <input type="text" id="matricNum" placeholder="e.g. AM210085" required>
+                </div>
+
+                <div class="input-box">
+                    <label for="regEmail">Email Address</label>
+                    <input type="email" id="regEmail" placeholder="name@university.com" required>
+                </div>
+
+                <div class="input-box">
+		    <label for="regPassword">Password</label>
+		    <div class="password-wrapper" style="position: relative;">
+   		     <input type="password" id="regPassword" placeholder="••••••••" required>
+     		   <span class="toggle-icon" onclick="togglePasswordVisibility('regPassword')" 
+            	  style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%); cursor: pointer; opacity: 0.6;">
+         	     👁️
+    		    </span>
+    		</div>
+		</div>
+                <button type="submit" class="btn">Start Learning Now</button>
+
+                <div class="signup-link">
+                    <p>Already have an account? <a href="login.html">Sign In</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<footer class="login-footer">
+    <div style="text-align: center; opacity: 0.6; font-size: 13px;">
+        <p>&copy; 2025 LMS Platform. Built for Excellence.</p>
+    </div>
+</footer>
+
+<div class="popup-overlay" id="successPopup">
+    <div class="popup-box animate-pop">
+        <h3 id="popupTitle">Welcome Aboard!</h3>
+        <p id="popupMessage" style="color: #94a3b8; margin: 15px 0 25px;">Your student account has been created successfully.</p>
+        <button class="btn" onclick="redirectLogin()">Go to Login</button>
+    </div>
+</div>
+
+<script src="login&signup.js"></script>
+
+</body>
+</html>
