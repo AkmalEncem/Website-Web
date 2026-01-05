@@ -181,4 +181,47 @@ body {
 
 @media (max-width: 850px) {
     .dashboard-grid { grid-template-columns: 1fr; }
+    .stats-card,
+    .review-form {
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        position: relative;
+        left: 0;
+        width: 100%;
+        padding: 0 15px;
+    }
+
+    .page {
+        margin-top: 40px;
+    }
+
+    .menu ul {
+        gap: 20px;
+    }
+
+    .menu ul li a {
+        font-size: 13px;
+    }
+
+    .logo {
+        font-size: 26px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section h1 {
+        font-size: 28px;
+    }
+
+    .stats-card h2 {
+        font-size: 34px;
+    }
+
+    .star-rating {
+        font-size: 24px;
+    }
 }
