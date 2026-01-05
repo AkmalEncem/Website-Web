@@ -19,7 +19,11 @@
 
 body {
     min-height: 100vh;
-    background: radial-gradient(circle at center, #1e293b 0%, #0f172a 100%);
+    background: radial-gradient(circle at center, #1e293b 0%, #0f172a 100%); 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     color: var(--text-main);
     padding: 20px;
     overflow-x: hidden;
@@ -45,23 +49,14 @@ body {
     width: 100%;
 }
 
-.auth-wrapper {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 .image-section {
     flex: 1.1;
     background: linear-gradient(135deg, rgba(56, 189, 248, 0.1), rgba(15, 23, 42, 0.4));
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    padding: 20px;
+    padding: 60px;
     border-right: 1px solid var(--border-color);
-    text-align: center;
 }
 
 .image-section h3 {
@@ -91,7 +86,6 @@ body {
     margin-bottom: 20px;
     text-align: center;
     animation: shake 0.4s ease-in-out;
-    min-height: 48px;
 }
 
 @keyframes shake {
@@ -134,11 +128,6 @@ body {
     transition: 0.3s;
 }
 
-.btn:focus {
-    outline: none;
-    box-shadow: 0 0 0 4px rgba(56,189,248,0.3);
-}
-
 .password-wrapper {
     width: 100%;
     display: flex;
@@ -146,8 +135,6 @@ body {
 }
 
 .toggle-icon {
-    cursor: pointer;
-    opacity: 0.6;
     font-size: 14px;
     transition: opacity 0.2s;
     user-select: none;
@@ -231,20 +218,77 @@ body {
     font-size: 14px;
     max-width: 300px;
     margin: 0 auto;
-
 }
+/* ===============================
+   MOBILE RESPONSIVE (GLOBAL)
+================================ */
+@media (max-width: 768px) {
 
-@media (max-width: 900px) {
+    body {
+        font-size: 14px;
+    }
+
+    /* Containers */
+    .container,
+    .main-container,
+    .content {
+        width: 100%;
+        padding: 15px;
+    }
+
+    /* Buttons */
+    button {
+        width: 100%;
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    /* Inputs */
+    input, select, textarea {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    /* Images */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+@media (max-width: 480px) {
+
+    .login-container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+}
+/* ===============================
+   AUTH PAGE – MOBILE FIX
+================================ */
+
+/* ===== TABLET & MOBILE ===== */
+@media (max-width: 768px) {
 
     body {
         justify-content: flex-start;
+        padding: 20px 10px;
     }
 
     .auth-container {
         flex-direction: column;
         min-height: auto;
+        border-radius: 22px;
     }
 
+    .auth-content {
+        flex-direction: column;
+    }
+
+    /* IMAGE / BRAND SECTION */
     .image-section {
         border-right: none;
         border-bottom: 1px solid var(--border-color);
@@ -252,31 +296,61 @@ body {
     }
 
     .logo-mega {
-        max-width: 260px;
+        max-width: 280px;
     }
 
+    .image-section h3 {
+        font-size: 22px;
+    }
+
+    .image-section p {
+        font-size: 13px;
+    }
+
+    /* FORM SECTION */
     .form-section {
-        padding: 40px 25px;
+        padding: 30px 20px;
     }
 
     .form-section h2 {
         font-size: 26px;
     }
-}
 
-@media (max-width: 480px) {
-
-    .logo-mega {
-        max-width: 220px;
-    }
-
-    .form-section {
-        padding: 30px 20px;
+    .subtitle {
+        margin-bottom: 24px;
     }
 
     .btn {
         padding: 14px;
         font-size: 15px;
+    }
+}
+
+/* ===== SMALL PHONES ===== */
+@media (max-width: 480px) {
+
+    .auth-container {
+        border-radius: 18px;
+    }
+
+    .logo-mega {
+        max-width: 220px;
+    }
+
+    .form-section h2 {
+        font-size: 22px;
+    }
+
+    .input-box label {
+        font-size: 13px;
+    }
+
+    .input-box input {
+        padding: 13px 14px;
+    }
+
+    .signup-link {
+        font-size: 13px;
     }
 }
 
