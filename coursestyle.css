@@ -512,3 +512,116 @@ footer{
 .popup-row input{
     width: 70px;
 }
+
+/* ================= MOBILE RESPONSIVE ================= */
+@media (max-width: 768px) {
+
+    /* GLOBAL */
+    body {
+        font-size: 14px;
+    }
+
+    .navbar {
+        width: 100%;
+        padding: 0 15px;
+        height: auto;
+        flex-wrap: wrap;
+    }
+
+    .logo {
+        font-size: 24px;
+    }
+
+    .menu ul {
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    .menu ul li a {
+        font-size: 12px;
+    }
+
+    /* PAGE TITLE */
+    .page-title {
+        margin-top: 40px;
+        padding: 0 15px;
+    }
+
+    .page-title h1 {
+        font-size: 26px;
+    }
+
+    .page-title p {
+        font-size: 13px;
+    }
+
+    /* FILTER */
+    .search-bar {
+        width: 100%;
+    }
+
+    .filter-options {
+        gap: 10px;
+    }
+
+    /* COURSE GRID */
+    .course-list {
+        width: 95%;
+        margin: 30px auto;
+        grid-template-columns: 1fr; /* ONE COLUMN */
+        gap: 20px;
+    }
+
+    .course-card {
+        padding: 20px;
+    }
+
+    .course-card h3 {
+        font-size: 18px;
+    }
+
+    /* POPUP */
+    .popup-box {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .popup-box h2 {
+        font-size: 20px;
+    }
+
+    .popup-box p {
+        font-size: 13px;
+    }
+
+    /* INPUTS */
+    .popup-box input,
+    .popup-box select {
+        width: 100%;
+    }
+
+    .popup-row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    /* BUTTONS */
+    .details-btn,
+    .enroll-btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* PROFILE DROPDOWN */
+    .profile-dropdown {
+        width: 90vw;
+        right: 5vw;
+        top: 60px;
+    }
+
+    /* FOOTER */
+    footer {
+        font-size: 12px;
+        padding: 12px;
+    }
+}
