@@ -387,3 +387,86 @@ a.browse-btn {
     line-height: 50px;
     text-align: center;
 }
+
+/* =========================
+   MOBILE RESPONSIVE FIX
+   ========================= */
+@media (max-width: 768px) {
+
+  /* GENERAL RESET */
+  body {
+    overflow-x: hidden;
+  }
+
+  header {
+    height: auto;
+    min-height: 100vh;
+    padding-bottom: 60px;
+  }
+
+  /* NAVBAR */
+  .navbar {
+    width: 100%;
+    padding: 0 16px;
+  }
+
+  .menu ul {
+    display: none; /* hide desktop menu (use hamburger later) */
+  }
+
+  /* HERO SECTION */
+  .hero {
+    width: 100%;
+    padding: 120px 20px 0;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: 34px;
+    letter-spacing: 1px;
+  }
+
+  .par {
+    font-size: 16px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .browse-btn,
+  .signup-btn2 {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  /* COURSE SECTION */
+  .course-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 0 16px;
+  }
+
+  .course-card {
+    width: 100%;
+    max-width: 350px;
+  }
+
+  /* INSTRUCTOR SECTION */
+  .instructor-container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 0 16px;
+  }
+
+  /* TESTIMONIAL */
+  .testimony-box {
+    width: 100%;
+    max-width: 350px;
+    margin: auto;
+  }
+
+  /* PROFILE DROPDOWN */
+  .p
+
