@@ -55,8 +55,10 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 60px;
+    align-items: center;
+    padding: 20px;
     border-right: 1px solid var(--border-color);
+    text-align: center;
 }
 
 .image-section h3 {
@@ -86,6 +88,7 @@ body {
     margin-bottom: 20px;
     text-align: center;
     animation: shake 0.4s ease-in-out;
+    min-height: 48px;
 }
 
 @keyframes shake {
@@ -128,6 +131,11 @@ body {
     transition: 0.3s;
 }
 
+.btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(56,189,248,0.3);
+}
+
 .password-wrapper {
     width: 100%;
     display: flex;
@@ -135,6 +143,8 @@ body {
 }
 
 .toggle-icon {
+    cursor: pointer;
+    opacity: 0.6;
     font-size: 14px;
     transition: opacity 0.2s;
     user-select: none;
@@ -218,4 +228,51 @@ body {
     font-size: 14px;
     max-width: 300px;
     margin: 0 auto;
+
+}
+
+@media (max-width: 900px) {
+
+    body {
+        justify-content: flex-start;
+    }
+
+    .auth-container {
+        flex-direction: column;
+        min-height: auto;
+    }
+
+    .image-section {
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+        padding: 30px 20px;
+    }
+
+    .logo-mega {
+        max-width: 260px;
+    }
+
+    .form-section {
+        padding: 40px 25px;
+    }
+
+    .form-section h2 {
+        font-size: 26px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .logo-mega {
+        max-width: 220px;
+    }
+
+    .form-section {
+        padding: 30px 20px;
+    }
+
+    .btn {
+        padding: 14px;
+        font-size: 15px;
+    }
 }
