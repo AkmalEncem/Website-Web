@@ -110,3 +110,68 @@
         grid-template-columns: 1fr;
     }
 }
+
+@media (max-width: 768px) {
+
+    /* PAGE HEADER */
+    .page-header {
+        margin-top: 40px;
+        padding: 0 16px;
+    }
+
+    .page-header h1 {
+        font-size: 26px;
+    }
+
+    .page-header p {
+        font-size: 13px;
+    }
+
+    /* FILTER */
+    .filter-section {
+        margin-top: 25px;
+        padding: 0 16px;
+    }
+
+    .filter-section select {
+        width: 100%;
+        margin: 8px 0;
+        font-size: 14px;
+    }
+
+    /* GRID */
+    .card-container {
+        width: 95%;
+        margin: 30px auto;
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    /* CARD */
+    .instructor-card {
+        padding: 20px;
+    }
+
+    .instructor-card h3 {
+        font-size: 18px;
+    }
+
+    .instructor-card p {
+        font-size: 13px;
+    }
+
+    /* IMAGE */
+    .instructor-img,
+    .instructor-card .instructor-img {
+        width: 64px;
+        height: 64px;
+        margin-bottom: 10px;
+    }
+
+    /* SUBJECT TAG */
+    .subject-tag {
+        font-size: 11px;
+        padding: 5px 12px;
+        margin-top: 8px;
+    }
+}
