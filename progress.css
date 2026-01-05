@@ -304,3 +304,95 @@ tr.active{
     color: #ff6b6b;
     font-weight: bold;
 }
+
+/* ===============================
+   MOBILE RESPONSIVE FIX – PROGRESS
+   =============================== */
+@media (max-width: 768px) {
+
+  /* NAVBAR */
+  .navbar{
+    width: 100%;
+    padding: 0 16px;
+  }
+
+  /* PAGE CONTAINER */
+  .container{
+    width: 100%;
+    margin: 30px auto;
+    padding: 0 16px;
+  }
+
+  /* PAGE TITLE */
+  .page-title{
+    font-size: 18px;
+    text-align: center;
+  }
+
+  /* TABLE BOX */
+  .table-box{
+    padding: 15px;
+  }
+
+  /* TABLE – MOBILE READABILITY */
+  table{
+    font-size: 13px;
+    min-width: 600px; /* enable horizontal scroll safely */
+  }
+
+  th, td{
+    padding: 10px;
+  }
+
+  /* DISABLE HOVER SCALE (CAUSES ZOOM ISSUE) */
+  tbody tr:hover{
+    transform: none;
+  }
+
+  /* PROGRESS DETAIL CARD */
+  .progress-detail{
+    padding: 20px;
+  }
+
+  .progress-detail h2{
+    font-size: 16px;
+    text-align: center;
+  }
+
+  /* DETAIL BOX */
+  .detail-box p{
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    font-size: 13px;
+  }
+
+  /* PROGRESS BAR */
+  .progress-bar{
+    height: 8px;
+  }
+
+  /* ACHIEVEMENTS */
+  .achievement-box p{
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    font-size: 13px;
+  }
+
+  /* DOWNLOAD BUTTONS */
+  .download-box{
+    flex-direction: column;
+  }
+
+  .download-box button{
+    width: 100%;
+    text-align: center;
+  }
+
+  /* ACTION BUTTON */
+  .view-progress{
+    font-size: 11px;
+    padding: 6px 12px;
+  }
+}
