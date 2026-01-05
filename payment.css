@@ -268,3 +268,64 @@ body{
         transform: translateY(0);
     }
 }
+
+/* ===============================
+   MOBILE RESPONSIVE FIX – PAYMENT
+   =============================== */
+@media (max-width: 768px) {
+
+  /* NAVBAR */
+  .navbar{
+    width: 100%;
+    padding: 0 16px;
+  }
+
+  /* MAIN LAYOUT */
+  .payment-container{
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin: 30px auto;
+    width: 100%;
+    padding: 0 16px;
+  }
+
+  /* SUMMARY & FORM */
+  .summary-box,
+  .payment-form,
+  #successBox{
+    padding: 20px;
+  }
+
+  /* ROW INPUTS (CARD DETAILS) */
+  .row{
+    flex-direction: column;
+  }
+
+  /* INPUTS & BUTTONS */
+  .payment-form input,
+  .payment-form select,
+  .payment-form button,
+  #doneBtn{
+    font-size: 16px;
+  }
+
+  /* QR IMAGE */
+  #qrSection img{
+    width: 100%;
+    max-width: 280px;
+    margin: auto;
+    display: block;
+  }
+
+  /* TOTAL BOX */
+  .total-box{
+    font-size: 18px;
+    text-align: center;
+  }
+
+  /* RECEIPT OVERLAY */
+  .receipt-card{
+    width: 90%;
+    max-width: 340px;
+  }
+}
