@@ -606,3 +606,147 @@ body {
     border-top: 1px solid rgba(255, 255, 255, 0.05);
     margin-top: 5px;
 }
+
+/* ===============================
+   MOBILE FIX – FORUM PAGE
+   =============================== */
+@media (max-width: 768px) {
+
+  body {
+    overflow-x: hidden;
+  }
+
+  /* PAGE TITLE */
+  .page-title h1 {
+    font-size: 26px;
+  }
+
+  .page-title p {
+    font-size: 14px;
+  }
+
+  /* FORUM HEADER */
+  .forum-header {
+    padding-top: 20px;
+    margin-bottom: 30px;
+  }
+
+  /* FILTERS */
+  .filters {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0 16px;
+  }
+
+  .filters input,
+  .filters select {
+    width: 100%;
+  }
+
+  /* POST BOX */
+  .forum-post-box {
+    width: 100%;
+    padding: 18px;
+    border-radius: 18px;
+  }
+
+  .forum-post-box button {
+    width: 100%;
+    align-self: stretch;
+  }
+
+  /* POST CARD */
+  .forum-post {
+    width: 100%;
+    margin: 16px auto;
+    padding: 16px;
+    border-radius: 16px;
+    transform: none !important;
+  }
+
+  /* DISABLE HOVER ANIMATION */
+  .forum-post:hover {
+    transform: none;
+    box-shadow: none;
+  }
+
+  /* POST HEADER */
+  .post-header {
+    align-items: flex-start;
+  }
+
+  .post-avatar {
+    width: 40px;
+    height: 40px;
+    font-size: 14px;
+  }
+
+  .post-info h4 {
+    font-size: 14px;
+  }
+
+  .post-info p {
+    font-size: 11px;
+  }
+
+  /* ROLE BADGE */
+  .post-role {
+    font-size: 10px;
+    padding: 4px 10px;
+  }
+
+  /* POST CONTENT */
+  .post-content p {
+    font-size: 14px;
+  }
+
+  /* ACTIONS */
+  .post-actions {
+    gap: 15px;
+    font-size: 13px;
+    flex-wrap: wrap;
+  }
+
+  /* REPLIES */
+  .replies {
+    padding-left: 15px;
+    border-left: 2px solid rgba(255,255,255,0.1);
+  }
+
+  .reply {
+    flex-direction: row;
+  }
+
+  .reply-avatar {
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
+  }
+
+  .reply-content p {
+    font-size: 13px;
+  }
+
+  /* INLINE REPLY BOX */
+  .reply-box {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .reply-box input {
+    width: 100%;
+  }
+
+  .reply-btn,
+  .cancel-btn {
+    width: 100%;
+    font-size: 13px;
+  }
+
+  /* PROFILE DROPDOWN */
+  .profile-dropdown {
+    width: 90%;
+    max-width: 320px;
+    right: 10px;
+  }
+}
