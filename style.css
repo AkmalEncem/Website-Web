@@ -388,85 +388,207 @@ a.browse-btn {
     text-align: center;
 }
 
-/* =========================
-   MOBILE RESPONSIVE FIX
-   ========================= */
+/* ================= MOBILE RESPONSIVE ================= */
+html, body {
+    overflow-x: hidden; /* Prevents side-scrolling and white gaps */
+    width: 100%;
+    position: relative;
+}
+
+/* ================= MOBILE VIEW ONLY (max-width: 768px) ================= */
+@media (max-width: 768px) {
+    
+    /* ===== NAVBAR RECONSTRUCTION ===== */
+    .navbar {
+        width: 95%; /* More space on mobile */
+        height: 60px;
+        padding: 0 5px;
+        justify-content: space-between;
+    }
+
+    .logo {
+        font-size: 20px;
+        flex-shrink: 0; /* Prevents logo from shrinking */
+    }
+
+    /* Target the sliding container specifically */
+    .menu.header-scroll {
+        flex: 1; 
+        overflow-x: auto;
+        overflow-y: hidden;
+        display: block; /* Required for scroll container */
+        margin: 0 10px;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+
+    .menu.header-scroll::-webkit-scrollbar {
+        display: none;
+    }
+
+    .menu.header-scroll ul {
+        display: flex;
+        gap: 20px;
+        width: max-content; /* Critical: allows list to be wider than the screen */
+        padding: 10px 0;
+    }
+
+    .menu ul li a {
+        font-size: 11px;
+        white-space: nowrap;
+        text-transform: uppercase;
+    }
+
+    /* ===== PROFILE & DROPDOWN ===== */
+    .chip-name {
+        display: none;
+    }
+
+    .profile-chip {
+        padding: 2px;
+        background: transparent;
+    }
+
+    .profile-dropdown {
+        position: fixed; /* Ensures it stays visible on top of everything */
+        top: 65px;
+        right: 5%;
+        left: 5%; /* Centers it on mobile */
+        width: 90%;
+        z-index: 2000;
+    }
+/* =========================================
+   MOBILE RESPONSIVE FIX (max-width: 768px)
+   ========================================= */
 @media (max-width: 768px) {
 
-  /* GENERAL RESET */
-  body {
-    overflow-x: hidden;
-  }
+    /* --- GENERAL --- */
+    body {
+        overflow-x: hidden;
+    }
 
-  header {
-    height: auto;
-    min-height: 100vh;
-    padding-bottom: 60px;
-  }
+    header {
+        height: auto;
+        min-height: 100vh;
+        padding-bottom: 50px;
+        background-attachment: scroll; /* Better performance on mobile */
+    }
 
-  /* NAVBAR */
-  .navbar {
-    width: 100%;
-    padding: 0 16px;
-  }
+    /* --- NAVBAR --- */
+    .navbar {
+        width: 100%;
+        padding: 0 15px;
+        height: 60px;
+    }
 
-  .menu ul {
-    display: none; /* hide desktop menu (use hamburger later) */
-  }
+    .logo {
+        font-size: 24px;
+        flex-shrink: 0;
+    }
 
-  /* HERO SECTION */
-  .hero {
-    width: 100%;
-    padding: 120px 20px 0;
-    text-align: center;
-  }
+    /* Keeps your sliding menu logic working on mobile */
+    .menu.header-scroll {
+        flex: 1;
+        overflow-x: auto;
+        margin: 0 10px;
+        display: block; 
+        -webkit-overflow-scrolling: touch;
+    }
 
-  .hero h1 {
-    font-size: 34px;
-    letter-spacing: 1px;
-  }
+    .menu.header-scroll ul {
+        display: flex;
+        gap: 15px;
+        width: max-content;
+        padding: 10px 0;
+    }
 
-  .par {
-    font-size: 16px;
-  }
+    .menu ul li a {
+        font-size: 11px;
+        white-space: nowrap;
+    }
 
-  .hero-buttons {
-    flex-direction: column;
-    align-items: center;
-  }
+    .chip-name {
+        display: none; /* Hide name to save space */
+    }
 
-  .browse-btn,
-  .signup-btn2 {
-    width: 100%;
-    max-width: 280px;
-  }
+    /* --- HERO SECTION --- */
+    .hero {
+        width: 100%;
+        padding: 100px 20px 0;
+        text-align: center;
+    }
 
-  /* COURSE SECTION */
-  .course-container {
-    flex-direction: column;
-    align-items: center;
-    padding: 0 16px;
-  }
+    .hero h1 {
+        font-size: 32px;
+        line-height: 1.2;
+    }
 
-  .course-card {
-    width: 100%;
-    max-width: 350px;
-  }
+    .par {
+        font-size: 15px;
+        margin-top: 15px;
+    }
 
-  /* INSTRUCTOR SECTION */
-  .instructor-container {
-    grid-template-columns: 1fr;
-    gap: 30px;
-    padding: 0 16px;
-  }
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        margin-top: 40px;
+    }
 
-  /* TESTIMONIAL */
-  .testimony-box {
-    width: 100%;
-    max-width: 350px;
-    margin: auto;
-  }
+    .browse-btn, .signup-btn2 {
+        width: 100%;
+        max-width: 260px;
+    }
 
-  /* PROFILE DROPDOWN */
-  .p
+    /* --- COURSE SECTION --- */
+    section {
+        padding: 40px 15px;
+    }
+
+    section h2 {
+        font-size: 28px;
+    }
+
+    .course-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .course-card {
+        width: 100%;
+        max-width: 100%; /* Fill the screen width */
+    }
+
+    /* --- INSTRUCTOR SECTION --- */
+    .instructor-container {
+        grid-template-columns: 1fr; /* Stack instructors vertically */
+        gap: 40px;
+    }
+
+    /* --- TESTIMONIAL SECTION --- */
+    .testimony-box {
+        width: 100%;
+        max-width: 100%;
+        border-left-width: 4px;
+        padding: 20px;
+    }
+
+    /* --- DROPDOWN FIX --- */
+    .profile-dropdown {
+        position: fixed;
+        top: 65px;
+        left: 5%;
+        right: 5%;
+        width: 90%;
+    }
+}
+
+/* Very small screens fix */
+@media (max-width: 380px) {
+    .hero h1 {
+        font-size: 26px;
+    }
+}
+
 
