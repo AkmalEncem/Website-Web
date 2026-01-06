@@ -16,6 +16,30 @@ body {
     overflow-x: hidden;
 }
 
+.hero {
+    /* Replace 'hero-bg.jpg' with your actual image path */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('background1.jpg');
+    
+    /* This ensures the image covers the entire area */
+    background-size: cover;
+    
+    /* This keeps the image centered */
+    background-position: center;
+    
+    /* This prevents the image from repeating if the div is large */
+    background-repeat: no-repeat;
+    
+    /* Adjust height as needed */
+    height: 80vh; 
+    
+    /* Flexbox helps center the text inside the hero div */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white; /* Makes text readable over the image */
+}
+
 /* ================= NAVBAR ================= */
 .navbar {
     width: 90%;
@@ -226,5 +250,6 @@ footer {
         display: none;
     }
 }
+
 
 
