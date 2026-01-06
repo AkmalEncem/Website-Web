@@ -14,12 +14,6 @@ body {
     background: #0e0e1a;
     color: #fff;
 }
-/* ================= HEADER (MATCH COURSE STYLE) ================= */
-header {
-    width: 100%;
-    background: #0e0e1a; /* same as body */
-    padding-bottom: 40px;
-}
 
 /* Navbar container stays identical */
 .navbar {
@@ -547,6 +541,7 @@ html, body {
         display: none; /* Hide logo to give more room for links */
     }
 }
+
 
 
 
