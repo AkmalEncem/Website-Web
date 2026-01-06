@@ -495,12 +495,6 @@ html, body {
     align-items: center;
   }
 
-  .browse-btn,
-  .signup-btn2 {
-    width: 100%;
-    max-width: 280px;
-  }
-
   /* COURSE SECTION */
   .course-container {
     flex-direction: column;
@@ -532,3 +526,4 @@ html, body {
         display: none; /* Hide logo to give more room for links */
     }
 }
+
