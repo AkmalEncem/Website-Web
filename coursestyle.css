@@ -535,15 +535,26 @@ html, body {
     }
 
     .logo {
+        flex-shrink: 0;
         font-size: 22px;
         white-space: nowrap;
     }
 
     .menu ul {
         display: flex;
-        gap: 18px;
+        gap: clamp(10px, 3vw, 18px);
         align-items: center;
         flex-wrap: nowrap;
+    }
+    
+    .menu {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    }
+
+    .menu ul {
+        max-width: 100%;
     }
 
     .menu ul li a {
@@ -553,6 +564,7 @@ html, body {
     }
 
     .auth-buttons {
+        flex-shrink: 0;
         display: flex;
         align-items: center;
         gap: 6px;
@@ -636,6 +648,12 @@ html, body {
         padding: 12px;
     }
 }
+@media (max-width: 360px) {
+    .menu ul li:last-child {
+        display: none;
+    }
+}
+
 
 
 
