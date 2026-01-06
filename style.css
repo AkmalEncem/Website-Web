@@ -19,36 +19,37 @@ body {
 .navbar {
     width: 90%;
     height: 65px;
-    margin: auto;
+    margin: 0 auto 40px;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-
-.logo{
+/* LOGO */
+.logo {
     font-size: 35px;
     color: #d1d9ff;
 }
 
-.menu ul{
+/* MENU */
+.menu ul {
     display: flex;
     gap: 40px;
 }
 
-.menu ul li{
+.menu ul li {
     list-style: none;
 }
 
-.menu ul li a{
+.menu ul li a {
     color: #d1d9ff;
     text-decoration: none;
     font-size: 14px;
     font-weight: bold;
-    transition: .3s;
+    transition: 0.3s;
 }
 
-.menu ul li a:hover{
+.menu ul li a:hover {
     color: #5672ff;
 }
 
@@ -59,37 +60,6 @@ body {
 
 .profile-wrapper {
     position: relative;
-    user-select: none;
-}
-
-/* Base Avatar Styling (Shared) */
-.chip-avatar, .profile-avatar {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-weight: bold;
-    text-transform: uppercase;
-    border-radius: 50%;
-    flex-shrink: 0;
-}
-
-/* Navbar Avatar (Small) */
-.chip-avatar {
-    width: 36px;
-    height: 36px;
-    font-size: 14px;
-    border: 2px solid rgba(255, 255, 255, 0.2);
-}
-
-/* Dropdown Avatar (Large) */
-.profile-avatar {
-    width: 72px;
-    height: 72px;
-    font-size: 28px;
-    margin: 0 auto 12px auto;
-    border: 3px solid #6c63ff;
-    box-shadow: 0 0 15px rgba(108, 99, 255, 0.3);
 }
 
 .profile-chip {
@@ -97,37 +67,39 @@ body {
     align-items: center;
     gap: 10px;
     padding: 5px 12px;
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255,255,255,0.05);
     border-radius: 30px;
     cursor: pointer;
-    transition: 0.3s;
 }
 
-.profile-chip:hover {
-    background: rgba(255, 255, 255, 0.1);
+.chip-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 2px solid rgba(255,255,255,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
 }
 
 .chip-name {
     font-size: 14px;
-    font-weight: 500;
     color: #d1d9ff;
 }
 
-/* Dropdown Container */
+/* DROPDOWN */
 .profile-dropdown {
     position: absolute;
     right: 0;
     top: 70px;
     width: 260px;
     background: #1c1c2e;
-    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 16px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
     display: none;
-    overflow: hidden;
     z-index: 1000;
 }
-
 /* Dropdown Header */
 .profile-header {
     padding: 25px 20px;
@@ -541,6 +513,7 @@ html, body {
         display: none; /* Hide logo to give more room for links */
     }
 }
+
 
 
 
