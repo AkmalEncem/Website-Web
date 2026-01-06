@@ -522,61 +522,64 @@ html, body {
 
 /* ================= MOBILE VIEW ONLY (max-width: 768px) ================= */
 @media (max-width: 768px) {
-    
-    /* NAVBAR - Keeps Profile on the right */
+
+    /* NAVBAR */
     .navbar {
         width: 100%;
         padding: 0 15px;
-        height: 70px;
+        height: 65px;
         display: flex;
-        justify-content: space-between; /* Logo Left, Profile Right */
         align-items: center;
-        flex-wrap: wrap; /* Allow wrapping if needed */
+        justify-content: space-between;
+        flex-wrap: nowrap;
     }
 
+    /* LOGO */
     .logo {
         font-size: 22px;
-        order: 1; /* Ensure logo is first */
+        flex-shrink: 0;
     }
 
-    /* MENU - Now visible, centered between logo and profile */
+    /* MENU - FORCE VISIBLE */
     .menu {
-        display: flex; /* Added to enable flex properties */
-        order: 2; /* Menu in the middle */
-        flex: 1; /* Allow menu to take available space */
-        justify-content: center; /* Center the menu items */
+        display: flex !important;
+        flex: 1;
+        justify-content: center;
     }
 
     .menu ul {
-        gap: 10px; /* Reduce gap for mobile */
-        flex-wrap: wrap; /* Wrap if too many items */
+        display: flex;
+        gap: 12px;
+        flex-wrap: nowrap;
     }
 
     .menu ul li a {
-        font-size: 11px; /* Smaller font for mobile */
+        font-size: 12px;
+        white-space: nowrap;
     }
 
-    /* PROFILE CHIP - Optimized for small screens */
+    /* PROFILE */
+    .auth-buttons {
+        flex-shrink: 0;
+    }
+
     .chip-name {
-        display: none; /* Hides name on mobile to keep profile on the right edge */
+        display: none; /* hide name, keep avatar */
     }
 
     .profile-chip {
-        padding: 5px;
+        padding: 4px;
         background: transparent;
     }
 
-    .auth-buttons {
-        order: 3; /* Ensure profile is last (right) */
-    }
-
-    /* DROPDOWN - Makes it fit the mobile screen width */
+    /* DROPDOWN */
     .profile-dropdown {
-        width: 280px;
-        right: 15px;
+        width: 90vw;
+        right: 5vw;
         top: 65px;
-        position: fixed; /* Ensures it stays visible relative to the screen */
+        position: fixed;
     }
+}
 
     /* PAGE TITLE */
     .page-title {
@@ -748,3 +751,4 @@ html, body {
         padding: 12px;
     }
 }
+
