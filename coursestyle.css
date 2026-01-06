@@ -535,6 +535,7 @@ html, body {
 
     .logo {
         font-size: 22px;
+        order: 1; /* Ensure logo is first */
     }
 
     /* Hide menu in mobile to prioritize profile on right */
@@ -554,6 +555,7 @@ html, body {
 
     .auth-buttons {
         margin-left: auto; /* Forces profile to the absolute right */
+        order: 2; /* Ensure profile is second (right) */
     }
 
     /* DROPDOWN - Makes it fit the mobile screen width */
