@@ -180,13 +180,21 @@ footer {
 }
 
 /* ================= MOBILE ================= */
+/* ================= MOBILE ================= */
 @media (max-width: 768px) {
+
+    /* NAVBAR STRUCTURE */
+    .navbar {
+        flex-wrap: nowrap;
+        gap: 10px;
+    }
 
     .logo {
         font-size: 20px;
+        flex-shrink: 0;
     }
 
-    /* Horizontal scroll menu */
+    /* MENU */
     .menu {
         flex: 1;
         overflow-x: auto;
@@ -208,23 +216,29 @@ footer {
         text-transform: uppercase;
     }
 
-    .chip-name {
-        display: none;
-    }
-
+    /* PROFILE CHIP */
     .profile-chip {
+        flex-shrink: 0;
         padding: 0;
         background: transparent;
     }
 
-    .profile-dropdown {
-        position: fixed;
-        top: 70px;
-        left: 5%;
-        width: 90%;
-        z-index: 2000;
+    .chip-name {
+        display: none;
     }
 
+    /* PROFILE DROPDOWN – FIXED & STABLE */
+    .profile-dropdown {
+        position: fixed;
+        top: 75px;
+        right: 10px;       /* ❗ KEKAL SATU ARAH SAHAJA */
+        left: auto;
+        width: calc(100% - 20px);
+        max-width: 320px;
+        z-index: 3000;
+    }
+
+    /* HERO */
     .hero h1 {
         font-size: 30px;
     }
@@ -234,6 +248,7 @@ footer {
         align-items: center;
     }
 
+    /* COURSES */
     .course-card {
         width: 100%;
         max-width: 350px;
@@ -246,3 +261,4 @@ footer {
         display: none;
     }
 }
+
