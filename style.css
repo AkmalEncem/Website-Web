@@ -275,3 +275,9 @@ section {
         width: 90%;
     }
 }
+/* Fix for very narrow phones */
+@media (max-width: 360px) {
+    .logo {
+        display: none; /* Hide logo to give more room for links */
+    }
+}
