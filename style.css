@@ -20,12 +20,13 @@ body {
 .navbar {
     width: 90%;
     height: 65px;
-    margin: 0 auto 40px;
+    margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
+/* Logo */
 .logo {
     font-size: 35px;
     color: #d1d9ff;
@@ -33,6 +34,11 @@ body {
 }
 
 /* ================= MENU ================= */
+.menu {
+    display: flex;
+    align-items: center;
+}
+
 .menu ul {
     display: flex;
     gap: 40px;
@@ -54,44 +60,29 @@ body {
     color: #5672ff;
 }
 
-/* ================= PROFILE CHIP ================= */
-/* ===== PROFILE CHIP (NAVBAR) ===== */
-@media (max-width: 768px) {
-  .profile-dropdown {
-    position: fixed;
-    top: 70px;
-    right: 10px;
-    width: 90%;
-    max-width: 320px;
-    z-index: 2000;
-  }
-
-  .chip-name {
-    display: none;
-  }
-}
-
 /* ================= HERO ================= */
 .hero {
-    /* Background setup */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('background1.jpg');
+    background-image: linear-gradient(
+        rgba(0, 0, 0, 0.6),
+        rgba(0, 0, 0, 0.6)
+    ), url('background1.jpg');
+
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    
-    /* Layout setup */
-    width: 100%; /* Changed from 90% to 100% to make the image full-width */
-    height: 80vh; 
+
+    width: 100%;
+    min-height: 80vh;
+
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column; /* Keeps text stacked vertically */
+    flex-direction: column;
     text-align: center;
+
     margin-bottom: 60px;
-    color: white;
 }
 
-/* Keep these separate as they target child elements */
 .hero h1 {
     font-size: 42px;
     color: #d1d9ff;
@@ -101,10 +92,11 @@ body {
 .par {
     margin-top: 12px;
     font-size: 18px;
-    color: #eee; /* Lightened for better contrast on dark bg */
-    max-width: 600px; /* Keeps text from stretching too wide */
+    color: #eee;
+    max-width: 600px;
 }
 
+/* Hero Buttons */
 .hero-buttons {
     margin-top: 30px;
     display: flex;
@@ -185,7 +177,6 @@ footer {
 
     /* Horizontal scroll menu */
     .menu {
-        flex: 1;
         overflow-x: auto;
         scrollbar-width: none;
     }
@@ -203,23 +194,6 @@ footer {
         font-size: 11px;
         white-space: nowrap;
         text-transform: uppercase;
-    }
-
-    .chip-name {
-        display: none;
-    }
-
-    .profile-chip {
-        padding: 0;
-        background: transparent;
-    }
-
-    .profile-dropdown {
-        position: fixed;
-        top: 70px;
-        left: 5%;
-        width: 90%;
-        z-index: 2000;
     }
 
     .hero h1 {
@@ -242,7 +216,3 @@ footer {
         display: none;
     }
 }
-
-
-
-
