@@ -276,7 +276,7 @@ header{
     gap: 20px;
 }
 
-.browse-btn, .signup-btn2{
+.browse-btn{
     width: 180px;
     height: 50px;
     border: none;
@@ -292,13 +292,7 @@ header{
     color: #fff;
 }
 
-.signup-btn2{
-    background: transparent;
-    color: #fff;
-    border: 2px solid #9f5bff;
-}
-
-.browse-btn:hover, .signup-btn2:hover{
+.browse-btn:hover{
     transform: scale(1.08);
 }
 
@@ -526,4 +520,5 @@ html, body {
         display: none; /* Hide logo to give more room for links */
     }
 }
+
 
