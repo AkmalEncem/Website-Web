@@ -16,30 +16,6 @@ body {
     overflow-x: hidden;
 }
 
-.hero {
-    /* Replace 'hero-bg.jpg' with your actual image path */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('background1.jpg');
-    
-    /* This ensures the image covers the entire area */
-    background-size: cover;
-    
-    /* This keeps the image centered */
-    background-position: center;
-    
-    /* This prevents the image from repeating if the div is large */
-    background-repeat: no-repeat;
-    
-    /* Adjust height as needed */
-    height: 80vh; 
-    
-    /* Flexbox helps center the text inside the hero div */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white; /* Makes text readable over the image */
-}
-
 /* ================= NAVBAR ================= */
 .navbar {
     width: 90%;
@@ -97,20 +73,36 @@ body {
 
 /* ================= HERO ================= */
 .hero {
-    width: 90%;
-    margin: 0 auto 60px;
+    /* Background setup */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('background1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    /* Layout setup */
+    width: 100%; /* Changed from 90% to 100% to make the image full-width */
+    height: 80vh; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; /* Keeps text stacked vertically */
     text-align: center;
+    margin-bottom: 60px;
+    color: white;
 }
 
+/* Keep these separate as they target child elements */
 .hero h1 {
     font-size: 42px;
     color: #d1d9ff;
+    line-height: 1.2;
 }
 
 .par {
     margin-top: 12px;
-    font-size: 16px;
-    color: #aaa;
+    font-size: 18px;
+    color: #eee; /* Lightened for better contrast on dark bg */
+    max-width: 600px; /* Keeps text from stretching too wide */
 }
 
 .hero-buttons {
@@ -250,6 +242,7 @@ footer {
         display: none;
     }
 }
+
 
 
 
