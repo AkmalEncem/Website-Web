@@ -1,4 +1,4 @@
-/* ================= 1. RESET & BASE STYLES ================= */
+/* ================= RESET ================= */
 * {
     margin: 0;
     padding: 0;
@@ -19,7 +19,7 @@ body {
     overflow-x: hidden;
 }
 
-/* ================= 2. NAVBAR ================= */
+/* ================= NAVBAR ================= */
 .navbar {
     width: 90%;
     height: 65px;
@@ -55,7 +55,7 @@ body {
     color: #5672ff;
 }
 
-/* ================= 3. PROFILE & AUTH ================= */
+/* ================= PROFILE & AUTH ================= */
 .auth-buttons {
     display: flex;
     gap: 15px;
@@ -106,7 +106,7 @@ body {
     display: none;
 }
 
-/* PROFILE DROPDOWN */
+/* DROPDOWN */
 .profile-dropdown {
     position: absolute;
     top: 65px;
@@ -134,9 +134,6 @@ body {
     border-radius: 50%;
     margin: 0 auto 10px;
     border: 3px solid #6c63ff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .profile-header h4 {
@@ -173,7 +170,7 @@ body {
     border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-/* ================= 4. PAGE TITLE & FILTERS ================= */
+/* ================= PAGE TITLE & FILTERS ================= */
 .page-title {
     text-align: center;
     margin-top: 80px;
@@ -201,7 +198,6 @@ body {
     border: 2px solid #5672ff;
     background: #1a1a2e;
     color: #fff;
-    outline: none;
 }
 
 .filter-options {
@@ -218,10 +214,9 @@ body {
     border: 2px solid #5672ff;
     background: #1a1a2e;
     color: #fff;
-    cursor: pointer;
 }
 
-/* ================= 5. COURSE GRID & CARDS ================= */
+/* ================= COURSE GRID & CARDS ================= */
 .course-list {
     width: 90%;
     margin: 60px auto;
@@ -268,7 +263,7 @@ body {
     transform: scale(1.05);
 }
 
-/* ================= 6. POPUP SYSTEM ================= */
+/* ================= POPUP SYSTEM ================= */
 .popup-overlay {
     display: none;
     position: fixed;
@@ -311,10 +306,9 @@ body {
     border: 1px solid #5672ff;
     background: #0f3460;
     color: #fff;
-    outline: none;
 }
 
-.popup-box input { width: 80px; text-align: center; }
+.popup-box input { width: 70px; text-align: center; }
 
 .section-row {
     display: inline-flex;
@@ -355,13 +349,12 @@ body {
     color: #fff;
     border: none;
     cursor: pointer;
-    font-weight: bold;
     transition: all 0.3s;
 }
 
 .enroll-btn:hover {
     background: #8fa2ff;
-    transform: scale(1.02);
+    transform: scale(1.05);
 }
 
 .close-btn {
@@ -373,7 +366,7 @@ body {
     color: #aaa;
 }
 
-/* ================= 7. FOOTER & OTHERS ================= */
+/* ================= FOOTER & OTHERS ================= */
 #noResults {
     display: none;
     text-align: center;
@@ -394,7 +387,7 @@ footer {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* ================= 8. MOBILE RESPONSIVE ================= */
+/* ================= MOBILE RESPONSIVE ================= */
 @media (max-width: 768px) {
     .navbar {
         width: 95%;
@@ -403,7 +396,6 @@ footer {
 
     .logo { font-size: 20px; }
 
-    /* Horizontal Scroll Menu */
     .menu.header-scroll {
         flex: 1;
         overflow-x: auto;
@@ -415,12 +407,11 @@ footer {
 
     .menu.header-scroll ul {
         width: max-content;
-        gap: 15px;
+        gap: 20px;
     }
 
     .menu ul li a { font-size: 11px; }
 
-    /* Profile Mobile */
     .chip-name { display: none; }
     .profile-chip { background: transparent; padding: 2px; }
     
@@ -431,16 +422,14 @@ footer {
         width: 90%;
     }
 
-    /* Content Scaling */
     .page-title h1 { font-size: 24px; }
     .search-bar { width: 90%; }
     
     .course-list {
         grid-template-columns: 1fr;
-        width: 92%;
+        width: 90%;
     }
 
-    /* Popup Mobile Fix */
     .popup-box {
         width: 92%;
         max-height: 90vh;
