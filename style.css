@@ -8,6 +8,12 @@ html {
     scroll-behavior: smooth;
 }
 
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0e0e1a;
+    color: #fff;
+}
 /* ================= HEADER (MATCH COURSE STYLE) ================= */
 header {
     width: 100%;
@@ -255,10 +261,9 @@ header {
 
 .hero {
     width: 90%;
-    margin: 60px auto 0;
+    margin: 0 auto 60px;
     padding: 0;
     text-align: center;
-    color: #fff;
 }
 
 .hero h1 {
@@ -395,12 +400,15 @@ html, body {
    MOBILE RESPONSIVE FIX
    ========================= */
 @media (max-width: 768px) {
-    .navbar {
-        width: 95%; /* More space on mobile */
-        height: 60px;
-        padding: 0 5px;
-        justify-content: space-between;
-    }
+    /* ================= NAVBAR ================= */
+.navbar {
+    width: 90%;
+    height: 65px;
+    margin: 0 auto 40px; /* IMPORTANT: replaces header padding */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 
     .logo {
         font-size: 20px;
@@ -476,14 +484,12 @@ html, body {
   }
 
   .hero h1 {
-    font-size: 34px;
-    letter-spacing: 1px;
-  }
+        font-size: 30px;
+    }
 
-  .par {
-    font-size: 16px;
-  }
-
+    .par {
+        font-size: 15px;
+    }
   .hero-buttons {
     flex-direction: column;
     align-items: center;
@@ -541,6 +547,7 @@ html, body {
         display: none; /* Hide logo to give more room for links */
     }
 }
+
 
 
 
