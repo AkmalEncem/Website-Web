@@ -1,6 +1,8 @@
-*{
+/* ================= RESET ================= */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     font-family: Arial, sans-serif;
 }
 
@@ -9,13 +11,12 @@ html {
 }
 
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
     background: #0e0e1a;
     color: #fff;
+    overflow-x: hidden;
 }
 
-/* Navbar container stays identical */
+/* ================= NAVBAR ================= */
 .navbar {
     width: 90%;
     height: 65px;
@@ -25,13 +26,13 @@ body {
     justify-content: space-between;
 }
 
-/* LOGO */
 .logo {
     font-size: 35px;
     color: #d1d9ff;
+    white-space: nowrap;
 }
 
-/* MENU */
+/* ================= MENU ================= */
 .menu ul {
     display: flex;
     gap: 40px;
@@ -53,16 +54,13 @@ body {
     color: #5672ff;
 }
 
-.auth-buttons{
-    display: flex;
-    gap: 15px;
-}
-
+/* ================= PROFILE CHIP ================= */
 .profile-wrapper {
     position: relative;
 }
 
 .profile-chip {
+    position: relative;
     display: flex;
     align-items: center;
     gap: 10px;
@@ -85,73 +83,11 @@ body {
 
 .chip-name {
     font-size: 14px;
-    color: #d1d9ff;
-}
-
-/* DROPDOWN */
-.profile-dropdown {
-    position: absolute;
-    right: 0;
-    top: 70px;
-    width: 260px;
-    background: #1c1c2e;
-    border-radius: 16px;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
-    display: none;
-    z-index: 1000;
-}
-/* Dropdown Header */
-.profile-header {
-    padding: 25px 20px;
-    text-align: center;
-    background: #18182a;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.profile-header h4 {
-    font-size: 16px;
-    color: #ffffff;
-    margin-bottom: 3px;
-}
-
-.profile-header p {
-    font-size: 12px;
-    color: #94a3b8;
-}
-
-/* Dropdown Menu Items */
-.profile-menu {
-    padding: 8px 0;
-}
-
-.profile-menu a {
-    display: block;
-    padding: 12px 20px;
-    font-size: 14px;
-    color: #e5e9f2;
-    text-decoration: none;
-    transition: 0.2s ease;
-}
-
-.profile-menu a:hover {
-    background: rgba(108, 99, 255, 0.1);
-    padding-left: 25px; /* Subtle slide effect */
-}
-
-.profile-menu .logout {
-    color: #ff6b6b;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    margin-top: 5px;
-}
-
-/* NAMA – IKUT NAVBAR */
-.chip-name {
-    font-size: 14px;
     font-weight: 500;
     color: #d1d9ff;
 }
 
-.course-badge{
+.course-badge {
     position: absolute;
     top: -6px;
     right: -6px;
@@ -163,36 +99,30 @@ body {
     display: none;
 }
 
-.profile-chip{
-    position: relative;
-}
-
-/* Dropdown Container */
+/* ================= DROPDOWN ================= */
 .profile-dropdown {
     position: absolute;
     right: 0;
     top: 70px;
     width: 260px;
     background: #1c1c2e;
-    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 16px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
     display: none;
     overflow: hidden;
     z-index: 1000;
 }
 
-/* Dropdown Header */
 .profile-header {
     padding: 25px 20px;
     text-align: center;
     background: #18182a;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 
 .profile-header h4 {
     font-size: 16px;
-    color: #ffffff;
     margin-bottom: 3px;
 }
 
@@ -201,40 +131,34 @@ body {
     color: #94a3b8;
 }
 
-/* Dropdown Menu Items */
-.profile-menu {
-    padding: 8px 0;
-}
-
 .profile-menu a {
     display: block;
     padding: 13px 20px;
     font-size: 14px;
     color: #e5e9f2;
     text-decoration: none;
-    transition: 0.2s ease;
+    transition: 0.2s;
 }
 
 .profile-menu a:hover {
-    background: rgba(108,99,255,0.12); /* accent hover */
+    background: rgba(108,99,255,0.12);
 }
 
 .profile-menu .logout {
     color: #ff6b6b;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-top: 1px solid rgba(255,255,255,0.05);
     margin-top: 5px;
 }
 
+/* ================= HERO ================= */
 .hero {
     width: 90%;
     margin: 0 auto 60px;
-    padding: 0;
     text-align: center;
 }
 
 .hero h1 {
     font-size: 42px;
-    letter-spacing: 1px;
     color: #d1d9ff;
 }
 
@@ -244,104 +168,70 @@ body {
     color: #aaa;
 }
 
-.hero-buttons{
+.hero-buttons {
     margin-top: 30px;
     display: flex;
     gap: 20px;
+    justify-content: center;
 }
 
-.browse-btn{
+.browse-btn {
     width: 180px;
     height: 50px;
-    border: none;
     border-radius: 30px;
-    cursor: pointer;
-    font-size: 17px;
-    font-weight: bold;
-    transition: .3s;
-}
-
-.browse-btn{
     background: #5672ff;
     color: #fff;
+    font-size: 17px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-.browse-btn:hover{
+.browse-btn:hover {
     transform: scale(1.08);
 }
 
-section{
-    background: #0e0e1a;
-    color: #fff;
+a.browse-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+/* ================= SECTIONS ================= */
+section {
     padding: 60px 0;
     text-align: center;
 }
 
-section h2{
+section h2 {
     font-size: 38px;
     margin-bottom: 40px;
 }
 
-.course-container{
+.course-container {
     display: flex;
     justify-content: center;
     gap: 30px;
+    flex-wrap: wrap;
 }
 
-.course-card{
+.course-card {
     width: 300px;
     padding: 35px 25px;
     background: #1a1a2e;
     border-radius: 15px;
-    transition: .4s;
+    transition: 0.4s;
 }
 
-.course-card:hover{
+.course-card:hover {
     transform: translateY(-10px);
     background: #252547;
 }
 
-.course-card h3{
-    color: #5672ff;
-    margin-bottom: 15px;
-}
-
-.instructor-container{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    max-width: 900px;
-    margin: auto;
-    text-align: center;
-}
-
-.instructor-card{
-    text-align: center;
-}
-
-.instructor-card img{
-    width: 130px;
-    height: 130px;
-    border-radius: 50%;
-    border: 4px solid #5672ff;
-    margin-bottom: 10px;
-}
-
-.testimony-box{
-    width: 500px;
-    margin: auto;
-    background: #1a1a2e;
-    border-left: 6px solid #5672ff;
-    padding: 30px;
-    border-radius: 12px;
-}
-
-.view-all{
-    margin-top: 40px;
-    display: flex;
-    justify-content: center;
-}
-
-footer{
+/* ================= FOOTER ================= */
+footer {
     background: #000;
     color: #aaa;
     padding: 15px;
@@ -349,58 +239,27 @@ footer{
     font-size: 14px;
 }
 
-a.browse-btn {
-    display: inline-block;
-    text-decoration: none;
-    line-height: 50px;
-    text-align: center;
-}
-
-/* ================= MOBILE RESPONSIVE ================= */
-html, body {
-    overflow-x: hidden; /* Prevents side-scrolling and white gaps */
-    width: 100%;
-    position: relative;
-}
-/* =========================
-   MOBILE RESPONSIVE FIX
-   ========================= */
+/* ================= MOBILE ================= */
 @media (max-width: 768px) {
-    /* ================= NAVBAR ================= */
-.navbar {
-    width: 90%;
-    height: 65px;
-    margin: 0 auto 40px; /* IMPORTANT: replaces header padding */
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
 
     .logo {
         font-size: 20px;
-        flex-shrink: 0; /* Prevents logo from shrinking */
     }
 
-    /* Target the sliding container specifically */
-    .menu.header-scroll {
-        flex: 1; 
+    /* Horizontal scroll menu */
+    .menu {
+        flex: 1;
         overflow-x: auto;
-        overflow-y: hidden;
-        display: block; /* Required for scroll container */
-        margin: 0 10px;
-        -webkit-overflow-scrolling: touch;
         scrollbar-width: none;
     }
 
-    .menu.header-scroll::-webkit-scrollbar {
+    .menu::-webkit-scrollbar {
         display: none;
     }
 
-    .menu.header-scroll ul {
-        display: flex;
+    .menu ul {
+        width: max-content;
         gap: 20px;
-        width: max-content; /* Critical: allows list to be wider than the screen */
-        padding: 10px 0;
     }
 
     .menu ul li a {
@@ -409,115 +268,40 @@ html, body {
         text-transform: uppercase;
     }
 
-    /* ===== PROFILE & DROPDOWN ===== */
     .chip-name {
         display: none;
     }
 
     .profile-chip {
-        padding: 2px;
+        padding: 0;
         background: transparent;
     }
 
     .profile-dropdown {
-        position: fixed; /* Ensures it stays visible on top of everything */
-        top: 65px;
-        right: 5%;
-        left: 5%; /* Centers it on mobile */
+        position: fixed;
+        top: 70px;
+        left: 5%;
         width: 90%;
         z-index: 2000;
     }
-  header {
-    padding-bottom: 20px;
-  }
 
-  /* NAVBAR */
-  .navbar {
-    width: 100%;
-    padding: 0 16px;
-  }
-
-  .menu ul {
-    display: none; /* hide desktop menu (use hamburger later) */
-  }
-
-  /* HERO SECTION */
-  .hero {
-    width: 100%;
-    margin-top: 40px;
-    padding: 0 20px;
-    text-align: center;
-  }
-
-  .hero h1 {
+    .hero h1 {
         font-size: 30px;
     }
 
-    .par {
-        font-size: 15px;
-    }
-  .hero-buttons {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  /* COURSE SECTION */
-  .course-container {
-    flex-direction: column;
-    align-items: center;
-    padding: 0 16px;
-  }
-
-  .course-card {
-    width: 100%;
-    max-width: 350px;
-  }
-
-  /* INSTRUCTOR SECTION */
-  .instructor-container {
-    grid-template-columns: 1fr;
-    gap: 30px;
-    padding: 0 16px;
-  }
-
-  /* TESTIMONIAL */
-  .testimony-box {
-    width: 100%;
-    max-width: 350px;
-    margin: auto;
-  }
-     /* ===== POPUP MOBILE FIX ===== */
-    .popup-box {
-        width: 92%;
-        max-height: 90vh; /* Prevents popup from going off-screen */
-        overflow-y: auto;
-        padding: 25px 20px;
-    }
-
-    .popup-row {
+    .hero-buttons {
         flex-direction: column;
-        align-items: flex-start; /* Align labels to the left */
-        gap: 10px;
-        margin-bottom: 15px;
+        align-items: center;
     }
 
-    .popup-box input, 
-    .popup-box select {
-        width: 100% !important; /* Full width for easy finger tapping */
-        height: 45px;
-        font-size: 16px; /* Prevents iOS auto-zoom on focus */
+    .course-card {
+        width: 100%;
+        max-width: 350px;
     }
 }
+
 @media (max-width: 360px) {
     .logo {
-        display: none; /* Hide logo to give more room for links */
+        display: none;
     }
 }
-
-
-
-
-
-
-
-
