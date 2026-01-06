@@ -24,15 +24,11 @@ body {
 header {
     width: 100%;
     min-height: 100vh;
-    background:
-        linear-gradient(
-            to top,
-            rgba(0,0,0,0.5),
-            rgba(0,0,0,0.5)
-        ),
-        url("background1.jpg"); /* GitHub-safe path */
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                      url("background1.jpg"); /* Pastikan path betul */
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
 }
 
 /* =========================
@@ -401,6 +397,7 @@ footer {
         max-width: 350px;
     }
 }
+
 
 
 
