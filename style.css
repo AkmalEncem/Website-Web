@@ -283,10 +283,24 @@ html, body {
     }
 
     .hero {
-        padding: 100px 20px 0;
+        height: auto; /* Changed from 100vh to allow content to grow */
+        padding: 120px 20px 60px; /* Added bottom padding */
         text-align: center;
     }
 
+    .hero-buttons {
+        display: flex;
+        flex-direction: column; /* Stacks buttons on top of each other */
+        align-items: center;
+        gap: 15px;
+        margin-top: 30px;
+    }
+
+    .browse-btn, .signup-btn2 {
+        width: 100%; /* Buttons take full width of their container */
+        max-width: 280px; /* But don't get too wide */
+    }
+    
     .hero h1 {
         font-size: 32px;
     }
@@ -313,4 +327,5 @@ html, body {
         display: none; /* Hide logo to give more room for links */
     }
 }
+
 
