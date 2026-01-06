@@ -345,13 +345,14 @@ footer {
    MOBILE RESPONSIVE
    ========================= */
 @media (max-width: 768px) {
-    /* 1. Tunjukkan Hamburger di Mobile */
+    /* WAJIB: Tunjukkan hamburger di mobile */
     .hamburger-menu {
-        display: flex;
+        display: flex; /* Tukar dari none ke flex */
         flex-direction: column;
         gap: 5px;
         cursor: pointer;
-        z-index: 1001; /* Supaya sentiasa di atas */
+        z-index: 1001;
+        position: relative;
     }
 
     .hamburger-menu span {
@@ -363,55 +364,52 @@ footer {
         transition: 0.3s;
     }
 
-    /* 2. Ubah Menu jadi Overlay Dropdown */
+    /* Logic Animasi X (Pastikan guna class .open) */
+    .hamburger-menu.open span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger-menu.open span:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger-menu.open span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    /* Menu Overlay */
     .menu {
-        display: none; /* Sembunyi secara default di mobile */
-        position: absolute;
+        display: none;
+        position: fixed; /* Guna fixed supaya cover satu screen */
         top: 0;
         left: 0;
         width: 100%;
-        height: 100vh; /* Full screen mobile */
-        background: rgba(14, 14, 26, 0.98); /* Warna body dengan sedikit transparent */
+        height: 100vh;
+        background: rgba(14, 14, 26, 0.95);
         z-index: 1000;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
     }
 
-    /* Class yang akan dipanggil oleh JavaScript */
     .menu.active {
         display: flex;
     }
 
     .menu ul {
-        flex-direction: column; /* Susun link ke bawah */
+        flex-direction: column;
         gap: 30px;
+    }
+
+    /* Tambahan: Pastikan Navbar tidak lari */
+    .navbar {
+        width: 95%;
+        padding: 0 10px;
+    }
+    
+    /* Hero adjustment */
+    .hero {
+        width: 100%;
+        padding: 120px 20px 0;
         text-align: center;
-    }
-
-    .menu ul li a {
-        font-size: 20px; /* Besarkan teks sikit untuk mobile user */
-    }
-
-   .menu.active ~ .hamburger-menu span:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
-   }
-   
-   .menu.active ~ .hamburger-menu span:nth-child(2) {
-       opacity: 0; /* Hilangkan garis tengah */
-   }
-   
-   .menu.active ~ .hamburger-menu span:nth-child(3) {
-       transform: translateY(-8px) rotate(-45deg);
-   }
-
-   .open {
-      .hamburger-menu.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
-      .hamburger-menu.open span:nth-child(2) { opacity: 0; }
-      .hamburger-menu.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
-   }
-    /* 3. Jarakkan butang 'View All' supaya pro */
-    .view-all {
-        margin-top: 40px;
     }
    
     .hero {
@@ -460,8 +458,3 @@ footer {
         max-width: 350px;
     }
 }
-
-
-
-
-
