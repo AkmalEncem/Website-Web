@@ -253,22 +253,24 @@ header {
     margin-top: 5px;
 }
 
-.hero{
-    width: 80%;
-    padding-top: 160px;
-    margin: auto;
-    text-align: left;
+.hero {
+    width: 90%;
+    margin: 60px auto 0;
+    padding: 0;
+    text-align: center;
     color: #fff;
 }
 
-.hero h1{
-    font-size: 60px;
-    letter-spacing: 2px;
+.hero h1 {
+    font-size: 42px;
+    letter-spacing: 1px;
+    color: #d1d9ff;
 }
 
-.par{
-    margin-top: 20px;
-    font-size: 18px;
+.par {
+    margin-top: 12px;
+    font-size: 16px;
+    color: #aaa;
 }
 
 .hero-buttons{
@@ -393,8 +395,6 @@ html, body {
    MOBILE RESPONSIVE FIX
    ========================= */
 @media (max-width: 768px) {
-
-/* ===== NAVBAR RECONSTRUCTION ===== */
     .navbar {
         width: 95%; /* More space on mobile */
         height: 60px;
@@ -454,9 +454,7 @@ html, body {
         z-index: 2000;
     }
   header {
-    height: auto;
-    min-height: 100vh;
-    padding-bottom: 60px;
+    padding-bottom: 20px;
   }
 
   /* NAVBAR */
@@ -472,7 +470,8 @@ html, body {
   /* HERO SECTION */
   .hero {
     width: 100%;
-    padding: 120px 20px 0;
+    margin-top: 40px;
+    padding: 0 20px;
     text-align: center;
   }
 
@@ -521,6 +520,7 @@ html, body {
         display: none; /* Hide logo to give more room for links */
     }
 }
+
 
 
 
