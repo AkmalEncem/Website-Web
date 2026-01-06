@@ -537,13 +537,9 @@ html, body {
         font-size: 22px;
     }
 
-    /* Hide long menu links or stack them to save space */
-    .menu ul {
-        gap: 10px;
-    }
-
-    .menu ul li a {
-        font-size: 11px;
+    /* Hide menu in mobile to prioritize profile on right */
+    .menu {
+        display: none;
     }
 
     /* PROFILE CHIP - Optimized for small screens */
