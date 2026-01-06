@@ -521,170 +521,121 @@ html, body {
 }
 
 /* ================= MOBILE VIEW ONLY (max-width: 768px) ================= */
+/* ================= MOBILE VIEW ONLY (max-width: 768px) ================= */
 @media (max-width: 768px) {
-
-    /* ===== NAVBAR (DESKTOP STYLE, SMALLER) ===== */
+    
+    /* ===== NAVBAR RECONSTRUCTION ===== */
     .navbar {
-        width: 90%;
+        width: 95%; /* More space on mobile */
         height: 60px;
-        margin: 0 auto;
-        display: flex;
-        align-items: center;
+        padding: 0 5px;
         justify-content: space-between;
-        flex-wrap: nowrap;
     }
 
     .logo {
-        flex-shrink: 0;
-        font-size: 22px;
-        white-space: nowrap;
+        font-size: 20px;
+        flex-shrink: 0; /* Prevents logo from shrinking */
     }
 
-    .menu ul {
+    /* Target the sliding container specifically */
+    .menu.header-scroll {
+        flex: 1; 
+        overflow-x: auto;
+        overflow-y: hidden;
+        display: block; /* Required for scroll container */
+        margin: 0 10px;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+
+    .menu.header-scroll::-webkit-scrollbar {
+        display: none;
+    }
+
+    .menu.header-scroll ul {
         display: flex;
-        gap: clamp(10px, 3vw, 18px);
-        align-items: center;
-        flex-wrap: nowrap;
-    }
-    
-    .menu {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    }
-
-    .menu ul {
-        max-width: 100%;
+        gap: 20px;
+        width: max-content; /* Critical: allows list to be wider than the screen */
+        padding: 10px 0;
     }
 
     .menu ul li a {
-        font-size: 12px;
-        font-weight: 600;
+        font-size: 11px;
         white-space: nowrap;
+        text-transform: uppercase;
     }
 
-    .auth-buttons {
-        flex-shrink: 0;
-        display: flex;
-        align-items: center;
-        gap: 6px;
-    }
-
+    /* ===== PROFILE & DROPDOWN ===== */
     .chip-name {
         display: none;
     }
 
     .profile-chip {
-        padding: 4px;
+        padding: 2px;
         background: transparent;
     }
 
     .profile-dropdown {
-        position: fixed;
+        position: fixed; /* Ensures it stays visible on top of everything */
         top: 65px;
-        right: 5vw;
-        width: 90vw;
+        right: 5%;
+        left: 5%; /* Centers it on mobile */
+        width: 90%;
+        z-index: 2000;
     }
 
-    /* ===== PAGE ===== */
+    /* ===== CONTENT SCALING ===== */
     .page-title {
-        margin-top: 40px;
-        padding: 0 15px;
+        margin-top: 30px;
     }
 
     .page-title h1 {
-        font-size: 26px;
+        font-size: 24px;
     }
 
-    .page-title p {
-        font-size: 13px;
-    }
-
-    /* ===== FILTER ===== */
     .search-bar {
-        width: 100%;
-    }
-
-    .filter-options {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .filter-options select {
-        width: 100%;
-    }
-
-    /* ===== COURSE GRID ===== */
-    .course-list {
-        width: 95%;
-        grid-template-columns: 1fr;
-        gap: 20px;
-        margin: 30px auto;
-    }
-
-    .course-card {
-        padding: 20px;
-    }
-
-    /* ===== POPUP ===== */
-    .popup-box {
         width: 90%;
-        padding: 20px;
+        margin: 0 auto;
+    }
+
+    .course-list {
+        width: 90%;
+        grid-template-columns: 1fr; /* Single column stack */
+        gap: 20px;
+    }
+
+    /* ===== POPUP MOBILE FIX ===== */
+    .popup-box {
+        width: 92%;
+        max-height: 90vh; /* Prevents popup from going off-screen */
+        overflow-y: auto;
+        padding: 25px 20px;
     }
 
     .popup-row {
         flex-direction: column;
-        align-items: stretch;
+        align-items: flex-start; /* Align labels to the left */
+        gap: 10px;
+        margin-bottom: 15px;
     }
 
-    .popup-box input,
+    .popup-box input, 
     .popup-box select {
-        width: 100%;
+        width: 100% !important; /* Full width for easy finger tapping */
+        height: 45px;
+        font-size: 16px; /* Prevents iOS auto-zoom on focus */
     }
 
-    /* ===== FOOTER ===== */
-    footer {
-        font-size: 12px;
+    .timetable-btn {
+        width: 100%;
+        text-align: center;
         padding: 12px;
     }
 }
+
+/* Fix for very narrow phones */
 @media (max-width: 360px) {
-    .menu ul li:last-child {
-        display: none;
+    .logo {
+        display: none; /* Hide logo to give more room for links */
     }
 }
-/* ================= MOBILE SLIDING HEADER ================= */
-@media (max-width: 768px) {
-
-    .header-scroll {
-        overflow-x: auto;
-        overflow-y: hidden;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none;
-    }
-
-    .header-scroll::-webkit-scrollbar {
-        display: none;
-    }
-
-    .header-scroll ul {
-        display: flex;
-        gap: 18px;
-        padding: 0 10px;
-        width: max-content;
-        flex-wrap: nowrap;
-    }
-
-    .header-scroll ul li a {
-        font-size: 12px;
-        white-space: nowrap;
-        padding: 6px 2px;
-    }
-}
-
-
-
-
-
-
-
