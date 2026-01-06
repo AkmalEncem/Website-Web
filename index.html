@@ -9,21 +9,21 @@
 <body>
 
     <header>
-    <nav class="navbar">
-        <h2 class="logo">LMS</h2>
+   <nav class="navbar">
+    <h2 class="logo">LMS</h2>
 
-        <div class="menu">
-            <ul>
-                <li><a href="index.html">HOME</a></li>
-                <li><a href="#courses">COURSES</a></li>
-                <li><a href="#instructors">INSTRUCTORS</a></li>
-                <li><a href="#testimonials">TESTIMONIALS</a></li>
-                <li><a href="forum.html">FORUM</a></li>
-            </ul>
-        </div>
+    <div class="menu header-scroll">
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="course.html">COURSES</a></li>
+            <li><a href="instructors.html">INSTRUCTORS</a></li>
+            <li><a href="testimonials.html">TESTIMONIALS</a></li>
+            <li><a href="forum.html">FORUM</a></li>
+        </ul>
+    </div>
 
-        <div class="profile-wrapper">
-            <div class="profile-trigger" onclick="toggleProfile()">
+    <div class="profile-wrapper">
+        <div class="profile-trigger" onclick="toggleProfile()">
             <div class="profile-chip">
                 <div id="navAvatar" class="chip-avatar">?</div>
                 <span id="navName" class="chip-name">User</span>
@@ -31,24 +31,20 @@
             </div>
         </div>
 
-            <div class="profile-dropdown" id="profileDropdown">
-
-                <div class="profile-header">
-                    <div id="mainAvatar" class="profile-avatar">?</div>
-                    <h4 id="studentName">User</h4>
-                    <p id="studentId">CI250026</p>
-                </div>
-
-                <div class="profile-menu">
-                    <a href="progress.html">Course Progress</a>
-                    <span id="courseBadge" class="course-badge"></span>
-                    <a href="payment.html" id="paymentMenu">Payment</a>
-                    <a href="#" class="logout" onclick="logout()">Logout</a>
-                </div>
+        <div class="profile-dropdown" id="profileDropdown">
+            <div class="profile-header">
+                <div id="mainAvatar" class="profile-avatar">?</div>
+                <h4 id="studentName">User</h4>
+                <p id="studentId">CI250026</p>
+            </div>
+            <div class="profile-menu">
+                <a href="progress.html">Course Progress</a>
+                <a href="payment.html" id="paymentMenu">Payment</a>
+                <a href="#" class="logout" onclick="logout()">Logout</a>
             </div>
         </div>
-    </nav>
-
+    </div>
+</nav>
      <div class="hero">
         <div class="hero-text">
             <h1>Improve Your Skills <br> Anytime, Anywhere</h1>
@@ -124,4 +120,5 @@
     <script src="index.js"></script>
 </body>
 </html>
+
 
