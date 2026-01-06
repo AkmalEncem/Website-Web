@@ -9,19 +9,24 @@
 <body>
 
     <header>
-    <nav class="navbar">
-        <h2 class="logo">LMS</h2>
+   <nav class="navbar">
+    <h2 class="logo">LMS</h2>
 
-        <div class="menu">
-            <ul>
-                <li><a href="index.html">HOME</a></li>
-                <li><a href="#courses">COURSES</a></li>
-                <li><a href="#instructors">INSTRUCTORS</a></li>
-                <li><a href="#testimonials">TESTIMONIALS</a></li>
-                <li><a href="forum.html">FORUM</a></li>
-            </ul>
-        </div>
+    <div class="hamburger-menu" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
 
+    <div class="menu" id="navMenu">
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="#courses">COURSES</a></li>
+            <li><a href="#instructors">INSTRUCTORS</a></li>
+            <li><a href="#testimonials">TESTIMONIALS</a></li>
+            <li><a href="forum.html">FORUM</a></li>
+        </ul>
+    </div>
         <div class="profile-wrapper">
             <div class="profile-trigger" onclick="toggleProfile()">
             <div class="profile-chip">
@@ -124,4 +129,5 @@
     <script src="index.js"></script>
 </body>
 </html>
+
 
