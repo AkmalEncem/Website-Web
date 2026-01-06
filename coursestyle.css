@@ -531,6 +531,7 @@ html, body {
         display: flex;
         justify-content: space-between; /* Logo Left, Profile Right */
         align-items: center;
+        flex-wrap: wrap; /* Allow wrapping if needed */
     }
 
     .logo {
@@ -538,9 +539,20 @@ html, body {
         order: 1; /* Ensure logo is first */
     }
 
-    /* Hide menu in mobile to prioritize profile on right */
+    /* MENU - Now visible, centered between logo and profile */
     .menu {
-        display: none;
+        order: 2; /* Menu in the middle */
+        flex: 1; /* Allow menu to take available space */
+        justify-content: center; /* Center the menu items */
+    }
+
+    .menu ul {
+        gap: 10px; /* Reduce gap for mobile */
+        flex-wrap: wrap; /* Wrap if too many items */
+    }
+
+    .menu ul li a {
+        font-size: 11px; /* Smaller font for mobile */
     }
 
     /* PROFILE CHIP - Optimized for small screens */
@@ -554,8 +566,7 @@ html, body {
     }
 
     .auth-buttons {
-        margin-left: auto; /* Forces profile to the absolute right */
-        order: 2; /* Ensure profile is second (right) */
+        order: 3; /* Ensure profile is last (right) */
     }
 
     /* DROPDOWN - Makes it fit the mobile screen width */
