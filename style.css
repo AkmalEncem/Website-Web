@@ -30,7 +30,7 @@ header {
             rgba(0,0,0,0.5),
             rgba(0,0,0,0.5)
         ),
-        url("./images/background1.jpg"); /* GitHub-safe path */
+        url("background1.jpg"); /* GitHub-safe path */
     background-size: cover;
     background-position: center;
 }
@@ -401,5 +401,6 @@ footer {
         max-width: 350px;
     }
 }
+
 
 
