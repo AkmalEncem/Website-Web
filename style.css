@@ -212,29 +212,38 @@ section {
     border: 4px solid #5672ff;
     object-fit: cover;
 }
-
 /* ================= MOBILE RESPONSIVE ================= */
-@media (max-width: 768px) {
-    header {
-        height: auto;
-        min-height: 100vh;
-    }
+html, body {
+    overflow-x: hidden; /* Prevents side-scrolling and white gaps */
+    width: 100%;
+    position: relative;
+}
 
+/* ================= MOBILE VIEW ONLY (max-width: 768px) ================= */
+@media (max-width: 768px) {
+    
+    /* ===== NAVBAR RECONSTRUCTION ===== */
     .navbar {
-        width: 100%;
-        padding: 0 15px;
+        width: 95%; /* More space on mobile */
+        height: 60px;
+        padding: 0 5px;
+        justify-content: space-between;
     }
 
     .logo {
-        font-size: 24px;
+        font-size: 20px;
+        flex-shrink: 0; /* Prevents logo from shrinking */
     }
 
-    /* Horizontal Scroll Menu */
+    /* Target the sliding container specifically */
     .menu.header-scroll {
-        flex: 1;
+        flex: 1; 
         overflow-x: auto;
+        overflow-y: hidden;
+        display: block; /* Required for scroll container */
         margin: 0 10px;
         -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
     }
 
     .menu.header-scroll::-webkit-scrollbar {
@@ -242,12 +251,35 @@ section {
     }
 
     .menu.header-scroll ul {
-        width: max-content;
-        gap: 15px;
+        display: flex;
+        gap: 20px;
+        width: max-content; /* Critical: allows list to be wider than the screen */
+        padding: 10px 0;
     }
 
+    .menu ul li a {
+        font-size: 11px;
+        white-space: nowrap;
+        text-transform: uppercase;
+    }
+
+    /* ===== PROFILE & DROPDOWN ===== */
     .chip-name {
         display: none;
+    }
+
+    .profile-chip {
+        padding: 2px;
+        background: transparent;
+    }
+
+    .profile-dropdown {
+        position: fixed; /* Ensures it stays visible on top of everything */
+        top: 65px;
+        right: 5%;
+        left: 5%; /* Centers it on mobile */
+        width: 90%;
+        z-index: 2000;
     }
 
     .hero {
@@ -281,3 +313,4 @@ section {
         display: none; /* Hide logo to give more room for links */
     }
 }
+
