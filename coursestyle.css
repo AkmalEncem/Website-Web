@@ -514,7 +514,120 @@ footer{
 }
 
 /* ================= MOBILE RESPONSIVE ================= */
+html, body {
+    overflow-x: hidden; /* Prevents side-scrolling and white gaps */
+    width: 100%;
+    position: relative;
+}
+
+/* ================= MOBILE VIEW ONLY (max-width: 768px) ================= */
 @media (max-width: 768px) {
+    
+    /* NAVBAR - Keeps Profile on the right */
+    .navbar {
+        width: 100%;
+        padding: 0 15px;
+        height: 70px;
+        display: flex;
+        justify-content: space-between; /* Logo Left, Profile Right */
+        align-items: center;
+    }
+
+    .logo {
+        font-size: 22px;
+    }
+
+    /* Hide long menu links or stack them to save space */
+    .menu ul {
+        gap: 10px;
+    }
+
+    .menu ul li a {
+        font-size: 11px;
+    }
+
+    /* PROFILE CHIP - Optimized for small screens */
+    .chip-name {
+        display: none; /* Hides name on mobile to keep profile on the right edge */
+    }
+
+    .profile-chip {
+        padding: 5px;
+        background: transparent;
+    }
+
+    .auth-buttons {
+        margin-left: auto; /* Forces profile to the absolute right */
+    }
+
+    /* DROPDOWN - Makes it fit the mobile screen width */
+    .profile-dropdown {
+        width: 280px;
+        right: 15px;
+        top: 65px;
+        position: fixed; /* Ensures it stays visible relative to the screen */
+    }
+
+    /* PAGE TITLE */
+    .page-title {
+        margin-top: 30px;
+        padding: 0 20px;
+    }
+
+    .page-title h1 {
+        font-size: 24px;
+    }
+
+    /* FILTERS & SEARCH */
+    .search-bar {
+        width: 90%;
+    }
+
+    .filter-options {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .filter-options select {
+        width: 90%;
+    }
+
+    /* COURSE GRID - 1 Column for Mobile */
+    .course-list {
+        width: 90%;
+        grid-template-columns: 1fr; 
+        gap: 20px;
+        margin: 30px auto;
+    }
+
+    .course-card {
+        padding: 20px;
+    }
+
+    /* POPUP - Full width mobile style */
+    .popup-box {
+        width: 95%;
+        padding: 20px;
+        margin: 10px;
+    }
+
+    .popup-row {
+        flex-direction: column; /* Stacks inputs vertically */
+        align-items: stretch;
+        gap: 8px;
+    }
+
+    .popup-row input, 
+    .popup-row select {
+        width: 100%; /* Inputs take full width on mobile */
+        text-align: left;
+    }
+
+    .enroll-btn, .details-btn {
+        width: 100%;
+        text-align: center;
+    }
 
     /* GLOBAL */
     body {
