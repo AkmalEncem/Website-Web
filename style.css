@@ -1,4 +1,4 @@
-/* ================= RESET ================= */
+/* ================= 1. RESET & BASE STYLES ================= */
 * {
     margin: 0;
     padding: 0;
@@ -8,19 +8,22 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body {
     background: #0e0e1a;
     color: #fff;
+    width: 100%;
+    position: relative;
     overflow-x: hidden;
 }
 
-/* ================= NAVBAR ================= */
+/* ================= 2. NAVBAR ================= */
 .navbar {
     width: 90%;
     height: 65px;
-    margin: 0 auto 40px;
+    margin: auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -29,10 +32,8 @@ body {
 .logo {
     font-size: 35px;
     color: #d1d9ff;
-    white-space: nowrap;
 }
 
-/* ================= MENU ================= */
 .menu ul {
     display: flex;
     gap: 40px;
@@ -47,218 +48,416 @@ body {
     text-decoration: none;
     font-size: 14px;
     font-weight: bold;
-    transition: 0.3s;
+    transition: .3s;
 }
 
 .menu ul li a:hover {
     color: #5672ff;
 }
 
-/* ================= PROFILE CHIP ================= */
-/* ===== PROFILE CHIP (NAVBAR) ===== */
-@media (max-width: 768px) {
-    .profile-dropdown {
-        position: fixed;
-        top: 70px;
-        right: 10px;
-        width: 90%;
-        max-width: 320px;
-        z-index: 2000;
-    }
-
-    .chip-name {
-        display: none;
-    }
+/* ================= 3. PROFILE & AUTH ================= */
+.auth-buttons {
+    display: flex;
+    gap: 15px;
 }
 
-/* ================= HERO ================= */
-.hero {
-    background-image: linear-gradient(
-        rgba(0, 0, 0, 0.6),
-        rgba(0, 0, 0, 0.6)
-    ), url('background1.jpg');
+.profile-wrapper {
+    position: relative;
+    user-select: none;
+}
 
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-
-    width: 100%;
-    height: 80vh;
-
+.profile-chip {
     display: flex;
     align-items: center;
-    justify-content: center;
-    flex-direction: column;
-
-    text-align: center;
-    margin-bottom: 60px;
-    color: #fff;
-}
-
-.hero h1 {
-    font-size: 42px;
-    color: #d1d9ff;
-    line-height: 1.2;
-}
-
-.par {
-    margin-top: 12px;
-    font-size: 18px;
-    color: #eee;
-    max-width: 600px;
-}
-
-.hero-buttons {
-    margin-top: 30px;
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-}
-
-.browse-btn {
-    width: 180px;
-    height: 50px;
+    gap: 10px;
+    padding: 5px 12px;
+    background: rgba(255,255,255,0.05);
     border-radius: 30px;
-    background: #5672ff;
-    color: #fff;
-    font-size: 17px;
-    font-weight: bold;
-    border: none;
     cursor: pointer;
-    transition: 0.3s;
+    position: relative;
 }
 
-.browse-btn:hover {
-    transform: scale(1.08);
-}
-
-a.browse-btn {
-    display: inline-flex;
+.chip-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
     align-items: center;
     justify-content: center;
-    text-decoration: none;
+    font-size: 14px;
+    border: 2px solid rgba(255,255,255,0.2);
 }
 
-/* ================= SECTIONS ================= */
-section {
-    padding: 60px 0;
+.chip-name {
+    font-size: 14px;
+    font-weight: 500;
+    color: #d1d9ff;
+}
+
+.course-badge {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    background: red;
+    color: white;
+    font-size: 11px;
+    padding: 2px 6px;
+    border-radius: 50%;
+    display: none;
+}
+
+/* PROFILE DROPDOWN */
+.profile-dropdown {
+    position: absolute;
+    top: 65px;
+    right: 0;
+    width: 260px;
+    background: #1c1c2e;
+    border: 1px solid #2e2e4d;
+    border-radius: 14px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.55);
+    display: none;
+    z-index: 1000;
+    overflow: hidden;
+}
+
+.profile-header {
+    padding: 22px;
     text-align: center;
+    background: #18182a;
+    border-bottom: 1px solid #2e2e4d;
 }
 
-section h2 {
-    font-size: 38px;
-    margin-bottom: 40px;
+.profile-avatar {
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    margin: 0 auto 10px;
+    border: 3px solid #6c63ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.course-container {
+.profile-header h4 {
+    font-size: 15px;
+    color: #ffffff;
+    margin-bottom: 3px;
+}
+
+.profile-header p {
+    font-size: 13px;
+    color: #bdbdbd;
+}
+
+.profile-menu {
+    padding: 8px 0;
+}
+
+.profile-menu a {
+    display: block;
+    padding: 13px 20px;
+    font-size: 14px;
+    color: #e5e9f2;
+    text-decoration: none;
+    transition: 0.2s ease;
+}
+
+.profile-menu a:hover {
+    background: rgba(108, 99, 255, 0.12);
+    padding-left: 25px;
+}
+
+.profile-menu .logout {
+    color: #ff6b6b;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* ================= 4. PAGE TITLE & FILTERS ================= */
+.page-title {
+    text-align: center;
+    margin-top: 80px;
+}
+
+.page-title h1 {
+    font-size: 40px;
+    color: #d1d9ff;
+}
+
+.page-title p {
+    margin-top: 10px;
+    color: #aaa;
+}
+
+.filters {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.search-bar {
+    width: 60%;
+    padding: 12px 20px;
+    border-radius: 30px;
+    border: 2px solid #5672ff;
+    background: #1a1a2e;
+    color: #fff;
+    outline: none;
+}
+
+.filter-options {
+    margin-top: 20px;
     display: flex;
     justify-content: center;
-    gap: 30px;
+    gap: 20px;
     flex-wrap: wrap;
 }
 
-.course-card {
-    width: 300px;
-    padding: 35px 25px;
+.filter-options select {
+    padding: 12px 20px;
+    border-radius: 30px;
+    border: 2px solid #5672ff;
     background: #1a1a2e;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* ================= 5. COURSE GRID & CARDS ================= */
+.course-list {
+    width: 90%;
+    margin: 60px auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 35px;
+}
+
+.course-card {
+    background: #1a1a2e;
+    padding: 30px;
     border-radius: 15px;
-    transition: 0.4s;
+    animation: fadeIn 0.3s ease;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .course-card:hover {
-    transform: translateY(-10px);
-    background: #252547;
+    transform: translateY(-6px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.4);
 }
 
-/* ================= FOOTER ================= */
+.course-card h3 {
+    color: #5672ff;
+    margin-bottom: 15px;
+}
+
+.course-card.hide {
+    display: none;
+}
+
+.details-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #5672ff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 20px;
+    transition: all 0.3s;
+}
+
+.details-btn:hover {
+    background: #8fa2ff;
+    transform: scale(1.05);
+}
+
+/* ================= 6. POPUP SYSTEM ================= */
+.popup-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.65);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup-box {
+    background: #1a1a2e;
+    padding: 30px;
+    width: 420px;
+    border-radius: 15px;
+    position: relative;
+    transform: translateY(30px) scale(0.95);
+    opacity: 0;
+    transition: all 0.35s ease;
+}
+
+.popup-box.show {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+}
+
+.popup-box h2 { color: #8fa2ff; }
+.popup-box p { margin: 10px 0; font-size: 14px; }
+
+.popup-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 12px 0;
+}
+
+.popup-box input, .popup-box select {
+    padding: 8px 12px;
+    border-radius: 20px;
+    border: 1px solid #5672ff;
+    background: #0f3460;
+    color: #fff;
+    outline: none;
+}
+
+.popup-box input { width: 80px; text-align: center; }
+
+.section-row {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 6px;
+}
+
+.section-hint {
+    display: block;
+    margin-top: 4px;
+    font-size: 12px;
+    color: #aaa;
+}
+
+.timetable-btn {
+    padding: 6px 14px;
+    background: #0f3460;
+    border: 1px solid #5672ff;
+    border-radius: 20px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 13px;
+    transition: all 0.3s;
+}
+
+.timetable-btn:hover {
+    background: #5672ff;
+    transform: translateY(-2px);
+}
+
+.enroll-btn {
+    margin-top: 20px;
+    width: 100%;
+    padding: 12px;
+    border-radius: 30px;
+    background: #5672ff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.enroll-btn:hover {
+    background: #8fa2ff;
+    transform: scale(1.02);
+}
+
+.close-btn {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #aaa;
+}
+
+/* ================= 7. FOOTER & OTHERS ================= */
+#noResults {
+    display: none;
+    text-align: center;
+    margin-top: 40px;
+    color: #aaa;
+}
+
 footer {
     background: #000;
     color: #aaa;
     padding: 15px;
     text-align: center;
-    font-size: 14px;
+    margin-top: 50px;
 }
 
-/* ================= MOBILE ================= */
-/* ================= MOBILE ================= */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ================= 8. MOBILE RESPONSIVE ================= */
 @media (max-width: 768px) {
-
-    /* NAVBAR STRUCTURE */
     .navbar {
-        flex-wrap: nowrap;
-        gap: 10px;
+        width: 95%;
+        height: 60px;
     }
 
-    .logo {
-        font-size: 20px;
-        flex-shrink: 0;
-    }
+    .logo { font-size: 20px; }
 
-    /* MENU */
-    .menu {
+    /* Horizontal Scroll Menu */
+    .menu.header-scroll {
         flex: 1;
         overflow-x: auto;
+        margin: 0 10px;
         scrollbar-width: none;
     }
 
-    .menu::-webkit-scrollbar {
-        display: none;
-    }
+    .menu.header-scroll::-webkit-scrollbar { display: none; }
 
-    .menu ul {
+    .menu.header-scroll ul {
         width: max-content;
-        gap: 20px;
+        gap: 15px;
     }
 
-    .menu ul li a {
-        font-size: 11px;
-        white-space: nowrap;
-        text-transform: uppercase;
-    }
+    .menu ul li a { font-size: 11px; }
 
-    /* PROFILE CHIP */
-    .profile-chip {
-        flex-shrink: 0;
-        padding: 0;
-        background: transparent;
-    }
-
-    .chip-name {
-        display: none;
-    }
-
-    /* PROFILE DROPDOWN – FIXED & STABLE */
+    /* Profile Mobile */
+    .chip-name { display: none; }
+    .profile-chip { background: transparent; padding: 2px; }
+    
     .profile-dropdown {
         position: fixed;
-        top: 75px;
-        right: 10px;       /* ❗ KEKAL SATU ARAH SAHAJA */
-        left: auto;
-        width: calc(100% - 20px);
-        max-width: 320px;
-        z-index: 3000;
+        top: 65px;
+        left: 5%;
+        width: 90%;
     }
 
-    /* HERO */
-    .hero h1 {
-        font-size: 30px;
+    /* Content Scaling */
+    .page-title h1 { font-size: 24px; }
+    .search-bar { width: 90%; }
+    
+    .course-list {
+        grid-template-columns: 1fr;
+        width: 92%;
     }
 
-    .hero-buttons {
+    /* Popup Mobile Fix */
+    .popup-box {
+        width: 92%;
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+
+    .popup-row {
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
     }
 
-    /* COURSES */
-    .course-card {
-        width: 100%;
-        max-width: 350px;
+    .popup-box input, .popup-box select {
+        width: 100% !important;
+        height: 45px;
     }
 }
 
-/* ================= SMALL MOBILE ================= */
 @media (max-width: 360px) {
-    .logo {
-        display: none;
-    }
+    .logo { display: none; }
 }
-
