@@ -210,6 +210,8 @@ header {
     width: 80%;
     padding-top: 160px;
     margin: auto;
+    position: relative;
+    z-index: 2;
 }
 
 .hero h1 {
@@ -399,4 +401,5 @@ footer {
         max-width: 350px;
     }
 }
+
 
