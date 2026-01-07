@@ -216,23 +216,15 @@ section {
 }
 
 /* =========================
-   MOBILE RESPONSIVE
-   ========================= */
-/* =========================
-   MOBILE – CLEAN DESKTOP-LIKE
-   ========================= */
-/* =========================
    MOBILE ONLY – SAFE FIX
    ========================= */
 @media (max-width: 768px) {
 
-    /* Navbar size adjustment only */
     .navbar {
         width: 100%;
         padding: 0 12px;
     }
 
-    /* Horizontal scroll menu (no layout change) */
     .menu {
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
@@ -244,7 +236,7 @@ section {
     }
 
     .menu ul {
-        display: inline-flex; /* penting: tak override desktop */
+        display: inline-flex;
         gap: 20px;
         padding: 0 10px;
     }
@@ -254,12 +246,10 @@ section {
         white-space: nowrap;
     }
 
-    /* Profile chip kemas */
     .chip-name {
         display: none;
     }
 
-    /* Hero text scale sahaja */
     .hero h1 {
         font-size: 36px;
     }
@@ -268,7 +258,6 @@ section {
         font-size: 16px;
     }
 
-    /* Button size kecil sikit, layout kekal */
     .browse-btn,
     .signup-btn2 {
         width: 150px;
@@ -276,8 +265,7 @@ section {
         font-size: 15px;
     }
 }
-
-        padding: 0 12px;
     }
 }
+
 
