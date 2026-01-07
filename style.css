@@ -391,18 +391,10 @@ a.browse-btn {
 /* =========================
    MOBILE RESPONSIVE FIX
    ========================= */
+/* =========================
+   MOBILE – KEEP DESKTOP STYLE
+   ========================= */
 @media (max-width: 768px) {
-
-  /* GENERAL RESET */
-  body {
-    overflow-x: hidden;
-  }
-
-  header {
-    height: auto;
-    min-height: 100vh;
-    padding-bottom: 60px;
-  }
 
   /* NAVBAR */
   .navbar {
@@ -410,60 +402,54 @@ a.browse-btn {
     padding: 0 16px;
   }
 
-  .menu ul {
-    display: none; /* hide desktop menu (use hamburger later) */
+  /* MENU: horizontal scroll */
+  .menu {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
   }
 
-  /* HERO SECTION */
+  .menu::-webkit-scrollbar {
+    display: none;
+  }
+
+  .menu ul {
+    display: flex;              /* kekal desktop */
+    gap: 24px;
+    padding: 0 8px;
+    width: max-content;         /* penting */
+  }
+
+  .menu ul li a {
+    font-size: 13px;
+    white-space: nowrap;        /* elak pecah baris */
+  }
+
+  /* Profile chip kemas */
+  .chip-name {
+    display: none;
+  }
+
+  /* HERO – scale sahaja, layout kekal */
   .hero {
-    width: 100%;
-    padding: 120px 20px 0;
-    text-align: center;
+    width: 90%;
+    padding-top: 130px;
+    text-align: left;
   }
 
   .hero h1 {
-    font-size: 34px;
-    letter-spacing: 1px;
+    font-size: 36px;
   }
 
   .par {
     font-size: 16px;
   }
 
-  .hero-buttons {
-    flex-direction: column;
-    align-items: center;
-  }
-
+  /* Button size kecil sikit */
   .browse-btn,
   .signup-btn2 {
-    width: 100%;
-    max-width: 280px;
+    width: 150px;
+    height: 46px;
+    font-size: 15px;
   }
 
-  /* COURSE SECTION */
-  .course-container {
-    flex-direction: column;
-    align-items: center;
-    padding: 0 16px;
-  }
-
-  .course-card {
-    width: 100%;
-    max-width: 350px;
-  }
-
-  /* INSTRUCTOR SECTION */
-  .instructor-container {
-    grid-template-columns: 1fr;
-    gap: 30px;
-    padding: 0 16px;
-  }
-
-  /* TESTIMONIAL */
-  .testimony-box {
-    width: 100%;
-    max-width: 350px;
-    margin: auto;
-  }
 }
