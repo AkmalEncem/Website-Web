@@ -160,4 +160,146 @@ header {
 }
 
 .browse-btn,
-.
+.signup-btn2 {
+    width: 180px;
+    height: 50px;
+    border-radius: 30px;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.browse-btn {
+    background: #5672ff;
+    color: #fff;
+    border: none;
+}
+
+.signup-btn2 {
+    background: transparent;
+    color: #fff;
+    border: 2px solid #9f5bff;
+}
+
+a.browse-btn,
+a.signup-btn2 {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.browse-btn:hover,
+.signup-btn2:hover {
+    transform: scale(1.08);
+}
+
+/* =========================
+   SECTION
+   ========================= */
+section {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.course-container {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+}
+
+.course-card {
+    width: 300px;
+    padding: 35px;
+    background: #1a1a2e;
+    border-radius: 15px;
+}
+
+/* =========================
+   MOBILE RESPONSIVE
+   ========================= */
+/* =========================
+   MOBILE – CLEAN DESKTOP-LIKE
+   ========================= */
+@media (max-width: 768px) {
+
+    /* Navbar kekal macam desktop */
+    .navbar {
+        width: 100%;
+        padding: 0 12px;
+        gap: 10px;
+    }
+
+    /* Menu jadi horizontal scroll */
+    .menu {
+        flex: 1;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .menu::-webkit-scrollbar {
+        display: none; /* Sorok scrollbar */
+    }
+
+    .menu ul {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 24px;
+        padding: 0 10px;
+        width: max-content;
+    }
+
+    .menu ul li a {
+        font-size: 14px;
+        white-space: nowrap; /* penting */
+    }
+
+    /* Profile chip kemas */
+    .chip-name {
+        display: none;
+    }
+
+    /* Hero kekal kemas */
+    .hero {
+        width: 90%;
+        padding-top: 130px;
+        text-align: left;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    /* Buttons tak berterabur */
+    .hero-buttons {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .browse-btn,
+    .signup-btn2 {
+        width: 160px;
+        height: 46px;
+    }
+
+    /* SECTION KEKAL DESKTOP STYLE */
+    .course-container {
+        flex-direction: row;
+        overflow-x: auto;
+        padding: 0 12px;
+        gap: 20px;
+    }
+
+    .course-container::-webkit-scrollbar {
+        display: none;
+    }
+
+    .course-card {
+        min-width: 260px;
+    }
+
+    .instructor-container {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 0 12px;
+    }
+}
