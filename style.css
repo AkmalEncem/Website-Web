@@ -221,37 +221,37 @@ section {
 /* =========================
    MOBILE – CLEAN DESKTOP-LIKE
    ========================= */
+/* =========================
+   MOBILE ONLY – SAFE FIX
+   ========================= */
 @media (max-width: 768px) {
 
-    /* Navbar kekal macam desktop */
+    /* Navbar size adjustment only */
     .navbar {
         width: 100%;
         padding: 0 12px;
-        gap: 10px;
     }
 
-    /* Menu jadi horizontal scroll */
+    /* Horizontal scroll menu (no layout change) */
     .menu {
-        flex: 1;
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
+        white-space: nowrap;
     }
 
     .menu::-webkit-scrollbar {
-        display: none; /* Sorok scrollbar */
+        display: none;
     }
 
     .menu ul {
-        display: flex;
-        flex-wrap: nowrap;
-        gap: 24px;
+        display: inline-flex; /* penting: tak override desktop */
+        gap: 20px;
         padding: 0 10px;
-        width: max-content;
     }
 
     .menu ul li a {
-        font-size: 14px;
-        white-space: nowrap; /* penting */
+        font-size: 13px;
+        white-space: nowrap;
     }
 
     /* Profile chip kemas */
@@ -259,47 +259,25 @@ section {
         display: none;
     }
 
-    /* Hero kekal kemas */
-    .hero {
-        width: 90%;
-        padding-top: 130px;
-        text-align: left;
-    }
-
+    /* Hero text scale sahaja */
     .hero h1 {
         font-size: 36px;
     }
 
-    /* Buttons tak berterabur */
-    .hero-buttons {
-        flex-direction: row;
-        flex-wrap: wrap;
+    .par {
+        font-size: 16px;
     }
 
+    /* Button size kecil sikit, layout kekal */
     .browse-btn,
     .signup-btn2 {
-        width: 160px;
+        width: 150px;
         height: 46px;
+        font-size: 15px;
     }
+}
 
-    /* SECTION KEKAL DESKTOP STYLE */
-    .course-container {
-        flex-direction: row;
-        overflow-x: auto;
-        padding: 0 12px;
-        gap: 20px;
-    }
-
-    .course-container::-webkit-scrollbar {
-        display: none;
-    }
-
-    .course-card {
-        min-width: 260px;
-    }
-
-    .instructor-container {
-        grid-template-columns: repeat(2, 1fr);
         padding: 0 12px;
     }
 }
+
