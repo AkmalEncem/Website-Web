@@ -25,7 +25,7 @@ header {
     width: 100%;
     min-height: 100vh;
     background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
-                      url("background1.jpg"); /* Pastikan path betul */
+                      url("background1.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -41,10 +41,6 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-}
-
-.hamburger-menu {
-    display: none; /* Desktop tak nampak butang ni */
 }
 
 .logo {
@@ -81,7 +77,6 @@ header {
     user-select: none;
 }
 
-/* Shared Avatar */
 .chip-avatar,
 .profile-avatar {
     display: flex;
@@ -93,7 +88,6 @@ header {
     color: #fff;
 }
 
-/* Navbar Avatar */
 .chip-avatar {
     width: 36px;
     height: 36px;
@@ -101,7 +95,6 @@ header {
     border: 2px solid rgba(255,255,255,0.2);
 }
 
-/* Dropdown Avatar */
 .profile-avatar {
     width: 72px;
     height: 72px;
@@ -110,9 +103,7 @@ header {
     border: 3px solid #6c63ff;
 }
 
-/* Profile Chip */
 .profile-chip {
-    position: relative;
     display: flex;
     align-items: center;
     gap: 10px;
@@ -129,21 +120,7 @@ header {
 
 .chip-name {
     font-size: 14px;
-    font-weight: 500;
     color: #d1d9ff;
-}
-
-/* Course Badge */
-.course-badge {
-    position: absolute;
-    top: -6px;
-    right: -6px;
-    background: red;
-    color: #fff;
-    font-size: 11px;
-    padding: 2px 6px;
-    border-radius: 50%;
-    display: none;
 }
 
 /* Dropdown */
@@ -153,54 +130,9 @@ header {
     top: 70px;
     width: 260px;
     background: #1c1c2e;
-    border: 1px solid rgba(255,255,255,0.1);
     border-radius: 16px;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
     display: none;
-    overflow: hidden;
     z-index: 1000;
-}
-
-/* Dropdown Header */
-.profile-header {
-    padding: 25px 20px;
-    text-align: center;
-    background: #18182a;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
-}
-
-.profile-header h4 {
-    font-size: 16px;
-}
-
-.profile-header p {
-    font-size: 12px;
-    color: #94a3b8;
-}
-
-/* Dropdown Menu */
-.profile-menu {
-    padding: 8px 0;
-}
-
-.profile-menu a {
-    display: block;
-    padding: 13px 20px;
-    font-size: 14px;
-    color: #e5e9f2;
-    text-decoration: none;
-    transition: 0.25s;
-}
-
-.profile-menu a:hover {
-    background: rgba(108,99,255,0.12);
-    padding-left: 26px;
-}
-
-.profile-menu .logout {
-    color: #ff6b6b;
-    border-top: 1px solid rgba(255,255,255,0.05);
-    margin-top: 5px;
 }
 
 /* =========================
@@ -210,13 +142,10 @@ header {
     width: 80%;
     padding-top: 160px;
     margin: auto;
-    position: relative;
-    z-index: 2;
 }
 
 .hero h1 {
     font-size: 60px;
-    letter-spacing: 2px;
 }
 
 .par {
@@ -230,238 +159,5 @@ header {
     gap: 20px;
 }
 
-/* Buttons */
 .browse-btn,
-.signup-btn2 {
-    width: 180px;
-    height: 50px;
-    border-radius: 30px;
-    font-size: 17px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.browse-btn {
-    background: #5672ff;
-    color: #fff;
-    border: none;
-}
-
-.signup-btn2 {
-    background: transparent;
-    color: #fff;
-    border: 2px solid #9f5bff;
-}
-
-/* FIX FOR <a> BUTTONS */
-a.browse-btn,
-a.signup-btn2 {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-}
-
-.browse-btn:hover,
-.signup-btn2:hover {
-    transform: scale(1.08);
-}
-
-/* =========================
-   SECTION
-   ========================= */
-section {
-    padding: 60px 0;
-    text-align: center;
-}
-
-section h2 {
-    font-size: 38px;
-    margin-bottom: 40px;
-}
-
-/* Courses */
-.course-container {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-}
-
-.course-card {
-    width: 300px;
-    padding: 35px 25px;
-    background: #1a1a2e;
-    border-radius: 15px;
-    transition: 0.35s;
-}
-
-.course-card:hover {
-    transform: translateY(-10px);
-    background: #252547;
-}
-
-.course-card h3 {
-    color: #5672ff;
-    margin-bottom: 15px;
-}
-
-/* Instructors */
-.instructor-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    max-width: 900px;
-    margin: auto;
-    gap: 30px;
-}
-
-.instructor-card img {
-    width: 130px;
-    height: 130px;
-    border-radius: 50%;
-    border: 4px solid #5672ff;
-}
-
-/* Testimonial */
-.testimony-box {
-    width: 500px;
-    margin: auto;
-    background: #1a1a2e;
-    border-left: 6px solid #5672ff;
-    padding: 30px;
-    border-radius: 12px;
-}
-
-/* Footer */
-footer {
-    background: #000;
-    color: #aaa;
-    padding: 15px;
-    text-align: center;
-    font-size: 14px;
-}
-
-/* =========================
-   MOBILE RESPONSIVE
-   ========================= */
-@media (max-width: 768px) {
-    /* Navbar tetap di atas */
-    .navbar {
-        width: 95%;
-        padding: 0 15px;
-        position: relative;
-        z-index: 2001; /* Pastikan navbar sentiasa di depan */
-    }
-
-    /* Tunjukkan Hamburger & pastikan ia paling atas */
-    .hamburger-menu {
-        display: flex;
-        flex-direction: column;
-        gap: 5px;
-        cursor: pointer;
-        z-index: 2002; /* Mesti lebih tinggi dari .menu */
-    }
-
-    .hamburger-menu span {
-        display: block;
-        width: 28px;
-        height: 3px;
-        background: #d1d9ff;
-        border-radius: 5px;
-        transition: 0.3s ease;
-    }
-
-    /* Menu Overlay */
-    .menu {
-        display: none; /* Sembunyi asal */
-        position: fixed; /* Mesti 'fixed' untuk cover skrin */
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100vh;
-        background: #0e0e1a; /* Warna solid */
-        z-index: 2000; /* Bawah hamburger, tapi atas hero */
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    /* Aktifkan Menu */
-    .menu.active {
-        display: flex;
-    }
-
-    .menu ul {
-        flex-direction: column;
-        gap: 30px;
-        text-align: center;
-    }
-
-    .menu ul li a {
-        font-size: 22px;
-    }
-
-    /* Animasi ke bentuk X */
-    .hamburger-menu.open span:nth-child(1) {
-        transform: translateY(8px) rotate(45deg);
-    }
-    .hamburger-menu.open span:nth-child(2) {
-        opacity: 0;
-    }
-    .hamburger-menu.open span:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg);
-    }
-
-    /* Kemaskan Profile Chip di Mobile */
-    .chip-name {
-        display: none; /* Sorok nama, tinggal avatar sahaja supaya tak sesak */
-    }
-
-    /* Hero & Sections */
-    .hero {
-        padding-top: 120px;
-        text-align: center;
-    }
-    .hero h1 { font-size: 32px; }
-    .course-container, .instructor-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .par {
-        font-size: 16px;
-    }
-
-    .hero-buttons {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .browse-btn,
-    .signup-btn2 {
-        width: 100%;
-        max-width: 280px;
-    }
-
-    .course-container {
-        flex-direction: column;
-        align-items: center;
-        padding: 0 16px;
-    }
-
-    .course-card {
-        width: 100%;
-        max-width: 350px;
-    }
-
-    .instructor-container {
-        grid-template-columns: 1fr;
-        padding: 0 16px;
-    }
-
-    .testimony-box {
-        width: 100%;
-        max-width: 350px;
-    }
-}
-
+.
