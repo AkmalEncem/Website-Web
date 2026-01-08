@@ -1,3 +1,6 @@
+/* =========================
+   GLOBAL RESET
+========================= */
 * {
     margin: 0;
     padding: 0;
@@ -5,12 +8,12 @@
     font-family: Arial, sans-serif;
 }
 
-/* Pastikan body ada ruang untuk Navbar */
 body {
     background: #0e0e1a;
     color: #fff;
     overflow-x: hidden;
-    padding-top: 65px; /* SAMA DENGAN TINGGI NAVBAR ANDA */
+    /* PENTING: Mesti sama dengan height navbar di NavbarProfile.css */
+    padding-top: 65px; 
 }
 
 /* =========================
@@ -18,34 +21,35 @@ body {
 ========================= */
 .hero-header {
     width: 100%;
-    /* Gunakan calc untuk tolak tinggi navbar supaya hero betul-betul fit skrin */
-    min-height: calc(100vh - 65px); 
+    min-height: calc(100vh - 65px);
     background: 
-        linear-gradient(rgba(14, 14, 26, 0.7), rgba(14, 14, 26, 0.7)), 
+        linear-gradient(rgba(14, 14, 26, 0.8), rgba(14, 14, 26, 0.8)), 
         url("background1.jpg") center / cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
 
 .hero {
     width: 90%;
     max-width: 1000px;
     text-align: center;
-    z-index: 2;
+    position: relative;
+    z-index: 1; /* Jangan letak terlalu tinggi nanti tutup dropdown navbar */
 }
 
 .hero h1 {
-    font-size: clamp(32px, 8vw, 60px); /* Saiz dinamik ikut skrin */
-    letter-spacing: 2px;
-    line-height: 1.2;
+    font-size: clamp(32px, 8vw, 60px);
     color: #d1d9ff;
+    line-height: 1.2;
+    margin-bottom: 20px;
 }
 
 .par {
-    margin: 25px auto 0;
     font-size: clamp(14px, 2vw, 18px);
-    max-width: 700px; /* Supaya teks tidak terlalu lebar ke tepi */
+    max-width: 700px;
+    margin: 0 auto;
     color: #9aa3c7;
     line-height: 1.6;
 }
@@ -54,192 +58,72 @@ body {
     margin-top: 40px;
     display: flex;
     gap: 20px;
-    justify-content: center; /* Center kan butang */
+    justify-content: center;
 }
 
 /* Buttons */
-.browse-btn, 
-.signup-btn2 {
-    width: 180px;
-    height: 50px;
+.browse-btn, .signup-btn2 {
+    padding: 15px 35px;
     border-radius: 30px;
-    font-size: 16px;
     font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
     text-decoration: none;
+    transition: 0.3s;
 }
 
 .browse-btn {
     background: #5672ff;
-    color: #fff;
-    border: none;
-    box-shadow: 0 4px 15px rgba(86, 114, 255, 0.3);
+    color: white;
 }
 
 .signup-btn2 {
-    background: transparent;
-    color: #fff;
     border: 2px solid #9f5bff;
+    color: white;
 }
 
-.browse-btn:hover, 
-.signup-btn2:hover {
-    transform: translateY(-5px) scale(1.05);
-}
+.browse-btn:hover { background: #8fa2ff; transform: translateY(-3px); }
 
 /* =========================
-   SECTIONS (GENERAL)
+   SECTIONS & CARDS
 ========================= */
-section {
-    padding: 80px 0;
-    text-align: center;
-}
+section { padding: 80px 5%; text-align: center; }
 
-section h2 {
-    font-size: clamp(28px, 4vw, 38px);
-    margin-bottom: 50px;
-    color: #d1d9ff;
-    position: relative;
-    display: inline-block;
-}
+h2 { font-size: 32px; margin-bottom: 40px; color: #d1d9ff; }
 
-/* Garis bawah dekoratif (Center) */
-section h2::after {
-    content: "";
-    display: block;
-    width: 60px;
-    height: 3px;
-    background: #5672ff;
-    margin: 15px auto 0;
-    border-radius: 10px;
-}
-
-/* =========================
-   COURSE CARDS (HOME)
-========================= */
-.course-container {
+.course-container, .instructor-container {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    flex-wrap: wrap; /* Elak pecah di skrin sederhana */
     gap: 30px;
-    padding: 0 5%;
 }
 
-.course-card {
-    width: 300px;
-    padding: 35px 25px;
+.course-card, .instructor-card {
     background: #1c1c2e;
+    padding: 30px;
     border-radius: 20px;
-    transition: 0.35s;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-    border: 1px solid transparent;
+    width: 300px;
+    transition: 0.3s;
 }
 
-.course-card:hover {
-    transform: translateY(-10px);
-    background: #252547;
-    border-color: #5672ff;
-}
-
-.course-card h3 {
-    color: #5672ff;
-    margin-bottom: 15px;
-}
-
-/* =========================
-   INSTRUCTORS (HOME)
-========================= */
-.instructor-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    max-width: 1000px;
-    margin: auto;
-    gap: 30px;
-    padding: 0 20px;
-}
-
-.instructor-card {
-    text-align: center;
-}
+.course-card:hover { transform: translateY(-10px); border: 1px solid #5672ff; }
 
 .instructor-card img {
-    width: 130px;
-    height: 130px;
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
-    border: 4px solid #5672ff;
-    object-fit: cover;
     margin-bottom: 15px;
+    border: 3px solid #5672ff;
+    object-fit: cover;
 }
 
-/* =========================
-   TESTIMONIAL (HOME)
-========================= */
-.testimony-box {
-    max-width: 600px;
-    margin: auto;
-    background: #1c1c2e;
-    border-left: 6px solid #5672ff;
-    padding: 40px;
-    border-radius: 15px;
-    text-align: left; /* Teks testimoni biasanya lebih cantik left-align */
-}
-
-/* Footer */
 footer {
+    padding: 40px;
     background: #090912;
-    color: #666;
-    padding: 30px;
     text-align: center;
-    font-size: 14px;
+    color: #666;
     border-top: 1px solid #1c1c2e;
 }
 
-/* =========================
-   MOBILE RESPONSIVE
-========================= */
+/* MOBILE */
 @media (max-width: 768px) {
-    .hero-header {
-        min-height: 80vh;
-    }
-
-    .hero h1 {
-        font-size: 32px;
-    }
-
-    .hero-buttons {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .browse-btn, 
-    .signup-btn2 {
-        width: 100%;
-        max-width: 280px;
-    }
-
-    .course-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .course-card {
-        width: 100%;
-    }
-
-    .instructor-container {
-        grid-template-columns: 1fr;
-    }
-
-    .testimony-box {
-        width: 90%;
-        padding: 25px;
-    }
+    .hero-buttons { flex-direction: column; align-items: center; }
 }
-
-
-
-
