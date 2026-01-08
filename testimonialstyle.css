@@ -179,15 +179,9 @@ body {
 .review-user { font-size: 13px; color: #aaa; margin-bottom: 10px; }
 .review-text { line-height: 1.5; color: #e5e9f2; font-style: italic; }
 
-@media (max-width: 850px) {
-    .dashboard-grid { grid-template-columns: 1fr; }
-    .stats-card,
-    .review-form {
-        text-align: center;
-    }
-}
-
 @media (max-width: 768px) {
+
+    /* Navbar behave normal */
     .navbar {
         position: relative;
         left: 0;
@@ -195,168 +189,21 @@ body {
         padding: 0 15px;
     }
 
+    /* BUANG OFFSET BESAR */
     .page {
-        margin-top: 40px;
-    }
-
-    .menu ul {
-        gap: 20px;
-    }
-
-    .menu ul li a {
-        font-size: 13px;
-    }
-
-    .logo {
-        font-size: 26px;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero-section h1 {
-        font-size: 28px;
-    }
-
-    .stats-card h2 {
-        font-size: 34px;
-    }
-
-    .star-rating {
-        font-size: 24px;
-    }
-}
-
-/* ===============================
-   TESTIMONIAL PAGE – MOBILE HEADER
-   MATCH COURSE PAGE (MOBILE ONLY)
-================================ */
-@media (max-width: 768px) {
-
-    /* HEADER / HERO SECTION */
-    .hero-section {
-        margin-top: 20px;          /* sama rasa dengan course */
-        padding: 0 15px;
-        text-align: center;
-    }
-
-    .hero-section h1 {
-        font-size: 26px;           /* same as course page */
-        color: #d1d9ff;
-        line-height: 1.2;
-        margin-bottom: 8px;
-    }
-
-    .hero-section p {
-        font-size: 14px;
-        color: #aaa;
-    }
-}
-
-/* ===============================
-   TESTIMONIAL – MATCH COURSE HEADER
-   MOBILE ONLY (FIX REAL ISSUE)
-================================ */
-@media (max-width: 768px) {
-
-    /* FIX MAIN PAGE OFFSET (THIS IS THE KEY) */
-    .page {
-        margin-top: 40px;       /* sama rasa dengan course */
-        padding: 0 15px;
-    }
-
-    /* HEADER / HERO */
-    .hero-section {
-        margin-bottom: 30px;
-        text-align: center;
-    }
-
-    .hero-section h1 {
-        font-size: 26px;        /* same as course */
-        color: #d1d9ff;
-        line-height: 1.2;
-        margin-bottom: 8px;
-    }
-
-    .hero-section p {
-        font-size: 14px;
-        color: #aaa;
-    }
-}
-
-/* ===============================
-   TESTIMONIAL – TRUE COURSE MOBILE HEADER
-================================ */
-@media (max-width: 768px) {
-
-    /* NAVBAR behave macam course */
-    .navbar {
-        position: relative;     /* INI PALING PENTING */
-        left: 0;
-        width: 100%;
-        padding: 0 15px;
-        margin-bottom: 10px;
-    }
-
-    /* PAGE ikut course */
-    .page {
-        margin-top: 0;          /* BUANG GAP PALSU */
-        padding: 0 15px;
-    }
-
-    /* HEADER ikut course */
-    .hero-section {
-        margin-top: 20px;
-        margin-bottom: 30px;
-        text-align: center;
-    }
-
-    .hero-section h1 {
-        font-size: 26px;
-        line-height: 1.2;
-    }
-
-    .hero-section p {
-        font-size: 14px;
-        color: #aaa;
-    }
-}
-/* ===============================
-   TESTIMONIAL – REAL COURSE MOBILE FIX
-   THIS ONE WILL CHANGE IT
-================================ */
-@media (max-width: 768px) {
-
-    /* 1️⃣ Navbar kekal absolute (desktop safe) */
-    .navbar {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        padding: 0 15px;
         margin: 0;
-    }
-
-    /* 2️⃣ BODY simulate course behaviour */
-    body {
-        padding-top: 65px; /* TINGGI NAVBAR */
-    }
-
-    /* 3️⃣ Page buang margin palsu */
-    .page {
-        margin-top: 20px;
         padding: 0 15px;
     }
 
-    /* 4️⃣ Header sama macam course */
+    /* Header ikut course */
     .hero-section {
-        margin: 0 0 30px;
+        margin: 20px 0 30px;
         text-align: center;
     }
 
     .hero-section h1 {
         font-size: 26px;
         line-height: 1.2;
-        margin-bottom: 8px;
     }
 
     .hero-section p {
@@ -364,3 +211,5 @@ body {
         color: #aaa;
     }
 }
+
+
