@@ -220,6 +220,19 @@ html, body {
 
 @media (max-width: 768px) {
 
+    .rating-card {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .review-text {
+        margin-top: 10px;
+        white-space: normal;        /* 🔥 wrap text */
+        overflow-x: hidden;         /* 🔥 stop scroll tepi */
+        word-break: break-word;
+        overflow-wrap: anywhere;
+    }
+
     .navbar {
         display: flex;
         align-items: center;
@@ -261,6 +274,7 @@ html, body {
         gap: 0;
     }
 }
+
 
 
 
