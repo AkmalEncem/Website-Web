@@ -225,3 +225,29 @@ body {
         font-size: 24px;
     }
 }
+
+/* ===============================
+   TESTIMONIAL PAGE – MOBILE HEADER
+   MATCH COURSE PAGE (MOBILE ONLY)
+================================ */
+@media (max-width: 768px) {
+
+    /* HEADER / HERO SECTION */
+    .hero-section {
+        margin-top: 20px;          /* sama rasa dengan course */
+        padding: 0 15px;
+        text-align: center;
+    }
+
+    .hero-section h1 {
+        font-size: 26px;           /* same as course page */
+        color: #d1d9ff;
+        line-height: 1.2;
+        margin-bottom: 8px;
+    }
+
+    .hero-section p {
+        font-size: 14px;
+        color: #aaa;
+    }
+}
