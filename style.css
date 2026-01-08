@@ -12,16 +12,23 @@ html, body {
 
 header{
     width: 100%;
-    height: 100vh;
-    background: linear-gradient(to top, rgba(0,0,0,0.5) 40%, rgba(0,0,0,0.5) 40%), url("background1.jpg");
+    min-height: 100vh;  /* ganti height */
+    background: linear-gradient(
+        to top,
+        rgba(0,0,0,0.5) 40%,
+        rgba(0,0,0,0.5) 40%
+    ), url("background1.jpg");
     background-size: cover;
     background-position: center;
+    overflow: hidden;   /* 🔴 tambah */
 }
 
 .navbar{
-    width: 90%;
+    max-width: 1200px;
+    width: 100%;
     height: 65px;
     margin: auto;
+    padding: 0 16px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -361,7 +368,8 @@ section h2{
 }
 
 .testimony-box{
-    width: 500px;
+    width: 100%;
+    max-width: 500px;
     margin: auto;
     background: #1a1a2e;
     border-left: 6px solid #5672ff;
@@ -397,12 +405,6 @@ a.browse-btn {
    MOBILE – KEEP DESKTOP STYLE
    ========================= */
 @media (max-width: 768px) {
-
-  /* NAVBAR */
-  .navbar {
-    width: 100%;
-    padding: 0 16px;
-  }
 
   /* MENU: horizontal scroll */
   .menu {
@@ -446,6 +448,22 @@ a.browse-btn {
     font-size: 16px;
   }
 
+  .course-container {
+    flex-wrap: wrap;
+    padding: 0 12px;
+  }
+
+  .course-card {
+    width: 100%;
+    max-width: 360px;
+  }
+
+  .instructor-container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 0 16px;
+  }
+
   /* Button size kecil sikit */
   .browse-btn,
   .signup-btn2 {
@@ -454,5 +472,15 @@ a.browse-btn {
     font-size: 15px;
   }
 
+    body {
+    overflow-x: hidden;
+    position: relative;
 }
+
+section, header, footer {
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+}
+
 
