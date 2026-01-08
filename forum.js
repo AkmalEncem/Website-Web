@@ -131,16 +131,69 @@ if (posts.length === 0) {
     posts = [
         {
             id: 1,
-            text: "I'm still confused about basic JavaScript concepts.",
+            text: "Adakah sesiapa mempunyai nota tambahan untuk subjek Programming Dasar? Saya masih keliru dengan konsep Loop.",
             author: "Ahmad Firdaus",
-            role: "Student",
-            date: randomPastTime(),
+            role: "student",
+            date: "2 hours ago",
             replies: [
                 {
                     author: "Dr. Noraini Hassan",
-                    role: "Lecturer",
-                    text: "Start with MDN Web Docs and practice regularly.",
-                    date: randomPastTime(5, "Lecturer")
+                    role: "lecturer",
+                    text: "Sila rujuk portal e-learning, saya ada muat naik slaid tambahan di sana.",
+                    date: "1 hour ago"
+                }
+            ]
+        },
+        {
+            id: 2,
+            text: "Saya menghadapi masalah untuk login ke dashboard hari ini. Adakah orang lain mengalami isu yang sama?",
+            author: "Sarah Tan",
+            role: "student",
+            date: "4 hours ago",
+            replies: [
+                {
+                    author: "Admin IT",
+                    role: "lecturer",
+                    text: "Sila kosongkan cache pelayar anda atau cuba guna mode Incognito.",
+                    date: "3 hours ago"
+                }
+            ]
+        },
+        {
+            id: 3,
+            text: "Tips untuk skor A dalam subjek Database: Pastikan anda faham Normalization (1NF hingga 3NF)!",
+            author: "Prof. Khalid",
+            role: "lecturer",
+            date: "6 hours ago",
+            replies: [
+                {
+                    author: "Amirul",
+                    role: "student",
+                    text: "Terima kasih Prof! Sangat membantu.",
+                    date: "5 hours ago"
+                }
+            ]
+        },
+        {
+            id: 4,
+            text: "Mencari ahli kumpulan untuk Projek Akhir kursus Web Development. Saya perlukan 2 orang lagi.",
+            author: "Jessica Lim",
+            role: "student",
+            date: "1 day ago",
+            replies: []
+        },
+        {
+            id: 5,
+            text: "Apa perbezaan utama antara Python dan Java untuk pembangunan backend?",
+            author: "Ravi Shankar",
+            role: "student",
+            date: "2 days ago",
+            replies: [
+                {
+                    author: "Dr. Noraini Hassan",
+                    role: "lecturer",
+                    text: "Python lebih mudah dipelajari (syntax ringkas), manakala Java lebih kuat dari segi 'strict typing' dan prestasi untuk sistem besar.",
+                    date: "1 day ago"
                 }
             ]
         }
@@ -290,3 +343,4 @@ document.addEventListener("DOMContentLoaded", () => {
     updateAvatar(name);
     renderPosts();
 });
+
