@@ -35,7 +35,7 @@ body {
     line-height: 1.6;
 }
 
-/* Underline */
+/* Underline dekoratif di bawah tajuk */
 .forum-header::after {
     content: "";
     display: block;
@@ -74,7 +74,7 @@ body {
     color: #aaa;
 }
 
-/* ================= NEW POST ================= */
+/* ================= NEW POST BOX ================= */
 .forum-post-box {
     width: 90%;
     max-width: 1000px;
@@ -118,7 +118,7 @@ body {
     transform: translateY(-2px);
 }
 
-/* ================= FORUM POSTS ================= */
+/* ================= FORUM FEED (POSTS) ================= */
 #forumFeed {
     width: 90%;
     max-width: 1000px;
@@ -139,7 +139,7 @@ body {
     box-shadow: 0 16px 40px rgba(0,0,0,0.7);
 }
 
-/* ================= POST HEADER ================= */
+/* Header di dalam setiap Post */
 .post-header {
     display: flex;
     align-items: center;
@@ -169,7 +169,7 @@ body {
     color: #aaa;
 }
 
-/* Role badge */
+/* Badge Peranan (Student/Lecturer) */
 .post-role {
     margin-left: auto;
     padding: 5px 14px;
@@ -186,14 +186,14 @@ body {
     background: #2196f3;
 }
 
-/* ================= POST CONTENT ================= */
+/* Kandungan Post */
 .post-content p {
     font-size: 15px;
     line-height: 1.6;
     color: #e5e9f2;
 }
 
-/* ================= POST ACTIONS ================= */
+/* Butang Like/Reply */
 .post-actions {
     display: flex;
     gap: 25px;
@@ -249,7 +249,7 @@ body {
     color: #aaa;
 }
 
-/* ================= INLINE REPLY BOX ================= */
+/* Box untuk menaip Reply */
 .reply-box {
     display: flex;
     gap: 10px;
@@ -303,7 +303,6 @@ body {
 
 /* ================= RESPONSIVE ================= */
 @media (max-width: 768px) {
-
     .filters {
         flex-direction: column;
     }
@@ -340,7 +339,6 @@ body {
 }
 
 @media (max-width: 480px) {
-
     .forum-header h1 {
         font-size: 24px;
     }
