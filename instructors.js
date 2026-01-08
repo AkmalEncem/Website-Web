@@ -93,6 +93,27 @@ subjectSet.forEach(subject => {
     subjectFilter.appendChild(option);
 });
 
+function updateAvatar(fullName) {
+    let avatarColor = localStorage.getItem("avatarColor");
+
+    if (!avatarColor) {
+        avatarColor = generateAvatarColor(fullName);
+        localStorage.setItem("avatarColor", avatarColor);
+    }
+
+    const letter = fullName.trim().charAt(0).toUpperCase();
+    const navAvatar = document.getElementById("navAvatar");
+    const mainAvatar = document.getElementById("mainAvatar");
+
+    if (navAvatar) {
+        navAvatar.textContent = letter;
+        navAvatar.style.backgroundColor = avatarColor;
+    }
+    if (mainAvatar) {
+        mainAvatar.textContent = letter;
+        mainAvatar.style.backgroundColor = avatarColor;
+    }
+}
 
 // ===== Display Instructors =====
 function displayInstructors() {
@@ -133,3 +154,4 @@ facultyFilter.addEventListener("change", displayInstructors);
 
 // Initial load
 displayInstructors();
+
