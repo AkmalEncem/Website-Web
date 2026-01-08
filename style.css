@@ -21,7 +21,7 @@ body {
 /* =========================
    HERO SECTION
 ========================= */
-header {
+.hero-header {
     width: 100%;
     min-height: 100vh;
     background: 
@@ -243,3 +243,4 @@ footer {
         padding: 25px;
     }
 }
+
