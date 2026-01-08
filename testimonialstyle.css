@@ -1,3 +1,8 @@
+/* GLOBAL BOX-SIZING (SAFE) */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
 /* ================= RESET & BASE ================= */
 body, h1, h2, h3, h4, h5, h6, p {
     margin: 0;
@@ -184,4 +189,5 @@ html {
         font-size: 35px;
     }
 }
+
 
