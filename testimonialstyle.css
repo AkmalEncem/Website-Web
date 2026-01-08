@@ -320,6 +320,47 @@ body {
         color: #aaa;
     }
 }
+/* ===============================
+   TESTIMONIAL – REAL COURSE MOBILE FIX
+   THIS ONE WILL CHANGE IT
+================================ */
+@media (max-width: 768px) {
 
+    /* 1️⃣ Navbar kekal absolute (desktop safe) */
+    .navbar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 0 15px;
+        margin: 0;
+    }
 
+    /* 2️⃣ BODY simulate course behaviour */
+    body {
+        padding-top: 65px; /* TINGGI NAVBAR */
+    }
 
+    /* 3️⃣ Page buang margin palsu */
+    .page {
+        margin-top: 20px;
+        padding: 0 15px;
+    }
+
+    /* 4️⃣ Header sama macam course */
+    .hero-section {
+        margin: 0 0 30px;
+        text-align: center;
+    }
+
+    .hero-section h1 {
+        font-size: 26px;
+        line-height: 1.2;
+        margin-bottom: 8px;
+    }
+
+    .hero-section p {
+        font-size: 14px;
+        color: #aaa;
+    }
+}
