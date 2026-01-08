@@ -92,6 +92,10 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    
+    /* TAMBAHKAN DUA LINE INI */
+    flex-shrink: 0; 
+    aspect-ratio: 1 / 1; 
 }
 
 .chip-name {
@@ -145,6 +149,10 @@ body {
     align-items: center;
     justify-content: center;
     margin: 0 auto 12px;
+
+    /* TAMBAHKAN INI */
+    flex-shrink: 0;
+    object-fit: cover; 
 }
 
 .profile-header h4 {
