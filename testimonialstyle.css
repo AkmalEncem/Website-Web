@@ -189,17 +189,23 @@ html, body {
 
 @media (max-width: 768px) {
 
-    /* NAVBAR STRUCTURE SAMA MACAM COURSE */
-   .navbar {
-        flex-direction: row;   /* KE TEPI */
+    .navbar {
+        display: flex;
         align-items: center;
         height: 65px;
-        padding: 0 15px;
+        padding: 0 12px;
+        gap: 10px;
+    }
+
+    .logo {
+        flex-shrink: 0;
+        font-size: 28px;
     }
 
     .menu {
-        width: 100%;
+        flex: 1;              /* 🔥 INI KUNCI */
         overflow-x: auto;
+        white-space: nowrap;
     }
 
     .menu ul {
@@ -209,36 +215,12 @@ html, body {
         width: max-content;
     }
 
-    /* HEADER (KEKAL BETUL) */
-    .page {
-        margin: 0;
-        padding: 0 15px;
-    }
-
-    .hero-section {
-        margin: 20px 0 30px;
-        text-align: center;
-    }
-
-    .hero-section h1 {
-        font-size: 26px;
-        line-height: 1.2;
-    }
-
-    .hero-section p {
-        font-size: 14px;
-        color: #aaa;
-    }
-
-   .menu::-webkit-scrollbar {
-        height: 4px;
-    }
-
-    .menu::-webkit-scrollbar-thumb {
-        background: #5672ff;
-        border-radius: 10px;
+    .profile-wrapper {
+        flex-shrink: 0;
     }
 }
+
+
 
 
 
