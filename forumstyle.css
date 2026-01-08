@@ -441,17 +441,13 @@ body {
     }
 
     /* 5. Dropdown Profil */
-   .profile-dropdown {
-        position: fixed; /* Tukar ke fixed supaya ia merujuk kepada skrin, bukan parent */
-        top: 70px;
-        right: 15px; /* Beri sedikit ruang dari tepi skrin */
-        left: 15px;  /* Beri ruang dari tepi kiri */
-        width: auto; /* Biar ia membesar ikut left/right */
-        max-width: 350px; /* Hadkan lebar maksimum supaya tidak terlalu gergasi */
-        margin: 0 auto; /* Tengah-tangkan jika skrin sangat lebar */
-        display: none; /* Kekalkan display none asal */
-        z-index: 9999;
-        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8); /* Tambah shadow lebih gelap untuk nampak timbul */
+    .profile-dropdown {
+        position: fixed; /* Ensures it stays visible on top of everything */
+        top: 65px;
+        right: 5%;
+        left: 5%; /* Centers it on mobile */
+        width: 90%;
+        z-index: 2000;
     }
 
     /* 6. Elemen Forum Lain */
@@ -466,4 +462,5 @@ body {
         padding: 15px;
     }
 }
+
 
