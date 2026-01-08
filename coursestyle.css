@@ -1,110 +1,43 @@
-/* ================= RESET & BASE ================= */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
-}
-
+/* ================= COURSES BASE ================= */
 body {
     background: #0e0e1a;
     color: #fff;
     overflow-x: hidden;
 }
 
-/* ================= NAVBAR ================= */
-.navbar {
-    width: 100%;
-    height: 65px;
-    padding: 0 5%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    background: #0e0e1a;
-}
-
-.logo {
-    font-size: 30px;
-    color: #d1d9ff;
-    text-decoration: none;
-    font-weight: bold;
-    flex-shrink: 0;
-}
-
-.menu {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-}
-
-.menu ul {
-    display: flex;
-    gap: 30px;
-    list-style: none;
-}
-
-.menu ul li a {
-    color: #d1d9ff;
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.menu ul li a:hover {
-    color: #5672ff;
-}
-
-/* Profile Section Styles */
-.profile-chip {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    background: #1c1c2e;
-    padding: 5px 15px;
-    border-radius: 30px;
-    cursor: pointer;
-    border: 1px solid #5672ff;
-}
-
-.chip-avatar {
-    width: 30px;
-    height: 30px;
-    background: #5672ff;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-}
-
-/* ================= PAGE TITLE ================= */
+/* ================= PAGE TITLE / HEADER (CENTERED) ================= */
 .page-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;    /* Center secara horizontal */
+    justify-content: center;
     text-align: center;
-    margin: 60px 0 30px;
+    margin: 60px auto 30px;
+    padding: 0 15px;
+    width: 100%;
 }
 
 .page-title h1 {
-    font-size: 38px;
+    font-size: clamp(28px, 5vw, 38px);
     color: #d1d9ff;
     letter-spacing: 0.5px;
+    margin: 0;
 }
 
 .page-title p {
     margin-top: 10px;
     font-size: 16px;
     color: #9aa3c7;
+    max-width: 600px;
 }
 
+/* Garis bawah dekoratif (Center) */
 .page-title::after {
     content: "";
     display: block;
     width: 70px;
     height: 3px;
-    margin: 20px auto 0;
+    margin-top: 20px;
     background: linear-gradient(90deg, #5672ff, #8fa2ff);
     border-radius: 10px;
 }
@@ -116,6 +49,7 @@ body {
     gap: 15px;
     flex-wrap: wrap;
     margin-bottom: 50px;
+    padding: 0 15px;
 }
 
 .search-bar {
@@ -207,7 +141,7 @@ body {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.85);
-    display: none; /* Controlled by JS */
+    display: none; 
     justify-content: center;
     align-items: center;
     z-index: 2000;
@@ -269,39 +203,29 @@ footer {
     border-top: 1px solid #1c1c2e;
 }
 
-/* ================= MOBILE OPTIMIZATION ================= */
+/* ================= RESPONSIVE ================= */
 @media (max-width: 768px) {
-    .navbar {
-        padding: 0 10px;
-    }
-
-    .logo {
-        font-size: 18px !important;
-    }
-
-    .menu {
-        overflow-x: auto;
-    }
-
-    .menu ul {
-        gap: 15px;
-    }
-
-    .menu ul li a {
-        font-size: 11px;
-        white-space: nowrap;
-    }
-
-    .chip-name {
-        display: none;
-    }
-
     .page-title h1 {
         font-size: 28px;
+    }
+
+    .filters {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .filters input, .filters select, .search-bar {
+        width: 100%;
+        max-width: none;
     }
 
     .course-list {
         grid-template-columns: 1fr;
         width: 95%;
+        padding: 0 10px;
+    }
+
+    .course-card {
+        padding: 20px;
     }
 }
