@@ -1,19 +1,16 @@
 /* ================= RESET & BASE ================= */
-* {
+body, h1, h2, h3, h4, h5, h6, p {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
 }
 
 body {
     background: #0e0e1a;
     color: #fff;
-    /* Memberi ruang supaya kandungan tidak tertutup oleh navbar fixed */
-    padding-top: 80px; 
+    padding-top: var(--navbar-height, 70px);
 }
 
-html, body {
+html {
     max-width: 100%;
     overflow-x: hidden;
 }
@@ -187,3 +184,4 @@ html, body {
         font-size: 35px;
     }
 }
+
