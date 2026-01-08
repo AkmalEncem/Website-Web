@@ -251,3 +251,75 @@ body {
         color: #aaa;
     }
 }
+
+/* ===============================
+   TESTIMONIAL – MATCH COURSE HEADER
+   MOBILE ONLY (FIX REAL ISSUE)
+================================ */
+@media (max-width: 768px) {
+
+    /* FIX MAIN PAGE OFFSET (THIS IS THE KEY) */
+    .page {
+        margin-top: 40px;       /* sama rasa dengan course */
+        padding: 0 15px;
+    }
+
+    /* HEADER / HERO */
+    .hero-section {
+        margin-bottom: 30px;
+        text-align: center;
+    }
+
+    .hero-section h1 {
+        font-size: 26px;        /* same as course */
+        color: #d1d9ff;
+        line-height: 1.2;
+        margin-bottom: 8px;
+    }
+
+    .hero-section p {
+        font-size: 14px;
+        color: #aaa;
+    }
+}
+
+/* ===============================
+   TESTIMONIAL – TRUE COURSE MOBILE HEADER
+================================ */
+@media (max-width: 768px) {
+
+    /* NAVBAR behave macam course */
+    .navbar {
+        position: relative;     /* INI PALING PENTING */
+        left: 0;
+        width: 100%;
+        padding: 0 15px;
+        margin-bottom: 10px;
+    }
+
+    /* PAGE ikut course */
+    .page {
+        margin-top: 0;          /* BUANG GAP PALSU */
+        padding: 0 15px;
+    }
+
+    /* HEADER ikut course */
+    .hero-section {
+        margin-top: 20px;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+
+    .hero-section h1 {
+        font-size: 26px;
+        line-height: 1.2;
+    }
+
+    .hero-section p {
+        font-size: 14px;
+        color: #aaa;
+    }
+}
+
+
+
