@@ -53,7 +53,33 @@ body {
 }
 
 .profile-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 50px;   /* Kunci lebar */
     flex-shrink: 0;
+}
+
+.profile-chip {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 10px;
+    border-radius: 30px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.profile-dropdown {
+    position: absolute;
+    top: 120%;
+    right: 0;
+    width: 220px;
+    background: #1c1c2e;
+    border-radius: 15px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+    z-index: 9999;
 }
 
 /* ================= PAGE TITLE ================= */
@@ -423,6 +449,7 @@ body {
     /* 4. Profile Section */
     .profile-wrapper {
         flex-shrink: 0;
+        max-width: 40px;
     }
 
     .chip-name {
@@ -430,26 +457,24 @@ body {
     }
 
     .profile-chip {
-        padding: 4px;
+        padding: 0;
         background: transparent;
     }
 
     .chip-avatar {
-        width: 30px;
-        height: 30px;
+        width: 32px;
+        height: 32px;
         font-size: 12px;
     }
 
     /* 5. Dropdown Profil */
     .profile-dropdown {
-        position: fixed; /* Ensures it stays visible on top of everything */
-        top: 65px;
-        right: 5%;
-        left: 5%; /* Centers it on mobile */
-        width: 90%;
-        z-index: 2000;
+        position: fixed;
+        top: 70px;
+        right: 10px;
+        left: auto;
+        width: 200px;
     }
-
     /* 6. Elemen Forum Lain */
     .filters {
         padding: 0 15px;
@@ -462,5 +487,6 @@ body {
         padding: 15px;
     }
 }
+
 
 
