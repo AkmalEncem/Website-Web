@@ -1,3 +1,79 @@
+/* ==================================================
+   USER PROFILE (INLINE – NO profile.js)
+   ================================================== */
+
+/* Avatar color generator */
+function generateAvatarColor(name) {
+    let hash = 0;
+    for (let i = 0; i < name.length; i++) {
+        hash = name.charCodeAt(i) + ((hash << 5) - hash);
+    }
+    return `hsl(${hash % 360}, 70%, 55%)`;
+}
+
+/* Update avatar */
+function updateAvatar(fullName) {
+    let avatarColor = localStorage.getItem("avatarColor");
+
+    if (!avatarColor) {
+        avatarColor = generateAvatarColor(fullName);
+        localStorage.setItem("avatarColor", avatarColor);
+    }
+
+    const letter = fullName.trim().charAt(0).toUpperCase();
+    const navAvatar = document.getElementById("navAvatar");
+    const mainAvatar = document.getElementById("mainAvatar");
+
+    if (navAvatar) {
+        navAvatar.textContent = letter;
+        navAvatar.style.backgroundColor = avatarColor;
+    }
+
+    if (mainAvatar) {
+        mainAvatar.textContent = letter;
+        mainAvatar.style.backgroundColor = avatarColor;
+    }
+}
+
+/* Set profile info */
+function setUserProfile() {
+    const fullName = localStorage.getItem("loggedInUser") || "User";
+    const matrix = localStorage.getItem("lms_matrix") || "CI000000";
+
+    const navName = document.getElementById("navName");
+    const studentName = document.getElementById("studentName");
+    const studentId = document.getElementById("studentId");
+
+    if (navName) navName.textContent = fullName;
+    if (studentName) studentName.textContent = fullName;
+    if (studentId) studentId.textContent = matrix;
+
+    updateAvatar(fullName);
+}
+
+/* Toggle dropdown */
+function toggleProfile() {
+    const dropdown = document.getElementById("profileDropdown");
+    if (!dropdown) return;
+
+    dropdown.style.display =
+        dropdown.style.display === "block" ? "none" : "block";
+}
+
+/* Close dropdown when click outside */
+document.addEventListener("click", (e) => {
+    const profile = document.querySelector(".profile-wrapper");
+    const dropdown = document.getElementById("profileDropdown");
+
+    if (dropdown && profile && !profile.contains(e.target)) {
+        dropdown.style.display = "none";
+    }
+});
+
+/* ==================================================
+   INSTRUCTORS DATA
+   ================================================== */
+
 const instructors = [
     {
         name: "Dr. Noryusliza Binti Abdullah",
@@ -74,17 +150,17 @@ const instructors = [
     }
 ];
 
+/* ==================================================
+   INSTRUCTORS FILTER & DISPLAY
+   ================================================== */
+
 const instructorList = document.getElementById("instructorList");
 const subjectFilter = document.getElementById("subjectFilter");
 const facultyFilter = document.getElementById("facultyFilter");
 
-
-// ===== Populate Subject Filter =====
+/* Populate subject filter */
 const subjectSet = new Set();
-
-instructors.forEach(inst => {
-    inst.subjects.forEach(sub => subjectSet.add(sub));
-});
+instructors.forEach(i => i.subjects.forEach(s => subjectSet.add(s)));
 
 subjectSet.forEach(subject => {
     const option = document.createElement("option");
@@ -93,29 +169,7 @@ subjectSet.forEach(subject => {
     subjectFilter.appendChild(option);
 });
 
-function updateAvatar(fullName) {
-    let avatarColor = localStorage.getItem("avatarColor");
-
-    if (!avatarColor) {
-        avatarColor = generateAvatarColor(fullName);
-        localStorage.setItem("avatarColor", avatarColor);
-    }
-
-    const letter = fullName.trim().charAt(0).toUpperCase();
-    const navAvatar = document.getElementById("navAvatar");
-    const mainAvatar = document.getElementById("mainAvatar");
-
-    if (navAvatar) {
-        navAvatar.textContent = letter;
-        navAvatar.style.backgroundColor = avatarColor;
-    }
-    if (mainAvatar) {
-        mainAvatar.textContent = letter;
-        mainAvatar.style.backgroundColor = avatarColor;
-    }
-}
-
-// ===== Display Instructors =====
+/* Display instructors */
 function displayInstructors() {
     instructorList.innerHTML = "";
 
@@ -123,7 +177,6 @@ function displayInstructors() {
     const facultyValue = facultyFilter.value;
 
     instructors.forEach(inst => {
-
         const subjectMatch =
             subjectValue === "all" || inst.subjects.includes(subjectValue);
 
@@ -135,7 +188,7 @@ function displayInstructors() {
             card.className = "instructor-card";
 
             card.innerHTML = `
-                <img src="${inst.image}" alt="${inst.name}" class="instructor-photo">
+                <img src="${inst.image}" class="instructor-photo">
                 <h3>${inst.name}</h3>
                 <p><strong>Email:</strong> ${inst.email}</p>
                 <p><strong>Faculty:</strong> ${inst.faculty}</p>
@@ -152,24 +205,11 @@ function displayInstructors() {
 subjectFilter.addEventListener("change", displayInstructors);
 facultyFilter.addEventListener("change", displayInstructors);
 
-// Initial load
-displayInstructors();
-
-function setUserProfile() {
-    const fullName = localStorage.getItem("loggedInUser") || "User";
-    const matrix = localStorage.getItem("lms_matrix") || "CI000000";
-
-    const navName = document.getElementById("navName");
-    const studentName = document.getElementById("studentName");
-    const studentId = document.getElementById("studentId");
-
-    if (navName) navName.textContent = fullName;
-    if (studentName) studentName.textContent = fullName;
-    if (studentId) studentId.textContent = matrix;
-
-    updateAvatar(fullName);
-}
+/* ==================================================
+   INITIAL LOAD
+   ================================================== */
 
 document.addEventListener("DOMContentLoaded", () => {
     setUserProfile();
+    displayInstructors();
 });
