@@ -1,18 +1,64 @@
-/* ==================================================
-   USER PROFILE (INLINE – NO profile.js)
-   ================================================== */
+/* ===============================
+   USER PROFILE SETUP
+================================ */
 
-/* Avatar color generator */
+function setUserProfile() {
+    const name = localStorage.getItem("loggedInUser") || "User";
+    const matrix = localStorage.getItem("lms_matrix") || "CI000000";
+
+    const navName = document.getElementById("navName");
+    const studentName = document.getElementById("studentName");
+    const studentId = document.getElementById("studentId");
+
+    if (navName) navName.innerText = name;
+    if (studentName) studentName.innerText = name;
+    if (studentId) studentId.innerText = matrix;
+
+    updateAvatar(name);
+}
+
+/* ===============================
+   PROFILE DROPDOWN
+================================ */
+
+function toggleProfile(event) {
+    if (event) event.stopPropagation();
+    const dropdown = document.getElementById("profileDropdown");
+    if (!dropdown) return;
+
+    dropdown.style.display =
+        dropdown.style.display === "block" ? "none" : "block";
+}
+
+document.addEventListener("click", function (e) {
+    if (!e.target.closest(".profile-wrapper")) {
+        const dropdown = document.getElementById("profileDropdown");
+        if (dropdown) dropdown.style.display = "none";
+    }
+});
+
+/* ===============================
+   AVATAR COLOR LOGIC
+================================ */
+
 function generateAvatarColor(name) {
+    const colors = [
+        "#1abc9c", "#3498db", "#9b59b6",
+        "#e67e22", "#e74c3c", "#2ecc71",
+        "#f39c12", "#16a085", "#2980b9"
+    ];
+
     let hash = 0;
     for (let i = 0; i < name.length; i++) {
         hash = name.charCodeAt(i) + ((hash << 5) - hash);
     }
-    return `hsl(${hash % 360}, 70%, 55%)`;
+
+    return colors[Math.abs(hash) % colors.length];
 }
 
-/* Update avatar */
 function updateAvatar(fullName) {
+    if (!fullName) return;
+
     let avatarColor = localStorage.getItem("avatarColor");
 
     if (!avatarColor) {
@@ -21,6 +67,7 @@ function updateAvatar(fullName) {
     }
 
     const letter = fullName.trim().charAt(0).toUpperCase();
+
     const navAvatar = document.getElementById("navAvatar");
     const mainAvatar = document.getElementById("mainAvatar");
 
@@ -35,44 +82,20 @@ function updateAvatar(fullName) {
     }
 }
 
-/* Set profile info */
-function setUserProfile() {
-    const fullName = localStorage.getItem("loggedInUser") || "User";
-    const matrix = localStorage.getItem("lms_matrix") || "CI000000";
+/* ===============================
+   LOGOUT
+================================ */
 
-    const navName = document.getElementById("navName");
-    const studentName = document.getElementById("studentName");
-    const studentId = document.getElementById("studentId");
-
-    if (navName) navName.textContent = fullName;
-    if (studentName) studentName.textContent = fullName;
-    if (studentId) studentId.textContent = matrix;
-
-    updateAvatar(fullName);
+function logout() {
+    localStorage.removeItem("loggedInUser");
+    localStorage.removeItem("lms_matrix");
+    localStorage.removeItem("avatarColor");
+    window.location.href = "login.html";
 }
 
-/* Toggle dropdown */
-function toggleProfile() {
-    const dropdown = document.getElementById("profileDropdown");
-    if (!dropdown) return;
-
-    dropdown.style.display =
-        dropdown.style.display === "block" ? "none" : "block";
-}
-
-/* Close dropdown when click outside */
-document.addEventListener("click", (e) => {
-    const profile = document.querySelector(".profile-wrapper");
-    const dropdown = document.getElementById("profileDropdown");
-
-    if (dropdown && profile && !profile.contains(e.target)) {
-        dropdown.style.display = "none";
-    }
-});
-
-/* ==================================================
+/* ===============================
    INSTRUCTORS DATA
-   ================================================== */
+================================ */
 
 const instructors = [
     {
@@ -150,15 +173,14 @@ const instructors = [
     }
 ];
 
-/* ==================================================
-   INSTRUCTORS FILTER & DISPLAY
-   ================================================== */
+/* ===============================
+   FILTER & DISPLAY
+================================ */
 
 const instructorList = document.getElementById("instructorList");
 const subjectFilter = document.getElementById("subjectFilter");
 const facultyFilter = document.getElementById("facultyFilter");
 
-/* Populate subject filter */
 const subjectSet = new Set();
 instructors.forEach(i => i.subjects.forEach(s => subjectSet.add(s)));
 
@@ -169,7 +191,6 @@ subjectSet.forEach(subject => {
     subjectFilter.appendChild(option);
 });
 
-/* Display instructors */
 function displayInstructors() {
     instructorList.innerHTML = "";
 
@@ -179,25 +200,21 @@ function displayInstructors() {
     instructors.forEach(inst => {
         const subjectMatch =
             subjectValue === "all" || inst.subjects.includes(subjectValue);
-
         const facultyMatch =
             facultyValue === "all" || inst.faculty === facultyValue;
 
         if (subjectMatch && facultyMatch) {
-            const card = document.createElement("div");
-            card.className = "instructor-card";
-
-            card.innerHTML = `
-                <img src="${inst.image}" class="instructor-photo">
-                <h3>${inst.name}</h3>
-                <p><strong>Email:</strong> ${inst.email}</p>
-                <p><strong>Faculty:</strong> ${inst.faculty}</p>
-                ${inst.subjects.map(s =>
-                    `<span class="subject-tag">${s}</span>`
-                ).join("")}
+            instructorList.innerHTML += `
+                <div class="instructor-card">
+                    <img src="${inst.image}" class="instructor-photo">
+                    <h3>${inst.name}</h3>
+                    <p><strong>Email:</strong> ${inst.email}</p>
+                    <p><strong>Faculty:</strong> ${inst.faculty}</p>
+                    ${inst.subjects.map(s =>
+                        `<span class="subject-tag">${s}</span>`
+                    ).join("")}
+                </div>
             `;
-
-            instructorList.appendChild(card);
         }
     });
 }
@@ -205,9 +222,9 @@ function displayInstructors() {
 subjectFilter.addEventListener("change", displayInstructors);
 facultyFilter.addEventListener("change", displayInstructors);
 
-/* ==================================================
-   INITIAL LOAD
-   ================================================== */
+/* ===============================
+   INIT
+================================ */
 
 document.addEventListener("DOMContentLoaded", () => {
     setUserProfile();
