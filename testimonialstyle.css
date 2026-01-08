@@ -258,6 +258,10 @@ html, body {
         gap: 25px;
     }
 
+     .rating-card {
+        overflow: hidden;
+    }
+    
     /* 🔥 FIX REVIEW TEXT (INI YANG KAU MAHU) */
     .review-text {
         white-space: normal !important;
@@ -267,3 +271,4 @@ html, body {
         margin-top: 8px;
     }
 }
+
