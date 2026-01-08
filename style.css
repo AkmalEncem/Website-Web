@@ -359,7 +359,7 @@ footer {
     }
 
     .menu {
-        display: none;
+        display: flex;
         position: fixed;
         inset: 0;
         background: #0e0e1a;
@@ -367,6 +367,8 @@ footer {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        overflow-x: auto;
+       -webkit-overflow-scrolling: touch;
     }
 
     .menu.active {
@@ -374,13 +376,19 @@ footer {
     }
 
     .menu ul {
-        flex-direction: column;
-        gap: 30px;
+        flex-direction: row;
+        gap: 20px;
+       width: max-content;
     }
 
     .menu ul li a {
-        font-size: 22px;
+       white-space: nowrap;
+        font-size: 13px;
     }
+   
+   .menu::-webkit-scrollbar {
+    display: none;
+  }
 
    .profile-wrapper {
         margin-left: auto;
@@ -434,5 +442,6 @@ footer {
         max-width: 350px;
     }
 }
+
 
 
