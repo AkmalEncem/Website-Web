@@ -155,3 +155,21 @@ facultyFilter.addEventListener("change", displayInstructors);
 // Initial load
 displayInstructors();
 
+function setUserProfile() {
+    const fullName = localStorage.getItem("loggedInUser") || "User";
+    const matrix = localStorage.getItem("lms_matrix") || "CI000000";
+
+    const navName = document.getElementById("navName");
+    const studentName = document.getElementById("studentName");
+    const studentId = document.getElementById("studentId");
+
+    if (navName) navName.textContent = fullName;
+    if (studentName) studentName.textContent = fullName;
+    if (studentId) studentId.textContent = matrix;
+
+    updateAvatar(fullName);
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    setUserProfile();
+});
