@@ -16,7 +16,7 @@ html, body {
     overflow-x: hidden;
 }
 
-/* NAVBAR BASE */
+/* ================= NAVBAR BASE ================= */
 .navbar {
     width: 100%;
     height: 65px;
@@ -59,10 +59,10 @@ html, body {
 
 .profile-wrapper {
     flex-shrink: 0;
+    position: relative; /* Essential for dropdown positioning */
 }
 
-/* ================= PROFILE DROPDOWN (FROM INDEX STYLE) ================= */
-
+/* ================= PROFILE CHIP & DROPDOWN ================= */
 .profile-chip {
     display: flex;
     align-items: center;
@@ -101,7 +101,7 @@ html, body {
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 16px;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
-    display: none;
+    display: none; /* Controlled via JavaScript */
     overflow: hidden;
     z-index: 1000;
 }
@@ -214,87 +214,36 @@ html, body {
     background: rgba(255, 255, 255, 0.05);
 }
 
+    /* ================= MOBILE RESPONSIVENESS ================= */
 @media (max-width: 768px) {
-
-    @media (max-width: 768px) {
-    /* 1. Paksa body dan navbar untuk tidak melebihi lebar skrin */
-    body {
-        overflow-x: hidden;
-        width: 100vw;
-    }
-
     .navbar {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
         padding: 0 10px;
-        height: 65px;
-        gap: 5px; /* Rapatkan gap antara logo, menu, dan profil */
-        width: 100%;
-        box-sizing: border-box; /* Pastikan padding tidak menambah lebar */
         position: sticky;
         top: 0;
-        background: #0e0e1a;
     }
 
-    /* 2. Kecilkan logo */
     .logo {
         font-size: 18px !important;
-        flex-shrink: 0;
-        margin-right: 5px;
-    }
-
-    /* 3. Menu Tengah - Kawal overflow dengan rapi */
-    .menu {
-        flex: 1;
-        min-width: 0; /* Penting: membolehkan flex child mengecil bawah saiz kandungan */
-        overflow-x: auto;
-        display: flex;
-        align-items: center;
-        -webkit-overflow-scrolling: touch; /* Skrol lebih lancar di iOS */
     }
 
     .menu ul {
-        display: flex;
         gap: 10px;
-        padding: 0 5px;
-        margin: 0;
     }
 
     .menu ul li a {
         font-size: 11px;
-        white-space: nowrap;
-        padding: 5px 2px;
-    }
-
-    /* 4. Profile Section */
-    .profile-wrapper {
-        flex-shrink: 0;
     }
 
     .chip-name {
-        display: none; /* Wajib sembunyi di mobile untuk elak berterabur */
+        display: none; /* Hide name on small screens */
     }
 
-    .profile-chip {
-        padding: 4px;
-        background: transparent;
-    }
-
-    .chip-avatar {
-        width: 30px;
-        height: 30px;
-        font-size: 12px;
-    }
-
-    /* 5. Dropdown Profil */
     .profile-dropdown {
-        position: fixed; /* Ensures it stays visible on top of everything */
+        position: fixed;
         top: 65px;
         right: 5%;
-        left: 5%; /* Centers it on mobile */
+        left: 5%;
         width: 90%;
-        z-index: 2000;
     }
 
     /* Layout mobile */
@@ -316,6 +265,7 @@ html, body {
     }
 
 }
+
 
 
 
