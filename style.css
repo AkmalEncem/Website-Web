@@ -352,55 +352,50 @@ footer {
 @media (max-width: 768px) {
 
     .navbar {
-        width: 95%;
+        width: 100%;
         padding: 0 5%;
-        position: relative;
-        z-index: 2001;
-    }
-
-    .menu {
         display: flex;
-        position: fixed;
-        inset: 0;
-        background: #0e0e1a;
-        z-index: 2000;
-        flex-direction: column;
-        justify-content: center;
         align-items: center;
-        overflow-x: auto;
-       -webkit-overflow-scrolling: touch;
+        justify-content: space-between;
     }
 
-    .menu.active {
-        display: flex;
+    /* Menu: horizontal scroll, kekal di navbar */
+    .menu {
+        display: flex;               /* paparkan menu terus */
+        flex: 1;                     /* ambil ruang tengah */
+        overflow-x: auto;            /* scroll horizontal */
+        -webkit-overflow-scrolling: touch;
+        gap: 20px;
+        white-space: nowrap;         /* elak pecah baris */
     }
 
     .menu ul {
-        flex-direction: row;
+        display: flex;
+        flex-direction: row;         /* kekal row */
         gap: 20px;
-       width: max-content;
+        width: max-content;          /* penting untuk scroll */
+        padding: 0;
+        margin: 0;
     }
 
     .menu ul li a {
-       white-space: nowrap;
         font-size: 13px;
+        white-space: nowrap;
     }
-   
-   .menu::-webkit-scrollbar {
-    display: none;
-  }
 
-   .profile-wrapper {
-        margin-left: auto;
+    .menu::-webkit-scrollbar {
+        display: none; /* sembunyi scrollbar */
     }
 
     .chip-name {
-        display: none;
+        display: none; /* sembunyi nama chip */
     }
 
     .hero {
         padding-top: 120px;
         text-align: center;
+        width: 90%;
+        margin: auto;
     }
 
     .hero h1 {
@@ -442,6 +437,7 @@ footer {
         max-width: 350px;
     }
 }
+
 
 
 
