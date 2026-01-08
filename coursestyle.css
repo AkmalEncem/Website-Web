@@ -1,4 +1,4 @@
-/* ================= RESET ================= */
+/* ================= RESET & BASE ================= */
 * {
     margin: 0;
     padding: 0;
@@ -9,9 +9,10 @@
 body {
     background: #0e0e1a;
     color: #fff;
+    overflow-x: hidden;
 }
 
-/* NAVBAR BASE */
+/* ================= NAVBAR ================= */
 .navbar {
     width: 100%;
     height: 65px;
@@ -19,7 +20,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    position: relative;
+    position: sticky;
+    top: 0;
     z-index: 1000;
     background: #0e0e1a;
 }
@@ -52,422 +54,254 @@ body {
     transition: 0.3s;
 }
 
-.profile-wrapper {
-    flex-shrink: 0;
+.menu ul li a:hover {
+    color: #5672ff;
+}
+
+/* Profile Section Styles */
+.profile-chip {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #1c1c2e;
+    padding: 5px 15px;
+    border-radius: 30px;
+    cursor: pointer;
+    border: 1px solid #5672ff;
+}
+
+.chip-avatar {
+    width: 30px;
+    height: 30px;
+    background: #5672ff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
 }
 
 /* ================= PAGE TITLE ================= */
 .page-title {
     text-align: center;
-    margin-top: 60px;
+    margin: 60px 0 30px;
 }
 
 .page-title h1 {
     font-size: 38px;
     color: #d1d9ff;
+    letter-spacing: 0.5px;
 }
 
 .page-title p {
-    margin-top: 6px;
-    font-size: 15px;
-    color: #aaa;
-}
-
-/* ================= TITLE ================= */
-.page-title{
-    text-align: center;
-    margin-top: 80px;
-}
-
-.page-title h1{
-    font-size: 40px;
-    color: #d1d9ff;
-}
-
-.page-title p{
     margin-top: 10px;
-    color: #aaa;
+    font-size: 16px;
+    color: #9aa3c7;
 }
 
-/* ================= FILTER ================= */
-.filters{
-    text-align: center;
-    margin-top: 40px;
+.page-title::after {
+    content: "";
+    display: block;
+    width: 70px;
+    height: 3px;
+    margin: 20px auto 0;
+    background: linear-gradient(90deg, #5672ff, #8fa2ff);
+    border-radius: 10px;
 }
 
-.filter-options{
-    margin-top: 20px;
+/* ================= SEARCH & FILTERS ================= */
+.filters {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 15px;
     flex-wrap: wrap;
+    margin-bottom: 50px;
 }
 
-.filter-options select{
-    padding: 12px 20px;
+.search-bar {
+    width: 100%;
+    max-width: 400px;
+}
+
+.filters input,
+.filters select {
+    padding: 12px 18px;
     border-radius: 30px;
     border: 2px solid #5672ff;
     background: #1a1a2e;
     color: #fff;
+    font-size: 14px;
+    outline: none;
+    transition: 0.3s;
 }
 
-.search-bar{
-    width: 60%;
-    padding: 12px 20px;
-    border-radius: 30px;
-    border: 2px solid #5672ff;
-    background: #1a1a2e;
-    color: #fff;
+.filters input:focus,
+.filters select:focus {
+    box-shadow: 0 0 10px rgba(86, 114, 255, 0.5);
 }
 
-/* ================= COURSE GRID ================= */
-.course-list{
-    width: 90%;
-    margin: 60px auto;
+/* ================= COURSE LIST (GRID) ================= */
+.course-list {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 35px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto 50px;
 }
 
-/* ================= COURSE CARD ================= */
-.course-card{
-    background: #1a1a2e;
-    padding: 30px;
-    border-radius: 15px;
-    animation: fadeIn 0.3s ease;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+.course-card {
+    background: #1c1c2e;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s;
+    border: 1px solid transparent;
 }
 
-.course-card:hover{
-    transform: translateY(-6px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+.course-card:hover {
+    transform: translateY(-8px);
+    border-color: #5672ff;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);
 }
 
-.course-card h3{
-    color: #5672ff;
-    margin-bottom: 15px;
+.course-card h3 {
+    color: #d1d9ff;
+    margin-bottom: 12px;
+    font-size: 20px;
 }
 
-.details-btn{
+.course-card p {
+    font-size: 14px;
+    color: #aaa;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.course-card strong {
+    color: #fff;
+}
+
+.details-btn {
     display: inline-block;
     margin-top: 15px;
     padding: 10px 20px;
     background: #5672ff;
     color: #fff;
     text-decoration: none;
-    border-radius: 20px;
-    transition: all 0.3s;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 13px;
+    transition: 0.3s;
 }
 
-.details-btn:hover{
+.details-btn:hover {
     background: #8fa2ff;
-    transform: scale(1.05);
 }
 
-.course-card.hide{
-    display: none;
-}
-
-/* ================= POPUP ================= */
-.popup-overlay{
-    display: none;
+/* ================= POPUP / MODAL ================= */
+.popup-overlay {
     position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.65);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    display: none; /* Controlled by JS */
     justify-content: center;
     align-items: center;
-    z-index: 1000;
+    z-index: 2000;
 }
 
-.popup-box{
-    background: #1a1a2e;
+.popup-box {
+    background: #1c1c2e;
     padding: 30px;
-    width: 420px;
-    border-radius: 15px;
+    border-radius: 25px;
+    width: 90%;
+    max-width: 500px;
     position: relative;
-    transform: translateY(30px) scale(0.95);
-    opacity: 0;
-    transition: all 0.35s ease;
+    border: 2px solid #5672ff;
 }
 
-.popup-box.show{
-    transform: translateY(0) scale(1);
-    opacity: 1;
-}
-
-.popup-box h2{
-    color: #8fa2ff;
-}
-
-.popup-box p{
-    margin: 10px 0;
-    font-size: 14px;
-}
-
-/* ================= INPUTS ================= */
-.popup-box input{
-    width: 70px;
-    padding: 6px 10px;
-    border-radius: 20px;
-    border: 1px solid #5672ff;
-    background: #0f3460;
-    color: #fff;
-    font-size: 13px;
-    text-align: center;
-}
-
-.popup-box input::placeholder{
-    font-size: 12px;
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    cursor: pointer;
     color: #aaa;
 }
 
-.popup-box select{
-    padding: 6px 12px;
-    border-radius: 20px;
-    border: 1px solid #5672ff;
-    background: #0f3460;
-    color: #fff;
-}
-
-/* ================= SECTION ROW (UPDATED) ================= */
-.section-row{
-    display: inline-flex;
+.popup-row {
+    margin: 15px 0;
+    display: flex;
     align-items: center;
     gap: 10px;
-    margin-top: 6px;
 }
 
-.section-hint{
-    display: block;
-    margin-top: 4px;
-    font-size: 12px;
-    color: #aaa;
-}
-
-/* ================= TIMETABLE BUTTON ================= */
-.timetable-btn{
-    padding: 6px 14px;
-    background: #0f3460;
-    border: 1px solid #5672ff;
-    border-radius: 20px;
-    color: #fff;
-    text-decoration: none;
-    font-size: 13px;
-    transition: all 0.3s;
-}
-
-.timetable-btn:hover{
-    background: #5672ff;
-    transform: translateY(-2px);
-}
-
-/* ================= ENROLL ================= */
-.enroll-btn{
-    margin-top: 20px;
-    width: 100%;
-    padding: 12px;
-    border-radius: 30px;
-    background: #5672ff;
-    color: #fff;
+.timetable-btn {
+    background: #4CAF50;
+    color: white;
     border: none;
+    padding: 5px 15px;
+    border-radius: 5px;
     cursor: pointer;
-    transition: all 0.3s;
 }
 
-.enroll-btn:hover{
-    background: #8fa2ff;
-    transform: scale(1.05);
-}
-
-/* ================= CLOSE ================= */
-.close-btn{
-    position: absolute;
-    top: 12px;
-    right: 15px;
-    font-size: 24px;
-    cursor: pointer;
-    color: #aaa;
-}
-
-.close-btn:hover{
+.enroll-btn {
+    width: 100%;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 30px;
+    border: none;
+    background: #5672ff;
     color: #fff;
-}
-
-/* ================= NO RESULT ================= */
-#noResults{
-    display: none;
-    text-align: center;
-    margin-top: 40px;
-    color: #aaa;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 16px;
 }
 
 /* ================= FOOTER ================= */
-footer{
-    background: #000;
-    color: #aaa;
-    padding: 15px;
+footer {
     text-align: center;
-    margin-top: 50px;
+    padding: 40px 0;
+    color: #666;
+    border-top: 1px solid #1c1c2e;
 }
 
-/* ================= ANIMATION ================= */
-@keyframes fadeIn{
-    from{
-        opacity: 0;
-        transform: translateY(5px);
-    }
-    to{
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* ================= POPUP ROW ================= */
-.popup-row{
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin: 12px 0;
-}
-
-/* kecilkan sedikit input supaya kemas */
-.popup-row input{
-    width: 70px;
-}
-
-/* ================= MOBILE RESPONSIVE ================= */
-html, body {
-    overflow-x: hidden; /* Prevents side-scrolling and white gaps */
-    width: 100%;
-    position: relative;
-}
-
-/* ================= MOBILE VIEW ONLY (max-width: 768px) ================= */
+/* ================= MOBILE OPTIMIZATION ================= */
 @media (max-width: 768px) {
-    /* 1. Paksa body dan navbar untuk tidak melebihi lebar skrin */
-    body {
-        overflow-x: hidden;
-        width: 100vw;
-    }
-
     .navbar {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
         padding: 0 10px;
-        height: 65px;
-        gap: 5px; /* Rapatkan gap antara logo, menu, dan profil */
-        width: 100%;
-        box-sizing: border-box; /* Pastikan padding tidak menambah lebar */
-        position: sticky;
-        top: 0;
-        background: #0e0e1a;
     }
 
-    /* 2. Kecilkan logo */
     .logo {
         font-size: 18px !important;
-        flex-shrink: 0;
-        margin-right: 5px;
     }
 
-    /* 3. Menu Tengah - Kawal overflow dengan rapi */
     .menu {
-        flex: 1;
-        min-width: 0; /* Penting: membolehkan flex child mengecil bawah saiz kandungan */
         overflow-x: auto;
-        display: flex;
-        align-items: center;
-        -webkit-overflow-scrolling: touch; /* Skrol lebih lancar di iOS */
     }
 
     .menu ul {
-        display: flex;
-        gap: 10px;
-        padding: 0 5px;
-        margin: 0;
+        gap: 15px;
     }
 
     .menu ul li a {
         font-size: 11px;
         white-space: nowrap;
-        padding: 5px 2px;
-    }
-
-    /* 4. Profile Section */
-    .profile-wrapper {
-        flex-shrink: 0;
     }
 
     .chip-name {
-        display: none; /* Wajib sembunyi di mobile untuk elak berterabur */
+        display: none;
     }
 
-    .profile-chip {
-        padding: 4px;
-        background: transparent;
-    }
-
-    .chip-avatar {
-        width: 30px;
-        height: 30px;
-        font-size: 12px;
-    }
-
-    /* 5. Dropdown Profil */
-    .profile-dropdown {
-        position: fixed; /* Ensures it stays visible on top of everything */
-        top: 65px;
-        right: 5%;
-        left: 5%; /* Centers it on mobile */
-        width: 90%;
-        z-index: 2000;
-    }
-
-    .search-bar {
-        width: 90%;
-        margin: 0 auto;
+    .page-title h1 {
+        font-size: 28px;
     }
 
     .course-list {
-        width: 90%;
-        grid-template-columns: 1fr; /* Single column stack */
-        gap: 20px;
-    }
-
-    /* ===== POPUP MOBILE FIX ===== */
-    .popup-box {
-        width: 92%;
-        max-height: 90vh; /* Prevents popup from going off-screen */
-        overflow-y: auto;
-        padding: 25px 20px;
-    }
-
-    .popup-row {
-        flex-direction: column;
-        align-items: flex-start; /* Align labels to the left */
-        gap: 10px;
-        margin-bottom: 15px;
-    }
-
-    .popup-box input, 
-    .popup-box select {
-        width: 100% !important; /* Full width for easy finger tapping */
-        height: 45px;
-        font-size: 16px; /* Prevents iOS auto-zoom on focus */
-    }
-
-    .timetable-btn {
-        width: 100%;
-        text-align: center;
-        padding: 12px;
+        grid-template-columns: 1fr;
+        width: 95%;
     }
 }
-
-/* Fix for very narrow phones */
-@media (max-width: 360px) {
-    .logo {
-        display: none; /* Hide logo to give more room for links */
-    }
-}
-
