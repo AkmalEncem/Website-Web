@@ -9,6 +9,8 @@
 body {
     background: #0e0e1a;
     color: #fff;
+    /* Memberi ruang supaya kandungan tidak tertutup oleh navbar fixed */
+    padding-top: 80px; 
 }
 
 html, body {
@@ -16,272 +18,172 @@ html, body {
     overflow-x: hidden;
 }
 
-/* ================= NAVBAR BASE ================= */
-.navbar {
-    width: 100%;
-    height: 65px;
-    padding: 0 5%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: relative;
-    z-index: 1000;
-    background: #0e0e1a;
-}
-
-.logo {
-    font-size: 30px;
-    color: #d1d9ff;
-    text-decoration: none;
-    font-weight: bold;
-    flex-shrink: 0;
-}
-
-.menu {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-}
-
-.menu ul {
-    display: flex;
-    gap: 30px;
-    list-style: none;
-}
-
-.menu ul li a {
-    color: #d1d9ff;
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.profile-wrapper {
-    flex-shrink: 0;
-}
-
-/* ================= PROFILE CHIP & DROPDOWN ================= */
-.profile-chip {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 5px 12px;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 30px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.chip-avatar, .profile-avatar {
-    width: 36px;
-    height: 36px;
-    background: #6c63ff;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-weight: bold;
-}
-
-.chip-name {
-    font-size: 14px;
-    font-weight: 500;
-    color: #d1d9ff;
-}
-
-.profile-dropdown {
-    position: absolute;
-    right: 0;
-    top: 70px;
-    width: 260px;
-    background: #1c1c2e;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 16px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
-    display: none; /* Controlled via JavaScript */
-    overflow: hidden;
-    z-index: 1000;
-}
-
-.profile-header {
-    padding: 25px 20px;
-    text-align: center;
-    background: #18182a;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.profile-avatar {
-    width: 72px;
-    height: 72px;
-    font-size: 28px;
-    margin: 0 auto 12px auto;
-    border: 3px solid #6c63ff;
-}
-
-.profile-menu a {
-    display: block;
-    padding: 13px 20px;
-    font-size: 14px;
-    color: #e5e9f2;
-    text-decoration: none;
-    transition: 0.2s ease;
-}
-
-.profile-menu a:hover {
-    background: rgba(108, 99, 255, 0.12);
-}
-
-.logout {
-    color: #ff6b6b !important;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.course-badge {
-    position: absolute;
-    top: -6px;
-    right: -6px;
-    background: red;
-    color: white;
-    font-size: 11px;
-    padding: 2px 6px;
-    border-radius: 50%;
-    display: none;
-}
-
 /* ================= TESTIMONIALS CONTENT ================= */
-.page { max-width: 1100px; margin: 100px auto 50px; padding: 0 20px; }
+.page { 
+    max-width: 1100px; 
+    margin: 40px auto; 
+    padding: 0 20px; 
+}
 
-.hero-section { text-align: center; margin-bottom: 50px; }
-.hero-section h1 { font-size: 40px; color: #d1d9ff; margin-bottom: 10px; }
+/* ================= HERO SECTION (CENTERED) ================= */
+.hero-section { 
+    text-align: center; 
+    margin-bottom: 60px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-.dashboard-grid { display: grid; grid-template-columns: 320px 1fr; gap: 40px; }
+.hero-section h1 { 
+    font-size: clamp(32px, 5vw, 45px); 
+    color: #d1d9ff; 
+    margin-bottom: 10px; 
+    font-weight: 700;
+}
+
+.hero-section p {
+    color: #9aa3c7;
+    font-size: 16px;
+    max-width: 600px;
+}
+
+/* Garis bawah dekoratif (Center) */
+.hero-section::after {
+    content: "";
+    display: block;
+    width: 70px;
+    height: 3px;
+    margin: 20px auto 0;
+    background: linear-gradient(90deg, #5672ff, #8fa2ff);
+    border-radius: 10px;
+}
+
+/* ================= DASHBOARD GRID ================= */
+.dashboard-grid { 
+    display: grid; 
+    grid-template-columns: 320px 1fr; 
+    gap: 40px; 
+}
 
 .stats-card, .review-form {
-    background: #1a1a2e; padding: 25px; border-radius: 15px; margin-bottom: 25px;
+    background: #1c1c2e; 
+    padding: 25px; 
+    border-radius: 20px; 
+    margin-bottom: 25px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
 }
-.stats-card h2 { font-size: 45px; color: #5672ff; }
+
+.stats-card h2 { 
+    font-size: 45px; 
+    color: #5672ff; 
+    margin-bottom: 5px;
+}
+
+.stats-card p {
+    color: #aaa;
+    font-size: 14px;
+}
+
+/* ================= REVIEW FORM ================= */
+.review-form h3 {
+    margin-bottom: 15px;
+    color: #d1d9ff;
+}
 
 .review-form select, .review-form textarea {
-    width: 100%; margin-top: 15px; padding: 12px;
-    border-radius: 8px; border: none; background: #0e0e1a; color: #fff;
-}
-.review-form button {
-    width: 100%; margin-top: 15px; padding: 12px;
-    background: #5672ff; color: white; border: none; border-radius: 8px;
-    font-weight: bold; cursor: pointer; transition: 0.3s;
+    width: 100%; 
+    margin-top: 15px; 
+    padding: 12px 15px;
+    border-radius: 10px; 
+    border: 2px solid #5672ff; 
+    background: #1a1a2e; 
+    color: #fff;
+    outline: none;
 }
 
-.star-rating { font-size: 30px; margin: 15px 0; display: flex; justify-content: center; gap: 5px; }
-.star { cursor: pointer; color: #444; }
+.review-form textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.review-form button {
+    width: 100%; 
+    margin-top: 20px; 
+    padding: 14px;
+    background: #5672ff; 
+    color: white; 
+    border: none; 
+    border-radius: 30px;
+    font-weight: bold; 
+    cursor: pointer; 
+    transition: 0.3s;
+}
+
+.review-form button:hover {
+    background: #8fa2ff;
+    transform: translateY(-2px);
+}
+
+/* ================= STAR RATING ================= */
+.star-rating { 
+    font-size: 30px; 
+    margin: 15px 0; 
+    display: flex; 
+    justify-content: center; 
+    gap: 5px; 
+}
+.star { cursor: pointer; color: #444; transition: 0.2s; }
 .star.active, .star.filled { color: #fbbf24; }
 
+/* ================= RATING CARDS ================= */
 .rating-card {
-    background: #1a1a2e;
-    padding: 20px;
-    border-radius: 12px;
-    margin-bottom: 20px;
+    background: #1c1c2e;
+    padding: 25px;
+    border-radius: 18px;
+    margin-bottom: 25px;
     border-left: 5px solid #5672ff;
-    /* Tambah ini untuk pastikan container tak membesar */
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    transition: 0.3s;
     max-width: 100%; 
     overflow: hidden; 
 }
-.rating-card h4 { color: #5672ff; margin-bottom: 5px; }
-.review-user { font-size: 13px; color: #aaa; margin-bottom: 10px; }
+
+.rating-card:hover {
+    transform: translateX(5px);
+}
+
+.rating-card h4 { color: #5672ff; margin-bottom: 5px; font-size: 18px; }
+
+.review-user { font-size: 13px; color: #aaa; margin-bottom: 12px; }
+
 .review-text {
-    line-height: 1.5;
+    line-height: 1.6;
     color: #e5e9f2;
     font-style: italic;
-
     display: block;
     width: 100%;
-    max-width: 100%;
-
-    overflow-wrap: anywhere;   /* 🔥 INI KUNCI */
+    overflow-wrap: anywhere; 
     word-break: break-word;
 }
 
-.review-text::-webkit-scrollbar {
-    height: 6px;
-}
-.review-text::-webkit-scrollbar-thumb {
-    background: #5672ff;
-    border-radius: 10px;
-}
-.review-text::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.05);
-}
-
-    /* ================= MOBILE RESPONSIVENESS ================= */
-@media (max-width: 768px) {
-    .navbar {
-        padding: 0 10px;
-        position: sticky;
-        top: 0;
-    }
-
-    .logo {
-        font-size: 18px !important;
-    }
-
-    .menu {
-        flex: 1;
-        min-width: 0; /* Penting: membolehkan flex child mengecil bawah saiz kandungan */
-        overflow-x: auto;
-        display: flex;
-        align-items: center;
-        -webkit-overflow-scrolling: touch; /* Skrol lebih lancar di iOS */
-    }
-
-    .menu ul {
-        display: flex;
-        gap: 10px;
-        padding: 0 5px;
-        margin: 0;
-    }
-
-    .menu ul li a {
-        font-size: 11px;
-        white-space: nowrap;
-        padding: 5px 2px;
-    }
-
-    .chip-name {
-        display: none; /* Hide name on small screens */
-    }
-
-    .profile-dropdown {
-        position: fixed; /* Ensures it stays visible on top of everything */
-        top: 65px;
-        right: 5%;
-        left: 5%; /* Centers it on mobile */
-        width: 90%;
-        z-index: 2000;
-    }
-
-    /* Layout mobile */
+/* ================= MOBILE RESPONSIVENESS ================= */
+@media (max-width: 900px) {
     .dashboard-grid {
         grid-template-columns: 1fr;
         gap: 25px;
     }
 
-     .rating-card {
-        overflow: hidden;
+    .hero-section h1 {
+        font-size: 28px;
     }
-
-    .review-text {
-        max-width: 100vw !important;
-        overflow-x: hidden !important;
-        white-space: normal !important;
-        overflow-wrap: anywhere !important;
-        word-break: break-word !important;
-    }
-
 }
 
-
-
-
-
-
+@media (max-width: 480px) {
+    .page {
+        padding: 0 15px;
+    }
+    
+    .stats-card h2 {
+        font-size: 35px;
+    }
+}
