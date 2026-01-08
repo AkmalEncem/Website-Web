@@ -1,7 +1,7 @@
 /* ================= PAGE TITLE ================= */
 .page-header {
     text-align: center;
-    margin-top: 80px;
+    margin-top: 80px; /* desktop spacing from navbar */
 }
 
 .page-header h1 {
@@ -12,6 +12,7 @@
 .page-header p {
     margin-top: 10px;
     color: #aaa;
+    font-size: 15px;
 }
 
 /* ================= FILTER ================= */
@@ -27,20 +28,11 @@
     background: #1a1a2e;
     color: #fff;
     margin: 0 10px;
+    font-size: 14px;
 }
 
-/* ================= INSTRUCTOR PHOTO ================= */
+/* ================= INSTRUCTOR IMAGE ================= */
 .instructor-img {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 12px;
-    border: 3px solid #5672ff;
-    box-shadow: 0 0 15px rgba(86,114,255,0.35);
-}
-
-.instructor-card .instructor-img {
     width: 80px;
     height: 80px;
     border-radius: 50%;
@@ -51,7 +43,7 @@
     margin: 0 auto 12px;
 }
 
-/* ================= INSTRUCTOR GRID ================= */
+/* ================= GRID ================= */
 .card-container {
     width: 90%;
     margin: 60px auto;
@@ -60,13 +52,14 @@
     gap: 35px;
 }
 
-/* ================= INSTRUCTOR CARD ================= */
+/* ================= CARD ================= */
 .instructor-card {
     background: #1a1a2e;
     padding: 30px;
     border-radius: 15px;
     animation: fadeIn 0.3s ease;
     transition: transform 0.25s ease, box-shadow 0.25s ease;
+    text-align: center;
 }
 
 .instructor-card:hover {
@@ -76,7 +69,7 @@
 
 .instructor-card h3 {
     color: #5672ff;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 .instructor-card p {
@@ -88,7 +81,7 @@
 /* ================= SUBJECT TAG ================= */
 .subject-tag {
     display: inline-block;
-    margin-top: 12px;
+    margin-top: 10px;
     margin-right: 6px;
     padding: 6px 14px;
     border-radius: 20px;
@@ -98,29 +91,24 @@
     color: #fff;
 }
 
-/* ================= RESPONSIVE ================= */
+/* ================= TABLET ================= */
 @media (max-width: 1000px) {
     .card-container {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
-@media (max-width: 600px) {
-    .card-container {
-        grid-template-columns: 1fr;
-    }
-}
-
+/* ================= MOBILE (MATCH COURSE STYLE) ================= */
 @media (max-width: 768px) {
 
     /* PAGE HEADER */
     .page-header {
-        margin-top: 40px;
+        margin-top: 30px;
         padding: 0 16px;
     }
 
     .page-header h1 {
-        font-size: 26px;
+        font-size: 24px;
     }
 
     .page-header p {
@@ -141,7 +129,7 @@
 
     /* GRID */
     .card-container {
-        width: 95%;
+        width: 90%;
         margin: 30px auto;
         grid-template-columns: 1fr;
         gap: 20px;
@@ -161,17 +149,35 @@
     }
 
     /* IMAGE */
-    .instructor-img,
-    .instructor-card .instructor-img {
+    .instructor-img {
         width: 64px;
         height: 64px;
         margin-bottom: 10px;
     }
 
-    /* SUBJECT TAG */
+    /* TAG */
     .subject-tag {
         font-size: 11px;
         padding: 5px 12px;
         margin-top: 8px;
+    }
+}
+
+/* ================= SMALL PHONE ================= */
+@media (max-width: 360px) {
+    .page-header h1 {
+        font-size: 22px;
+    }
+}
+
+/* ================= ANIMATION ================= */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
