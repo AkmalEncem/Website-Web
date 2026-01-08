@@ -220,16 +220,17 @@ html, body {
         flex-shrink: 0;
     }
 
-    .profile-chip .chip-name {
-        display: none;
+    .profile-chip .chip-name,
+    .profile-chip span {
+        display: none !important;
     }
 
-    /* KECILKAN CHIP SUPAYA KEMAS */
     .profile-chip {
         padding: 6px;
-        gap: 0 !important;
+        gap: 0;
     }
 }
+
 
 
 
