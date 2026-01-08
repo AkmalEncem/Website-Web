@@ -26,14 +26,6 @@ html {
     margin: 40px auto; 
     padding: 0 20px; 
 } 
-.navbar {
-    position: fixed; 
-    top: 0; width: 100%; 
-    z-index: 9999; 
-} 
-.navbar * {
-    box-sizing: border-box;
-}
 
 /* ================= HERO SECTION (CENTERED) ================= */
 .hero-section { 
@@ -197,6 +189,7 @@ html {
         font-size: 35px;
     }
 }
+
 
 
 
