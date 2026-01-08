@@ -182,10 +182,41 @@ html, body {
 .star { cursor: pointer; color: #444; }
 .star.active, .star.filled { color: #fbbf24; }
 
-.rating-card { background: #1a1a2e; padding: 20px; border-radius: 12px; margin-bottom: 20px; border-left: 5px solid #5672ff; }
+.rating-card {
+    background: #1a1a2e;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    border-left: 5px solid #5672ff;
+    /* Tambah ini untuk pastikan container tak membesar */
+    max-width: 100%; 
+    overflow: hidden; 
+}
 .rating-card h4 { color: #5672ff; margin-bottom: 5px; }
 .review-user { font-size: 13px; color: #aaa; margin-bottom: 10px; }
-.review-text { line-height: 1.5; color: #e5e9f2; font-style: italic; }
+.review-text {
+    line-height: 1.5;
+    color: #e5e9f2;
+    font-style: italic;
+
+    /* --- FIX UNTUK SCROLL KE TEPI --- */
+    display: block;
+    width: 100%;
+    white-space: nowrap;   /* Paksa text jadi satu baris panjang */
+    overflow-x: auto;      /* Benarkan scroll horizontal */
+    padding-bottom: 10px;  /* Ruang sikit untuk scrollbar */
+}
+
+.review-text::-webkit-scrollbar {
+    height: 6px;
+}
+.review-text::-webkit-scrollbar-thumb {
+    background: #5672ff;
+    border-radius: 10px;
+}
+.review-text::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+}
 
 @media (max-width: 768px) {
 
@@ -230,6 +261,7 @@ html, body {
         gap: 0;
     }
 }
+
 
 
 
