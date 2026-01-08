@@ -1,9 +1,11 @@
-/* ================= RESET ================= */
+/* =========================
+   GLOBAL RESET
+========================= */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Arial, sans-serif;
+    font-family: Arial, sans-serif;
 }
 
 html {
@@ -14,42 +16,42 @@ body {
     background: #0e0e1a;
     color: #fff;
     overflow-x: hidden;
-    padding-top: 65px;
 }
 
-/* ================= HEADER ================= */
+/* =========================
+   HEADER / HERO
+========================= */
 header {
+    width: 100%;
     min-height: 100vh;
     background:
-        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+        linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
         url("background1.jpg") center / cover no-repeat;
 }
 
-/* ================= NAVBAR ================= */
+/* =========================
+   NAVBAR
+========================= */
 .navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
+    width: 90%;
     height: 65px;
-    padding: 0 8%;
+    margin: auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: rgba(14,14,26,0.95);
-    backdrop-filter: blur(10px);
-    z-index: 1000;
 }
 
 .logo {
-    font-size: 32px;
+    font-size: 35px;
     color: #d1d9ff;
 }
 
-/* ================= MENU ================= */
+/* =========================
+   MENU
+========================= */
 .menu ul {
     display: flex;
-    gap: 35px;
+    gap: 40px;
 }
 
 .menu ul li {
@@ -57,9 +59,9 @@ header {
 }
 
 .menu ul li a {
-    text-decoration: none;
     color: #d1d9ff;
-    font-size: 13px;
+    text-decoration: none;
+    font-size: 14px;
     font-weight: bold;
     transition: 0.3s;
 }
@@ -68,18 +70,52 @@ header {
     color: #5672ff;
 }
 
-/* ================= PROFILE ================= */
+/* =========================
+   PROFILE CHIP & DROPDOWN
+========================= */
 .profile-wrapper {
     position: relative;
+    user-select: none;
 }
 
+/* Shared Avatar */
+.chip-avatar,
+.profile-avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 50%;
+    color: #fff;
+}
+
+/* Navbar Avatar */
+.chip-avatar {
+    width: 36px;
+    height: 36px;
+    font-size: 14px;
+    border: 2px solid rgba(255,255,255,0.2);
+}
+
+/* Dropdown Avatar */
+.profile-avatar {
+    width: 72px;
+    height: 72px;
+    font-size: 28px;
+    margin: 0 auto 12px;
+    border: 3px solid #6c63ff;
+}
+
+/* Profile Chip */
 .profile-chip {
+    position: relative;
     display: flex;
     align-items: center;
     gap: 10px;
     padding: 5px 12px;
-    background: rgba(255,255,255,0.05);
     border-radius: 30px;
+    background: rgba(255,255,255,0.05);
     cursor: pointer;
     transition: 0.3s;
 }
@@ -88,79 +124,60 @@ header {
     background: rgba(255,255,255,0.1);
 }
 
-.chip-avatar {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    border: 2px solid rgba(255,255,255,0.2);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-}
-
 .chip-name {
     font-size: 14px;
+    font-weight: 500;
     color: #d1d9ff;
 }
 
+/* Badge */
 .course-badge {
     position: absolute;
-    top: -5px;
-    right: -5px;
+    top: -6px;
+    right: -6px;
     background: red;
-    color: white;
-    font-size: 10px;
+    color: #fff;
+    font-size: 11px;
     padding: 2px 6px;
     border-radius: 50%;
     display: none;
 }
 
-/* ================= DROPDOWN ================= */
+/* =========================
+   DROPDOWN
+========================= */
 .profile-dropdown {
     position: absolute;
-    top: 70px;
     right: 0;
+    top: 70px;
     width: 260px;
     background: #1c1c2e;
-    border-radius: 14px;
-    border: 1px solid #2e2e4d;
-    box-shadow: 0 12px 30px rgba(0,0,0,0.55);
+    border-radius: 16px;
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
     display: none;
     overflow: hidden;
-    z-index: 2000;
-}
-
-.profile-wrapper.open .profile-dropdown {
-    display: block;
+    z-index: 1000;
 }
 
 .profile-header {
-    padding: 22px;
+    padding: 25px 20px;
     text-align: center;
     background: #18182a;
-    border-bottom: 1px solid #2e2e4d;
-}
-
-.profile-avatar {
-    width: 68px;
-    height: 68px;
-    border-radius: 50%;
-    border: 3px solid #6c63ff;
-    margin: 0 auto 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 26px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 
 .profile-header h4 {
-    font-size: 15px;
+    font-size: 16px;
 }
 
 .profile-header p {
-    font-size: 13px;
-    color: #bdbdbd;
+    font-size: 12px;
+    color: #94a3b8;
+}
+
+.profile-menu {
+    padding: 8px 0;
 }
 
 .profile-menu a {
@@ -169,75 +186,190 @@ header {
     font-size: 14px;
     color: #e5e9f2;
     text-decoration: none;
+    transition: 0.25s;
 }
 
 .profile-menu a:hover {
     background: rgba(108,99,255,0.12);
+    padding-left: 26px;
 }
 
 .profile-menu .logout {
     color: #ff6b6b;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    margin-top: 5px;
 }
 
-/* ================= HERO ================= */
+/* =========================
+   HERO CONTENT
+========================= */
 .hero {
     width: 80%;
+    padding-top: 160px;
     margin: auto;
-    padding-top: 120px;
+    position: relative;
+    z-index: 2;
 }
 
 .hero h1 {
-    font-size: 55px;
-    line-height: 1.1;
+    font-size: 60px;
+    letter-spacing: 2px;
 }
 
 .par {
-    margin-top: 25px;
+    margin-top: 20px;
     font-size: 18px;
-    max-width: 600px;
-    color: #ccc;
 }
 
-/* ================= SECTIONS ================= */
+.hero-buttons {
+    margin-top: 30px;
+    display: flex;
+    gap: 20px;
+}
+
+/* Buttons */
+.browse-btn,
+.signup-btn2 {
+    width: 180px;
+    height: 50px;
+    border-radius: 30px;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.browse-btn {
+    background: #5672ff;
+    color: #fff;
+    border: none;
+}
+
+.signup-btn2 {
+    background: transparent;
+    color: #fff;
+    border: 2px solid #9f5bff;
+}
+
+a.browse-btn,
+a.signup-btn2 {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.browse-btn:hover,
+.signup-btn2:hover {
+    transform: scale(1.08);
+}
+
+/* =========================
+   SECTIONS
+========================= */
 section {
-    padding: 80px 8%;
+    padding: 60px 0;
+    text-align: center;
 }
 
 section h2 {
-    text-align: center;
-    color: #d1d9ff;
+    font-size: 38px;
     margin-bottom: 40px;
 }
 
-/* ================= FOOTER ================= */
-footer {
-    background: #000;
-    padding: 15px;
-    text-align: center;
-    color: #aaa;
+.course-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
 }
 
-/* ================= MOBILE ================= */
+.course-card {
+    width: 300px;
+    padding: 35px 25px;
+    background: #1a1a2e;
+    border-radius: 15px;
+    transition: 0.35s;
+}
+
+.course-card:hover {
+    transform: translateY(-10px);
+    background: #252547;
+}
+
+.course-card h3 {
+    color: #5672ff;
+    margin-bottom: 15px;
+}
+
+/* Instructors */
+.instructor-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 900px;
+    margin: auto;
+    gap: 30px;
+}
+
+.instructor-card img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    border: 4px solid #5672ff;
+}
+
+/* Testimonial */
+.testimony-box {
+    width: 500px;
+    margin: auto;
+    background: #1a1a2e;
+    border-left: 6px solid #5672ff;
+    padding: 30px;
+    border-radius: 12px;
+}
+
+/* Footer */
+footer {
+    background: #000;
+    color: #aaa;
+    padding: 15px;
+    text-align: center;
+    font-size: 14px;
+}
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
 @media (max-width: 768px) {
 
     .navbar {
-        padding: 0 5%;
+        width: 95%;
+        padding: 0 15px;
+        position: relative;
+        z-index: 2001;
     }
 
-    .menu.header-scroll {
-        flex: 1;
-        overflow-x: auto;
-        margin: 0 10px;
+    .menu {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: #0e0e1a;
+        z-index: 2000;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 
-    .menu.header-scroll ul {
-        width: max-content;
-        gap: 20px;
+    .menu.active {
+        display: flex;
+    }
+
+    .menu ul {
+        flex-direction: column;
+        gap: 30px;
     }
 
     .menu ul li a {
-        font-size: 11px;
-        white-space: nowrap;
+        font-size: 22px;
     }
 
     .chip-name {
@@ -245,18 +377,46 @@ footer {
     }
 
     .hero {
-        width: 90%;
+        padding-top: 120px;
         text-align: center;
     }
 
     .hero h1 {
-        font-size: 34px;
+        font-size: 32px;
     }
 
-    .profile-dropdown {
-        position: fixed;
-        left: 5%;
-        right: 5%;
-        width: 90%;
+    .par {
+        font-size: 16px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .browse-btn,
+    .signup-btn2 {
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .course-container {
+        flex-direction: column;
+        padding: 0 16px;
+    }
+
+    .course-card {
+        width: 100%;
+        max-width: 350px;
+    }
+
+    .instructor-container {
+        grid-template-columns: 1fr;
+        padding: 0 16px;
+    }
+
+    .testimony-box {
+        width: 100%;
+        max-width: 350px;
     }
 }
