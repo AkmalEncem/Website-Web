@@ -1,132 +1,33 @@
-/* ================= RESET ================= */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
-}
-
+/* ================= FORUM BASE ================= */
 body {
     background: #0e0e1a;
     color: #fff;
 }
 
-/* NAVBAR BASE */
-.navbar {
-    width: 100%;
-    height: 65px;
-    padding: 0 5%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: relative;
-    z-index: 1000;
-    background: #0e0e1a;
-}
-
-.logo {
-    font-size: 30px;
-    color: #d1d9ff;
-    text-decoration: none;
-    font-weight: bold;
-    flex-shrink: 0;
-}
-
-.menu {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-}
-
-.menu ul {
-    display: flex;
-    gap: 30px;
-    list-style: none;
-}
-
-.menu ul li a {
-    color: #d1d9ff;
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.profile-wrapper {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    max-width: 50px;   /* Kunci lebar */
-    flex-shrink: 0;
-}
-
-.profile-chip {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 6px 10px;
-    border-radius: 30px;
-    cursor: pointer;
-    white-space: nowrap;
-}
-
-.profile-dropdown {
-    position: absolute;
-    top: 120%;
-    right: 0;
-    width: 220px;
-    background: #1c1c2e;
-    border-radius: 15px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.6);
-    z-index: 9999;
-}
-
-/* ================= PAGE TITLE ================= */
-.page-title {
-    text-align: center;
-    margin-top: 60px;
-}
-
-.page-title h1 {
-    font-size: 38px;
-    color: #d1d9ff;
-}
-
-.page-title p {
-    margin-top: 6px;
-    font-size: 15px;
-    color: #aaa;
-}
-
 /* ================= FORUM HEADER ================= */
 .forum-header {
     text-align: center;
-    margin-bottom: 50px;
-    padding-top: 40px;
+    margin: 50px auto 40px;
+    padding: 0 15px;
 }
 
 .forum-header h1 {
-    font-size: clamp(28px, 4vw, 42px);
+    font-size: clamp(28px, 4vw, 40px);
     font-weight: 700;
     color: #d1d9ff;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 14px;
-    letter-spacing: 0.5px;
+    gap: 12px;
 }
 
 .forum-icon {
-    font-size: clamp(26px, 4vw, 40px);
-    background: linear-gradient(135deg, #5672ff, #8fa2ff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    font-size: 34px;
 }
 
 .forum-header p {
     margin-top: 10px;
-    font-size: clamp(14px, 2vw, 16px);
+    font-size: 15px;
     color: #9aa3c7;
     max-width: 520px;
     margin-left: auto;
@@ -134,7 +35,7 @@ body {
     line-height: 1.6;
 }
 
-/* Decorative underline */
+/* Underline */
 .forum-header::after {
     content: "";
     display: block;
@@ -145,14 +46,14 @@ body {
     border-radius: 10px;
 }
 
-
 /* ================= FILTERS ================= */
 .filters {
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
     display: flex;
-    justify-content: center;
     gap: 15px;
     flex-wrap: wrap;
-    margin-top: 30px;
 }
 
 .filters input,
@@ -165,19 +66,23 @@ body {
     font-size: 14px;
 }
 
+.filters input {
+    flex: 1;
+}
+
 .filters input::placeholder {
     color: #aaa;
 }
 
-/* ================= NEW POST BOX ================= */
+/* ================= NEW POST ================= */
 .forum-post-box {
-    width: 95%;
+    width: 90%;
     max-width: 1000px;
-    margin: 40px auto;
+    margin: 35px auto;
     background: #1c1c2e;
     padding: 25px;
-    border-radius: 25px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -186,27 +91,26 @@ body {
 .forum-post-box textarea {
     width: 100%;
     min-height: 120px;
-    padding: 18px;
-    border-radius: 25px;
+    padding: 16px 18px;
+    border-radius: 18px;
     border: 2px solid #5672ff;
     background: #1a1a2e;
     color: #fff;
-    font-size: 16px;
+    font-size: 15px;
     resize: vertical;
     outline: none;
 }
 
 .forum-post-box button {
     align-self: flex-end;
-    padding: 12px 30px;
+    padding: 11px 28px;
     border-radius: 30px;
     border: none;
     background: #5672ff;
     color: #fff;
     font-weight: bold;
-    font-size: 14px;
     cursor: pointer;
-    transition: all 0.3s;
+    transition: 0.3s;
 }
 
 .forum-post-box button:hover {
@@ -214,31 +118,33 @@ body {
     transform: translateY(-2px);
 }
 
-/* ================= FORUM POST CARDS ================= */
-.forum-post {
-    width: 95%;
+/* ================= FORUM POSTS ================= */
+#forumFeed {
+    width: 90%;
     max-width: 1000px;
-    margin: 25px auto;
-    padding: 20px 25px;
+    margin: auto;
+}
+
+.forum-post {
     background: #1c1c2e;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    transition: all 0.3s;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+    border-radius: 18px;
+    padding: 22px;
+    margin-bottom: 25px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    transition: 0.3s;
 }
 
 .forum-post:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.7);
 }
 
 /* ================= POST HEADER ================= */
 .post-header {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 14px;
+    margin-bottom: 10px;
 }
 
 .post-avatar {
@@ -254,7 +160,7 @@ body {
 }
 
 .post-info h4 {
-    font-size: 16px;
+    font-size: 15px;
     color: #d1d9ff;
 }
 
@@ -263,29 +169,35 @@ body {
     color: #aaa;
 }
 
+/* Role badge */
 .post-role {
     margin-left: auto;
     padding: 5px 14px;
     border-radius: 15px;
-    font-size: 12px;
+    font-size: 11px;
     font-weight: bold;
 }
 
-.post-role.student { background: #4CAF50; color: #fff; }
-.post-role.lecturer { background: #2196F3; color: #fff; }
+.post-role.student {
+    background: #4caf50;
+}
+
+.post-role.lecturer {
+    background: #2196f3;
+}
 
 /* ================= POST CONTENT ================= */
 .post-content p {
     font-size: 15px;
-    color: #fff;
-    margin-bottom: 10px;
     line-height: 1.6;
+    color: #e5e9f2;
 }
 
 /* ================= POST ACTIONS ================= */
 .post-actions {
     display: flex;
     gap: 25px;
+    margin-top: 12px;
     font-size: 14px;
     color: #5672ff;
     cursor: pointer;
@@ -298,7 +210,7 @@ body {
 /* ================= REPLIES ================= */
 .replies {
     margin-top: 15px;
-    padding-left: 60px;
+    padding-left: 50px;
     border-left: 2px solid rgba(255,255,255,0.1);
     display: flex;
     flex-direction: column;
@@ -314,24 +226,22 @@ body {
     width: 34px;
     height: 34px;
     border-radius: 50%;
-    background: #4CAF50;
-    color: #fff;
+    background: #4caf50;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 13px;
     font-weight: bold;
 }
 
 .reply-content h5 {
     font-size: 13px;
     color: #d1d9ff;
-    margin-bottom: 2px;
 }
 
 .reply-content p {
     font-size: 14px;
     color: #fff;
-    margin-bottom: 2px;
 }
 
 .reply-content small {
@@ -348,23 +258,21 @@ body {
 
 .reply-box input {
     flex: 1;
-    padding: 12px 18px;
+    padding: 11px 16px;
     border-radius: 30px;
     border: 2px solid #5672ff;
     background: #1a1a2e;
     color: #fff;
-    font-size: 14px;
-    outline: none;
 }
 
 .reply-btn,
 .cancel-btn {
-    padding: 9px 22px;
+    padding: 9px 20px;
     border-radius: 30px;
-    font-weight: bold;
     border: none;
     cursor: pointer;
-    transition: all 0.3s;
+    font-weight: bold;
+    transition: 0.3s;
 }
 
 .reply-btn {
@@ -374,7 +282,6 @@ body {
 
 .reply-btn:hover {
     background: #8fa2ff;
-    transform: translateY(-2px);
 }
 
 .cancel-btn {
@@ -384,109 +291,67 @@ body {
 
 .cancel-btn:hover {
     background: #777;
-    transform: translateY(-2px);
 }
 
 /* ================= NO RESULTS ================= */
 #noResults {
-    display: none;
     text-align: center;
-    margin-top: 40px;
+    margin: 40px 0;
     color: #aaa;
+    display: none;
 }
 
+/* ================= RESPONSIVE ================= */
 @media (max-width: 768px) {
-    /* 1. Paksa body dan navbar untuk tidak melebihi lebar skrin */
-    body {
-        overflow-x: hidden;
-        width: 100vw;
-    }
 
-    .navbar {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0 10px;
-        height: 65px;
-        gap: 5px; /* Rapatkan gap antara logo, menu, dan profil */
-        width: 100%;
-        box-sizing: border-box; /* Pastikan padding tidak menambah lebar */
-        position: sticky;
-        top: 0;
-        background: #0e0e1a;
-    }
-
-    /* 2. Kecilkan logo */
-    .logo {
-        font-size: 18px !important;
-        flex-shrink: 0;
-        margin-right: 5px;
-    }
-
-    /* 3. Menu Tengah - Kawal overflow dengan rapi */
-    .menu {
-        flex: 1;
-        min-width: 0; /* Penting: membolehkan flex child mengecil bawah saiz kandungan */
-        overflow-x: auto;
-        display: flex;
-        align-items: center;
-        -webkit-overflow-scrolling: touch; /* Skrol lebih lancar di iOS */
-    }
-
-    .menu ul {
-        display: flex;
-        gap: 10px;
-        padding: 0 5px;
-        margin: 0;
-    }
-
-    .menu ul li a {
-        font-size: 11px;
-        white-space: nowrap;
-        padding: 5px 2px;
-    }
-
-    /* 4. Profile Section */
-    .profile-wrapper {
-        flex-shrink: 0;
-        max-width: 40px;
-    }
-
-    .chip-name {
-        display: none; /* Wajib sembunyi di mobile untuk elak berterabur */
-    }
-
-    .profile-chip {
-        padding: 0;
-        background: transparent;
-    }
-
-    .chip-avatar {
-        width: 32px;
-        height: 32px;
-        font-size: 12px;
-    }
-
-    /* 5. Dropdown Profil */
-    .profile-dropdown {
-        position: fixed;
-        top: 70px;
-        right: 10px;
-        left: auto;
-        width: 200px;
-    }
-    /* 6. Elemen Forum Lain */
     .filters {
-        padding: 0 15px;
-        gap: 10px;
+        flex-direction: column;
     }
 
-    .forum-post-box, .forum-post {
-        width: calc(100% - 20px); /* Guna calc untuk margin yang konsisten */
-        margin: 15px auto;
-        padding: 15px;
+    .forum-post-box button {
+        width: 100%;
+    }
+
+    .post-header {
+        flex-wrap: wrap;
+    }
+
+    .post-role {
+        margin-left: 0;
+        margin-top: 6px;
+    }
+
+    .replies {
+        padding-left: 20px;
+    }
+
+    .reply {
+        flex-direction: column;
+    }
+
+    .reply-box {
+        flex-direction: column;
+    }
+
+    .reply-btn,
+    .cancel-btn {
+        width: 100%;
     }
 }
 
+@media (max-width: 480px) {
 
+    .forum-header h1 {
+        font-size: 24px;
+    }
 
+    .forum-header p {
+        font-size: 13px;
+    }
+
+    .post-avatar {
+        width: 40px;
+        height: 40px;
+        font-size: 14px;
+    }
+}
