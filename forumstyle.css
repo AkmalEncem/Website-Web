@@ -11,6 +11,51 @@ body {
     color: #fff;
 }
 
+/* NAVBAR BASE */
+.navbar {
+    width: 100%;
+    height: 65px;
+    padding: 0 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1000;
+    background: #0e0e1a;
+}
+
+.logo {
+    font-size: 30px;
+    color: #d1d9ff;
+    text-decoration: none;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.menu {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.menu ul {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+.menu ul li a {
+    color: #d1d9ff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.profile-wrapper {
+    flex-shrink: 0;
+}
+
 /* ================= PAGE TITLE ================= */
 .page-title {
     text-align: center;
@@ -324,138 +369,64 @@ body {
     color: #aaa;
 }
 
-/* ===============================
-   MOBILE VIEW (MAX 768px)
-   =============================== */
 @media (max-width: 768px) {
+    /* Paksa navbar jangan melimpah keluar screen */
+    .navbar {
+        padding: 0 10px;
+        justify-content: space-between;
+        gap: 5px;
+    }
 
-  body {
-    overflow-x: hidden;
-  }
+    /* Kecilkan logo supaya ada ruang untuk menu & profile */
+    .logo {
+        font-size: 20px !important;
+    }
 
-  /* PAGE TITLE */
-  .page-title h1 {
-    font-size: 26px;
-  }
+    /* KUNCI: Benarkan menu scroll ke tepi (Horizontal Scroll) */
+    .menu {
+        overflow-x: auto;
+        white-space: nowrap;
+        display: block; /* Tukar dari center ke block untuk scroll */
+        margin: 0 10px;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none; /* Sembunyi scrollbar Firefox */
+    }
 
-  .page-title p {
-    font-size: 14px;
-  }
+    .menu::-webkit-scrollbar {
+        display: none; /* Sembunyi scrollbar Chrome/Safari */
+    }
 
-  /* FORUM HEADER */
-  .forum-header {
-    padding-top: 20px;
-    margin-bottom: 30px;
-  }
+    .menu ul {
+        gap: 20px;
+        width: max-content; /* Pastikan ul lebar ikut isi untuk scroll */
+        padding: 10px 0;
+    }
 
-  /* FILTERS */
-  .filters {
-    flex-direction: column;
-    gap: 10px;
-    padding: 0 16px;
-  }
+    /* Pastikan Profile Chip sentiasa di kanan */
+    .profile-wrapper {
+        margin-left: auto;
+    }
 
-  .filters input,
-  .filters select {
-    width: 100%;
-  }
+    .profile-chip {
+        padding: 5px;
+        gap: 0;
+    }
 
-  /* POST BOX */
-  .forum-post-box {
-    width: 100%;
-    padding: 18px;
-    border-radius: 18px;
-  }
+    .chip-name {
+        display: none; /* Sorok nama pada mobile untuk jimat ruang */
+    }
 
-  .forum-post-box button {
-    width: 100%;
-  }
+    /* Pastikan dropdown tak lari keluar screen */
+    .profile-dropdown {
+        width: 250px;
+        right: 0;
+        top: 60px;
+        position: absolute;
+    }
 
-  /* POST CARD */
-  .forum-post {
-    width: 100%;
-    margin: 16px auto;
-    padding: 16px;
-    border-radius: 16px;
-    transform: none !important;
-  }
-
-  .forum-post:hover {
-    transform: none;
-    box-shadow: none;
-  }
-
-  /* POST HEADER */
-  .post-header {
-    align-items: flex-start;
-  }
-
-  .post-avatar {
-    width: 40px;
-    height: 40px;
-    font-size: 14px;
-  }
-
-  .post-info h4 {
-    font-size: 14px;
-  }
-
-  .post-info p {
-    font-size: 11px;
-  }
-
-  .post-role {
-    font-size: 10px;
-    padding: 4px 10px;
-  }
-
-  /* POST CONTENT — INI PENTING (ELAK KE TEPI) */
-  .post-content p,
-  .reply-content p {
-    font-size: 14px;
-    max-width: 100%;
-    overflow-wrap: anywhere;
-    word-break: break-word;
-    white-space: normal;
-  }
-
-  /* ACTIONS */
-  .post-actions {
-    gap: 15px;
-    font-size: 13px;
-    flex-wrap: wrap;
-  }
-
-  /* REPLIES */
-  .replies {
-    padding-left: 15px;
-    border-left: 2px solid rgba(255,255,255,0.1);
-  }
-
-  .reply-avatar {
-    width: 28px;
-    height: 28px;
-    font-size: 12px;
-  }
-
-  /* INLINE REPLY BOX */
-  .reply-box {
-    flex-direction: column;
-    gap: 8px;
-  }
-
-  .reply-box input,
-  .reply-btn,
-  .cancel-btn {
-    width: 100%;
-  }
-
-  /* PROFILE DROPDOWN */
-  .profile-dropdown {
-    width: 90%;
-    max-width: 320px;
-    right: 10px;
-  }
+    /* Selebihnya maintain kod forum awak */
+    .filters { flex-direction: column; }
+    .forum-post-box, .forum-post { width: 95%; }
 }
 
 
