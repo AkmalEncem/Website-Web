@@ -181,21 +181,27 @@ body {
 
 @media (max-width: 768px) {
 
-    /* Navbar behave normal */
+    /* NAVBAR STRUCTURE SAMA MACAM COURSE */
     .navbar {
-        position: relative;
-        left: 0;
-        width: 100%;
-        padding: 0 15px;
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        gap: 12px;
+        padding: 15px;
     }
 
-    /* BUANG OFFSET BESAR */
+    .menu ul {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+
+    /* HEADER (KEKAL BETUL) */
     .page {
         margin: 0;
         padding: 0 15px;
     }
 
-    /* Header ikut course */
     .hero-section {
         margin: 20px 0 30px;
         text-align: center;
@@ -211,5 +217,6 @@ body {
         color: #aaa;
     }
 }
+
 
 
