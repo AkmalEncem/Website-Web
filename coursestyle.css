@@ -1,254 +1,76 @@
-*{
+/* ================= RESET ================= */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
-body{
+body {
     background: #0e0e1a;
     color: #fff;
 }
 
-/* ================= NAVBAR ================= */
-.navbar{
-    width: 90%;
+/* NAVBAR BASE */
+.navbar {
+    width: 100%;
     height: 65px;
-    margin: auto;
+    padding: 0 5%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-}
-
-.logo{
-    font-size: 35px;
-    color: #d1d9ff;
-}
-
-.menu ul{
-    display: flex;
-    gap: 40px;
-}
-
-.menu ul li{
-    list-style: none;
-}
-
-.menu ul li a{
-     color: #d1d9ff;
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: bold;
-    transition: .3s;
-}
-
-.menu ul li a:hover{
-    color: #5672ff;
-}
-
-/* ================= AUTH ================= */
-.auth-buttons{
-    display: flex;
-    gap: 15px;
-}
-
-.profile-wrapper {
     position: relative;
-    user-select: none;
+    z-index: 1000;
+    background: #0e0e1a;
 }
 
-/* Base Avatar Styling (Shared) */
-.chip-avatar, .profile-avatar {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
+.logo {
+    font-size: 30px;
+    color: #d1d9ff;
+    text-decoration: none;
     font-weight: bold;
-    text-transform: uppercase;
-    border-radius: 50%;
     flex-shrink: 0;
 }
 
-/* Navbar Avatar (Small) */
-.chip-avatar {
-    width: 36px;
-    height: 36px;
-    font-size: 14px;
-    border: 2px solid rgba(255, 255, 255, 0.2);
-}
-
-/* Dropdown Avatar (Large) */
-.profile-avatar {
-    width: 72px;
-    height: 72px;
-    font-size: 28px;
-    margin: 0 auto 12px auto;
-    border: 3px solid #6c63ff;
-    box-shadow: 0 0 15px rgba(108, 99, 255, 0.3);
-}
-
-.profile-chip {
+.menu {
+    flex: 1;
     display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 5px 12px;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 30px;
-    cursor: pointer;
+    justify-content: center;
+}
+
+.menu ul {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+.menu ul li a {
+    color: #d1d9ff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
     transition: 0.3s;
 }
 
-.profile-chip:hover {
-    background: rgba(255, 255, 255, 0.1);
+.profile-wrapper {
+    flex-shrink: 0;
 }
 
-.chip-name {
-    font-size: 14px;
-    font-weight: 500;
+/* ================= PAGE TITLE ================= */
+.page-title {
+    text-align: center;
+    margin-top: 60px;
+}
+
+.page-title h1 {
+    font-size: 38px;
     color: #d1d9ff;
 }
 
-/* Dropdown Container */
-.profile-dropdown {
-    position: absolute;
-    right: 0;
-    top: 70px;
-    width: 260px;
-    background: #1c1c2e;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 16px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
-    display: none;
-    overflow: hidden;
-    z-index: 1000;
-}
-
-/* Dropdown Header */
-.profile-header {
-    padding: 25px 20px;
-    text-align: center;
-    background: #18182a;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.profile-header h4 {
-    font-size: 16px;
-    color: #ffffff;
-    margin-bottom: 3px;
-}
-
-.profile-header p {
-    font-size: 12px;
-    color: #94a3b8;
-}
-
-/* Dropdown Menu Items */
-.profile-menu {
-    padding: 8px 0;
-}
-
-.profile-menu a {
-    display: block;
-    padding: 12px 20px;
-    font-size: 14px;
-    color: #e5e9f2;
-    text-decoration: none;
-    transition: 0.2s ease;
-}
-
-.profile-menu a:hover {
-    background: rgba(108, 99, 255, 0.1);
-    padding-left: 25px; /* Subtle slide effect */
-}
-
-.profile-menu .logout {
-    color: #ff6b6b;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    margin-top: 5px;
-}
-
-/* NAMA – IKUT NAVBAR */
-.chip-name {
-    font-size: 14px;
-    font-weight: 500;
-    color: #d1d9ff;
-}
-
-.course-badge{
-    position: absolute;
-    top: -6px;
-    right: -6px;
-    background: red;
-    color: white;
-    font-size: 11px;
-    padding: 2px 6px;
-    border-radius: 50%;
-    display: none;
-}
-
-.profile-chip{
-    position: relative;
-}
-
-.profile-dropdown {
-    position: absolute;
-    right: 0;
-    top: 65px;
-    width: 260px;
-    background: #1c1c2e;
-    border: 1px solid #2e2e4d;
-    border-radius: 14px;
-    box-shadow: 0 12px 30px rgba(0,0,0,0.55);
-    display: none;
-    overflow: hidden;
-}
-
-/* HEADER DROPDOWN */
-.profile-header {
-    padding: 22px;
-    text-align: center;
-    background: #18182a;
-    border-bottom: 1px solid #2e2e4d;
-}
-
-.profile-avatar {
-    width: 68px;
-    height: 68px;
-    border-radius: 50%;
-    margin-bottom: 10px;
-    border: 3px solid #6c63ff;
-}
-
-.profile-header h4 {
+.page-title p {
+    margin-top: 6px;
     font-size: 15px;
-    color: #ffffff;
-    margin-bottom: 3px;
-}
-
-.profile-header p {
-    font-size: 13px;
-    color: #bdbdbd;
-}
-
-.profile-menu a {
-    display: block;
-    padding: 13px 20px;
-    font-size: 14px;
-    color: #e5e9f2;
-    text-decoration: none;
-    transition: 0.2s ease;
-}
-
-.profile-menu a:hover {
-    background: rgba(108,99,255,0.12); /* accent hover */
-}
-
-.profile-menu .logout {
-    color: #ff6b6b;
+    color: #aaa;
 }
 
 /* ================= TITLE ================= */
@@ -522,58 +344,77 @@ html, body {
 
 /* ================= MOBILE VIEW ONLY (max-width: 768px) ================= */
 @media (max-width: 768px) {
-    
-    /* ===== NAVBAR RECONSTRUCTION ===== */
+    /* 1. Paksa body dan navbar untuk tidak melebihi lebar skrin */
+    body {
+        overflow-x: hidden;
+        width: 100vw;
+    }
+
     .navbar {
-        width: 95%; /* More space on mobile */
-        height: 60px;
-        padding: 0 5px;
-        justify-content: space-between;
-    }
-
-    .logo {
-        font-size: 20px;
-        flex-shrink: 0; /* Prevents logo from shrinking */
-    }
-
-    /* Target the sliding container specifically */
-    .menu.header-scroll {
-        flex: 1; 
-        overflow-x: auto;
-        overflow-y: hidden;
-        display: block; /* Required for scroll container */
-        margin: 0 10px;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none;
-    }
-
-    .menu.header-scroll::-webkit-scrollbar {
-        display: none;
-    }
-
-    .menu.header-scroll ul {
         display: flex;
-        gap: 20px;
-        width: max-content; /* Critical: allows list to be wider than the screen */
-        padding: 10px 0;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 10px;
+        height: 65px;
+        gap: 5px; /* Rapatkan gap antara logo, menu, dan profil */
+        width: 100%;
+        box-sizing: border-box; /* Pastikan padding tidak menambah lebar */
+        position: sticky;
+        top: 0;
+        background: #0e0e1a;
+    }
+
+    /* 2. Kecilkan logo */
+    .logo {
+        font-size: 18px !important;
+        flex-shrink: 0;
+        margin-right: 5px;
+    }
+
+    /* 3. Menu Tengah - Kawal overflow dengan rapi */
+    .menu {
+        flex: 1;
+        min-width: 0; /* Penting: membolehkan flex child mengecil bawah saiz kandungan */
+        overflow-x: auto;
+        display: flex;
+        align-items: center;
+        -webkit-overflow-scrolling: touch; /* Skrol lebih lancar di iOS */
+    }
+
+    .menu ul {
+        display: flex;
+        gap: 10px;
+        padding: 0 5px;
+        margin: 0;
     }
 
     .menu ul li a {
         font-size: 11px;
         white-space: nowrap;
-        text-transform: uppercase;
+        padding: 5px 2px;
     }
 
-    /* ===== PROFILE & DROPDOWN ===== */
+    /* 4. Profile Section */
+    .profile-wrapper {
+        flex-shrink: 0;
+    }
+
     .chip-name {
-        display: none;
+        display: none; /* Wajib sembunyi di mobile untuk elak berterabur */
     }
 
     .profile-chip {
-        padding: 2px;
+        padding: 4px;
         background: transparent;
     }
 
+    .chip-avatar {
+        width: 30px;
+        height: 30px;
+        font-size: 12px;
+    }
+
+    /* 5. Dropdown Profil */
     .profile-dropdown {
         position: fixed; /* Ensures it stays visible on top of everything */
         top: 65px;
@@ -581,15 +422,6 @@ html, body {
         left: 5%; /* Centers it on mobile */
         width: 90%;
         z-index: 2000;
-    }
-
-    /* ===== CONTENT SCALING ===== */
-    .page-title {
-        margin-top: 30px;
-    }
-
-    .page-title h1 {
-        font-size: 24px;
     }
 
     .search-bar {
@@ -638,3 +470,4 @@ html, body {
         display: none; /* Hide logo to give more room for links */
     }
 }
+
