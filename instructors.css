@@ -160,17 +160,21 @@
 
     /* ===== PAGE HEADER ===== */
     .page-header {
-        margin-top: 50px;
+        margin-top: 40px;          /* sama macam course */
         padding: 0 15px;
+        text-align: center;
     }
 
     .page-header h1 {
-        font-size: 26px;
+        font-size: 26px;           /* sama dengan course h1 */
+        color: #d1d9ff;
         line-height: 1.2;
     }
 
     .page-header p {
         font-size: 14px;
+        color: #aaa;
+        margin-top: 8px;
     }
 
     /* ===== FILTER SECTION ===== */
@@ -219,3 +223,4 @@
         margin: 6px 4px;
     }
 }
+
