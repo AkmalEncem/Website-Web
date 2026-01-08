@@ -226,9 +226,11 @@ html, body {
 
     /* KECILKAN CHIP SUPAYA KEMAS */
     .profile-chip {
-        padding: 5px;
+        padding: 6px;
+        gap: 0 !important;
     }
 }
+
 
 
 
