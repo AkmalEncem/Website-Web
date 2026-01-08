@@ -33,25 +33,34 @@ header {
    NAVBAR
 ========================= */
 .navbar {
-    width: 90%;
+    width: 100%;
     height: 65px;
-    margin: auto;
+    padding: 0 8%;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
+/* LOGO */
 .logo {
-    font-size: 35px;
+    font-size: 32px;
     color: #d1d9ff;
+    flex-shrink: 0; /* JANGAN BIAR LOGO TOLAK KE BAWAH */
 }
 
 /* =========================
    MENU
 ========================= */
+.menu {
+    flex: 1; /* AMBIL RUANG TENGAH */
+    display: flex;
+    justify-content: center;
+}
+
 .menu ul {
     display: flex;
-    gap: 40px;
+    align-items: center;
+    gap: 35px;
 }
 
 .menu ul li {
@@ -74,8 +83,9 @@ header {
    PROFILE CHIP & DROPDOWN
 ========================= */
 .profile-wrapper {
-    position: relative;
-    user-select: none;
+    flex-shrink: 0; /* KEKAL DI KANAN */
+    display: flex;
+    align-items: center;
 }
 
 /* Shared Avatar */
@@ -420,3 +430,4 @@ footer {
         max-width: 350px;
     }
 }
+
