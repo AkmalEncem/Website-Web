@@ -11,6 +11,11 @@ body {
     color: #fff;
 }
 
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 /* ================= NAVBAR (FROM INDEX STYLE) ================= */
 /* ================= NAVBAR (FIXED) ================= */
 /* ================= NAVBAR (STATIC/NON-STICKY) ================= */
@@ -185,15 +190,11 @@ body {
 @media (max-width: 768px) {
 
     /* NAVBAR STRUCTURE SAMA MACAM COURSE */
-    .navbar {
-        flex-direction: column;
-        align-items: flex-start;
-        height: auto;
-        gap: 12px;
-        padding: 15px;
-
-        /* Mobile sahaja boleh scroll */
-        overflow-x: hidden;
+   .navbar {
+        flex-direction: row;   /* KE TEPI */
+        align-items: center;
+        height: 65px;
+        padding: 0 15px;
     }
 
     .menu {
@@ -238,6 +239,7 @@ body {
         border-radius: 10px;
     }
 }
+
 
 
 
