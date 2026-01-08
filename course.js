@@ -133,11 +133,7 @@ function applyFilters() {
     const searchValue = searchInput.value.toLowerCase();
     const instructorValue = instructorFilter.value;
 
-    if (courses.length === 0) {
-        noResults.style.display = "block"; // tiada data langsung
-        return;
-    }
-
+    // Loop setiap course untuk decide nak show atau tak
     courses.forEach(card => {
         const title = card.querySelector("h3").innerText;
         const text = card.innerText.toLowerCase();
@@ -153,8 +149,14 @@ function applyFilters() {
         if (show) visible++;
     });
 
-    noResults.style.display = visible === 0 ? "block" : "none";
+    // 🚨 Tunjuk "Sorry no results" bila:
+    // - Tiada course langsung
+    // - Atau tiada match filter
+    noResults.style.display = (courses.length === 0 || visible === 0) ? "block" : "none";
 }
+
+// Jalankan sekali bila page load untuk initial check
+applyFilters();
 
 filter.addEventListener("change", applyFilters);
 searchInput.addEventListener("keyup", applyFilters);
@@ -248,6 +250,5 @@ proceedBtn.onclick = function(){
     closePopup();
     alert("Course added!");
 };
-
 });
 
