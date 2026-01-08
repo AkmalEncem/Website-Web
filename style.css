@@ -353,7 +353,7 @@ footer {
 
     .navbar {
         width: 95%;
-        padding: 0 15px;
+        padding: 0 5%;
         position: relative;
         z-index: 2001;
     }
@@ -380,6 +380,10 @@ footer {
 
     .menu ul li a {
         font-size: 22px;
+    }
+
+   .profile-wrapper {
+        margin-left: auto;
     }
 
     .chip-name {
@@ -430,4 +434,5 @@ footer {
         max-width: 350px;
     }
 }
+
 
