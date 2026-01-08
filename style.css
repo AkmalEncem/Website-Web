@@ -206,7 +206,7 @@ footer {
    MOBILE RESPONSIVE
 ========================= */
 @media (max-width: 768px) {
-    header {
+    .hero-header {
         min-height: 80vh;
     }
 
@@ -243,4 +243,6 @@ footer {
         padding: 25px;
     }
 }
+
+
 
