@@ -299,7 +299,251 @@ footer {
         gap: 30px;
         padding: 0 16px;
     }
+/* =========================================
+   1. RESET & BASE STYLES
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif; /* Font lebih moden */
+}
 
+html, body {
+    width: 100%;
+    height: 100%;
+    background: #0e0e1a; /* Warna base supaya tidak nampak putih ketika loading */
+    color: #fff;
+    overflow-x: hidden;
+}
+
+/* =========================================
+   2. HEADER & NAVIGATION
+   ========================================= */
+header {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(
+        to bottom, /* Tukar ke bottom untuk nampak lebih natural */
+        rgba(0,0,0,0.6),
+        rgba(0,0,0,0.3)
+    ), url("background1.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Efek parallax sedikit */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Navbar Container (Cadangan: Pastikan ada class nav di HTML) */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%; /* Konsisten dengan hero width */
+    width: 100%;
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: bold;
+    color: #d1d9ff;
+    text-decoration: none;
+}
+
+.auth-buttons {
+    display: flex;
+    align-items: center; /* Pastikan butang & nama selari */
+    gap: 20px;
+}
+
+.profile-chip {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    cursor: pointer;
+}
+
+.chip-name {
+    font-size: 14px;
+    font-weight: 500;
+    color: #d1d9ff;
+}
+
+/* =========================================
+   3. HERO SECTION
+   ========================================= */
+.hero {
+    width: 80%;
+    max-width: 1200px;
+    margin: auto; /* Letak di tengah secara vertical & horizontal */
+    padding: 100px 0;
+    text-align: left;
+}
+
+.hero h1 {
+    font-size: clamp(32px, 5vw, 60px); /* Responsive font size */
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.par {
+    max-width: 600px;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #e0e0e0;
+}
+
+.hero-buttons {
+    margin-top: 40px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap; /* Elak butang bertindih di skrin kecil */
+}
+
+.browse-btn, .signup-btn2 {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 180px;
+    height: 55px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.browse-btn {
+    background: #5672ff;
+    color: #fff;
+    border: none;
+}
+
+.signup-btn2 {
+    background: transparent;
+    color: #fff;
+    border: 2px solid #9f5bff;
+}
+
+.browse-btn:hover, .signup-btn2:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(86, 114, 255, 0.3);
+}
+
+/* =========================================
+   4. CONTENT SECTIONS (COURSES & INSTRUCTORS)
+   ========================================= */
+section {
+    padding: 80px 10%;
+    text-align: center;
+}
+
+section h2 {
+    font-size: 32px;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+/* Container untuk Card */
+.course-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap; /* PENTING: Supaya card turun ke bawah jika skrin sempit */
+}
+
+.course-card {
+    flex: 1;
+    min-width: 280px;
+    max-width: 350px;
+    padding: 40px 30px;
+    background: #1a1a2e;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.05);
+    transition: 0.4s ease;
+}
+
+.course-card:hover {
+    transform: translateY(-10px);
+    background: #252547;
+    border-color: #5672ff;
+}
+
+/* Instructor Grid */
+.instructor-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Lebih flexible dari repeat(3, 1fr) */
+    gap: 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.instructor-card img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    border: 4px solid #5672ff;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+/* =========================================
+   5. TESTIMONY & FOOTER
+   ========================================= */
+.testimony-box {
+    max-width: 600px;
+    margin: 40px auto;
+    background: #1a1a2e;
+    border-left: 6px solid #5672ff;
+    padding: 40px;
+    border-radius: 15px;
+    font-style: italic;
+}
+
+footer {
+    background: #000;
+    color: #777;
+    padding: 30px;
+    text-align: center;
+    border-top: 1px solid #111;
+}
+
+/* =========================================
+   6. MOBILE RESPONSIVE FIX
+   ========================================= */
+@media (max-width: 768px) {
+    nav {
+        padding: 20px 5%;
+    }
+
+    .hero {
+        width: 90%;
+        text-align: center;
+        padding-top: 120px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .instructor-container {
+        grid-template-columns: 1fr; /* Satu kolum sahaja di phone */
+    }
+
+    .chip-name {
+        display: none; /* Sembunyi nama di phone untuk jimat ruang */
+    }
+
+    .course-card {
+        max-width: 100%;
+    }
+}
     .browse-btn,
     .signup-btn2 {
         width: 150px;
@@ -307,3 +551,4 @@ footer {
         font-size: 15px;
     }
 }
+
