@@ -18,11 +18,10 @@ body {
     padding: 0 5%;
     display: flex;
     align-items: center;
-    /* justify-content: space-between; <-- Boleh buang ini */
     background: #0e0e1a;
     position: fixed;
-    top: 0; /* Pastikan ada top 0 */
-    left: 0; /* Pastikan ada left 0 */
+    top: 0; 
+    left: 0; 
     z-index: 1000;
 }
 
@@ -30,7 +29,7 @@ body {
     font-size: 30px;
     font-weight: bold;
     color: #d1d9ff;
-    flex: 0 0 auto; /* Biar dia grow */
+    flex: 0 0 auto;
     display: flex;
     min-width: 140px;
     justify-content: flex-start;
@@ -177,9 +176,6 @@ body {
     border-top: 1px solid rgba(255,255,255,0.05);
 }
 
-/* =====================================
-   MOBILE RESPONSIVE
-===================================== */
 @media (max-width: 768px) {
 
     .navbar {
