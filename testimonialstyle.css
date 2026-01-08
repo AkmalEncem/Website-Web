@@ -25,10 +25,11 @@ body {
     align-items: center;
     justify-content: space-between;
     z-index: 1000;
-    overflow-x: auto;
-    white-space: nowrap;
-}
 
+    /* FIX */
+    overflow-x: hidden;
+    white-space: normal;
+}
 
 .logo {
     font-size: 35px;
@@ -181,26 +182,30 @@ body {
 .review-user { font-size: 13px; color: #aaa; margin-bottom: 10px; }
 .review-text { line-height: 1.5; color: #e5e9f2; font-style: italic; }
 
-html, body {
-    max-width: 100%;
-    overflow-x: hidden;
-}
-
 @media (max-width: 768px) {
 
     /* NAVBAR STRUCTURE SAMA MACAM COURSE */
     .navbar {
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
         height: auto;
         gap: 12px;
         padding: 15px;
+
+        /* Mobile sahaja boleh scroll */
+        overflow-x: hidden;
+    }
+
+    .menu {
+        width: 100%;
+        overflow-x: auto;
     }
 
     .menu ul {
-        flex-direction: column;
-        gap: 15px;
-        align-items: center;
+        display: flex;
+        gap: 20px;
+        flex-wrap: nowrap;
+        width: max-content;
     }
 
     /* HEADER (KEKAL BETUL) */
@@ -224,14 +229,16 @@ html, body {
         color: #aaa;
     }
 
-    .navbar::-webkit-scrollbar {
-    height: 4px;
+   .menu::-webkit-scrollbar {
+        height: 4px;
+    }
+
+    .menu::-webkit-scrollbar-thumb {
+        background: #5672ff;
+        border-radius: 10px;
+    }
 }
-.navbar::-webkit-scrollbar-thumb {
-    background: #5672ff;
-    border-radius: 10px;
-}
-}
+
 
 
 
