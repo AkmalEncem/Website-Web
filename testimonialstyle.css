@@ -199,11 +199,12 @@ html, body {
 
     .logo {
         flex-shrink: 0;
-        font-size: 28px;
+        font-size: 26px;
+        margin: 0;              /* 🔥 penting sebab h2 */
     }
 
     .menu {
-        flex: 1;              /* 🔥 INI KUNCI */
+        flex: 1;               /* 🔥 INI KUNCI SEBENAR */
         overflow-x: auto;
         white-space: nowrap;
     }
@@ -219,6 +220,8 @@ html, body {
         flex-shrink: 0;
     }
 }
+
+
 
 
 
