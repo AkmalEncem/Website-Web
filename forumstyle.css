@@ -370,63 +370,95 @@ body {
 }
 
 @media (max-width: 768px) {
-    /* Paksa navbar jangan melimpah keluar screen */
+    /* 1. Paksa body dan navbar untuk tidak melebihi lebar skrin */
+    body {
+        overflow-x: hidden;
+        width: 100vw;
+    }
+
     .navbar {
-        padding: 0 10px;
+        display: flex;
         justify-content: space-between;
-        gap: 5px;
+        align-items: center;
+        padding: 0 10px;
+        height: 65px;
+        gap: 5px; /* Rapatkan gap antara logo, menu, dan profil */
+        width: 100%;
+        box-sizing: border-box; /* Pastikan padding tidak menambah lebar */
+        position: sticky;
+        top: 0;
+        background: #0e0e1a;
     }
 
-    /* Kecilkan logo supaya ada ruang untuk menu & profile */
+    /* 2. Kecilkan logo */
     .logo {
-        font-size: 20px !important;
+        font-size: 18px !important;
+        flex-shrink: 0;
+        margin-right: 5px;
     }
 
-    /* KUNCI: Benarkan menu scroll ke tepi (Horizontal Scroll) */
+    /* 3. Menu Tengah - Kawal overflow dengan rapi */
     .menu {
+        flex: 1;
+        min-width: 0; /* Penting: membolehkan flex child mengecil bawah saiz kandungan */
         overflow-x: auto;
-        white-space: nowrap;
-        display: block; /* Tukar dari center ke block untuk scroll */
-        margin: 0 10px;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none; /* Sembunyi scrollbar Firefox */
-    }
-
-    .menu::-webkit-scrollbar {
-        display: none; /* Sembunyi scrollbar Chrome/Safari */
+        display: flex;
+        align-items: center;
+        -webkit-overflow-scrolling: touch; /* Skrol lebih lancar di iOS */
     }
 
     .menu ul {
-        gap: 20px;
-        width: max-content; /* Pastikan ul lebar ikut isi untuk scroll */
-        padding: 10px 0;
+        display: flex;
+        gap: 10px;
+        padding: 0 5px;
+        margin: 0;
     }
 
-    /* Pastikan Profile Chip sentiasa di kanan */
+    .menu ul li a {
+        font-size: 11px;
+        white-space: nowrap;
+        padding: 5px 2px;
+    }
+
+    /* 4. Profile Section */
     .profile-wrapper {
-        margin-left: auto;
-    }
-
-    .profile-chip {
-        padding: 5px;
-        gap: 0;
+        flex-shrink: 0;
     }
 
     .chip-name {
-        display: none; /* Sorok nama pada mobile untuk jimat ruang */
+        display: none; /* Wajib sembunyi di mobile untuk elak berterabur */
     }
 
-    /* Pastikan dropdown tak lari keluar screen */
+    .profile-chip {
+        padding: 4px;
+        background: transparent;
+    }
+
+    .chip-avatar {
+        width: 30px;
+        height: 30px;
+        font-size: 12px;
+    }
+
+    /* 5. Dropdown Profil */
     .profile-dropdown {
-        width: 250px;
-        right: 0;
-        top: 60px;
-        position: absolute;
+        position: fixed;
+        right: 10px;
+        left: 10px; /* Buat dropdown hampir penuh skrin supaya senang tekan */
+        top: 70px;
+        width: auto;
+        max-width: calc(100vw - 20px);
     }
 
-    /* Selebihnya maintain kod forum awak */
-    .filters { flex-direction: column; }
-    .forum-post-box, .forum-post { width: 95%; }
+    /* 6. Elemen Forum Lain */
+    .filters {
+        padding: 0 15px;
+        gap: 10px;
+    }
+
+    .forum-post-box, .forum-post {
+        width: calc(100% - 20px); /* Guna calc untuk margin yang konsisten */
+        margin: 15px auto;
+        padding: 15px;
+    }
 }
-
-
