@@ -220,48 +220,26 @@ html, body {
 
 @media (max-width: 768px) {
 
-    .rating-card {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .review-text {
-        margin-top: 10px;
-        white-space: normal;        /* 🔥 wrap text */
-        overflow-x: hidden;         /* 🔥 stop scroll tepi */
-        word-break: break-word;
-        overflow-wrap: anywhere;
-    }
-
+    /* Navbar mobile */
     .navbar {
-        display: flex;
-        align-items: center;
-        height: 65px;
         padding: 0 12px;
         gap: 10px;
     }
 
     .logo {
-        flex-shrink: 0;
         font-size: 26px;
-        margin: 0;              /* 🔥 penting sebab h2 */
+        flex-shrink: 0;
     }
 
     .menu {
-        flex: 1;               /* 🔥 INI KUNCI SEBENAR */
+        flex: 1;
         overflow-x: auto;
         white-space: nowrap;
     }
 
     .menu ul {
-        display: flex;
         gap: 20px;
-        flex-wrap: nowrap;
         width: max-content;
-    }
-
-    .profile-wrapper {
-        flex-shrink: 0;
     }
 
     .profile-chip .chip-name,
@@ -273,19 +251,19 @@ html, body {
         padding: 6px;
         gap: 0;
     }
+
+    /* Layout mobile */
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    /* 🔥 FIX REVIEW TEXT (INI YANG KAU MAHU) */
+    .review-text {
+        white-space: normal !important;
+        overflow-x: hidden !important;
+        word-break: break-word;
+        overflow-wrap: break-word;
+        margin-top: 8px;
+    }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
