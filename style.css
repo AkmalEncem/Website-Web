@@ -5,347 +5,41 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
-
-html, body {
-    width: 100%;
-    overflow-x: hidden;
+    font-family: 'Segoe UI', Arial, sans-serif;
 }
 
 body {
-    overflow-x: hidden;
-    position: relative;
-}
-
-/* =========================================
-   2. HEADER & NAVIGATION
-   ========================================= */
-header {
-    width: 100%;
-    min-height: 100vh;
-    background: linear-gradient(
-        to top,
-        rgba(0,0,0,0.5) 40%,
-        rgba(0,0,0,0.5) 40%
-    ), url("background1.jpg");
-    background-size: cover;
-    background-position: center;
-    overflow: hidden;
-}
-
-.logo {
-    font-size: 35px;
-    color: #d1d9ff;
-}
-
-.auth-buttons {
-    display: flex;
-    gap: 15px;
-}
-
-/* Profile / Chip Styles */
-.profile-chip {
-    position: relative;
-}
-
-.chip-name {
-    font-size: 14px;
-    font-weight: 500;
-    color: #d1d9ff;
-}
-
-.course-badge {
-    position: absolute;
-    top: -6px;
-    right: -6px;
-    background: red;
-    color: white;
-    font-size: 11px;
-    padding: 2px 6px;
-    border-radius: 50%;
-    display: none;
-}
-
-/* Dropdown Menu */
-.profile-header {
-    padding: 25px 20px;
-    text-align: center;
-    background: #18182a;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.profile-header h4 {
-    font-size: 16px;
-    color: #ffffff;
-    margin-bottom: 3px;
-}
-
-.profile-header p {
-    font-size: 12px;
-    color: #94a3b8;
-}
-
-.profile-menu {
-    padding: 8px 0;
-}
-
-.profile-menu a {
-    display: block;
-    padding: 13px 20px;
-    font-size: 14px;
-    color: #e5e9f2;
-    text-decoration: none;
-    transition: 0.2s ease;
-}
-
-.profile-menu a:hover {
-    background: rgba(108,99,255,0.12);
-}
-
-.profile-menu .logout {
-    color: #ff6b6b;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    margin-top: 5px;
-}
-
-/* =========================================
-   3. HERO SECTION
-   ========================================= */
-.hero {
-    width: 80%;
-    padding-top: 160px;
-    margin: auto;
-    text-align: left;
-    color: #fff;
-}
-
-.hero h1 {
-    font-size: 60px;
-    letter-spacing: 2px;
-}
-
-.par {
-    margin-top: 20px;
-    font-size: 18px;
-}
-
-.hero-buttons {
-    margin-top: 30px;
-    display: flex;
-    gap: 20px;
-}
-
-.browse-btn, 
-.signup-btn2 {
-    width: 180px;
-    height: 50px;
-    border: none;
-    border-radius: 30px;
-    cursor: pointer;
-    font-size: 17px;
-    font-weight: bold;
-    transition: .3s;
-}
-
-a.browse-btn {
-    display: inline-block;
-    text-decoration: none;
-    line-height: 50px;
-    text-align: center;
-}
-
-.browse-btn {
-    background: #5672ff;
-    color: #fff;
-}
-
-.signup-btn2 {
-    background: transparent;
-    color: #fff;
-    border: 2px solid #9f5bff;
-}
-
-.browse-btn:hover, 
-.signup-btn2:hover {
-    transform: scale(1.08);
-}
-
-/* =========================================
-   4. CONTENT SECTIONS
-   ========================================= */
-section {
     background: #0e0e1a;
     color: #fff;
-    padding: 60px 0;
-    text-align: center;
-}
-
-section h2 {
-    font-size: 38px;
-    margin-bottom: 40px;
-}
-
-/* Course Cards */
-.course-container {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-}
-
-.course-card {
-    width: 300px;
-    padding: 35px 25px;
-    background: #1a1a2e;
-    border-radius: 15px;
-    transition: .4s;
-}
-
-.course-card:hover {
-    transform: translateY(-10px);
-    background: #252547;
-}
-
-.course-card h3 {
-    color: #5672ff;
-    margin-bottom: 15px;
-}
-
-/* Instructor Section */
-.instructor-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    max-width: 900px;
-    margin: auto;
-    text-align: center;
-}
-
-.instructor-card {
-    text-align: center;
-}
-
-.instructor-card img {
-    width: 130px;
-    height: 130px;
-    border-radius: 50%;
-    border: 4px solid #5672ff;
-    margin-bottom: 10px;
-}
-
-/* Testimony & Footer */
-.testimony-box {
-    width: 100%;
-    max-width: 500px;
-    margin: auto;
-    background: #1a1a2e;
-    border-left: 6px solid #5672ff;
-    padding: 30px;
-    border-radius: 12px;
-}
-
-.view-all {
-    margin-top: 40px;
-    display: flex;
-    justify-content: center;
-}
-
-footer {
-    background: #000;
-    color: #aaa;
-    padding: 15px;
-    text-align: center;
-    font-size: 14px;
-}
-
-/* =========================================
-   5. MOBILE RESPONSIVE FIX
-   ========================================= */
-@media (max-width: 768px) {
-    section, header, footer {
-        max-width: 100vw;
-        overflow-x: hidden;
-    }
-
-    .chip-name {
-        display: none;
-    }
-
-    .hero {
-        width: 90%;
-        padding-top: 130px;
-        text-align: left;
-    }
-
-    .hero h1 {
-        font-size: 36px;
-    }
-
-    .par {
-        font-size: 16px;
-    }
-
-    .course-container {
-        flex-wrap: wrap;
-        padding: 0 12px;
-    }
-
-    .course-card {
-        width: 100%;
-        max-width: 360px;
-    }
-
-    .instructor-container {
-        grid-template-columns: 1fr;
-        gap: 30px;
-        padding: 0 16px;
-    }
-/* =========================================
-   1. RESET & BASE STYLES
-   ========================================= */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Arial, sans-serif; /* Font lebih moden */
-}
-
-html, body {
-    width: 100%;
-    height: 100%;
-    background: #0e0e1a; /* Warna base supaya tidak nampak putih ketika loading */
-    color: #fff;
     overflow-x: hidden;
 }
 
 /* =========================================
-   2. HEADER & NAVIGATION
+   2. HEADER & NAVIGATION (FIXED)
    ========================================= */
 header {
     width: 100%;
     min-height: 100vh;
-    background: linear-gradient(
-        to bottom, /* Tukar ke bottom untuk nampak lebih natural */
-        rgba(0,0,0,0.6),
-        rgba(0,0,0,0.3)
-    ), url("background1.jpg");
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("background1.jpg");
     background-size: cover;
     background-position: center;
-    background-attachment: fixed; /* Efek parallax sedikit */
     display: flex;
     flex-direction: column;
 }
 
-/* Navbar Container (Cadangan: Pastikan ada class nav di HTML) */
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 10%; /* Konsisten dengan hero width */
+    padding: 20px 8%;
     width: 100%;
+    position: absolute; /* Supaya dia duduk atas hero */
+    top: 0;
+    z-index: 1000;
 }
 
 .logo {
-    font-size: 30px;
+    font-size: 28px;
     font-weight: bold;
     color: #d1d9ff;
     text-decoration: none;
@@ -353,16 +47,21 @@ nav {
 
 .auth-buttons {
     display: flex;
-    align-items: center; /* Pastikan butang & nama selari */
-    gap: 20px;
+    align-items: center;
+    gap: 25px;
 }
 
+/* =========================================
+   3. PROFILE CHIP & DROPDOWN LOGIC
+   ========================================= */
 .profile-chip {
+    position: relative; /* PENTING: Supaya dropdown ikut kedudukan chip */
     display: flex;
     align-items: center;
-    gap: 10px;
-    position: relative;
+    gap: 12px;
+    padding: 5px 10px;
     cursor: pointer;
+    transition: 0.3s;
 }
 
 .chip-name {
@@ -371,184 +70,121 @@ nav {
     color: #d1d9ff;
 }
 
+/* Menu Dropdown - Sembunyi secara asal */
+.dropdown-wrapper {
+    position: absolute;
+    top: 100%; /* Duduk tepat bawah chip */
+    right: 0;
+    width: 220px;
+    background: #18182a;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    border: 1px solid rgba(255,255,255,0.1);
+    margin-top: 15px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    overflow: hidden;
+    z-index: 1001;
+}
+
+/* Tunjuk Dropdown bila Hover pada Profile Chip */
+.profile-chip:hover .dropdown-wrapper {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.profile-header {
+    padding: 15px;
+    background: rgba(255,255,255,0.03);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    text-align: center;
+}
+
+.profile-header h4 {
+    font-size: 14px;
+    color: #fff;
+}
+
+.profile-header p {
+    font-size: 11px;
+    color: #94a3b8;
+}
+
+.profile-menu a {
+    display: block;
+    padding: 12px 20px;
+    font-size: 13px;
+    color: #e5e9f2;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.profile-menu a:hover {
+    background: rgba(86, 114, 255, 0.15);
+    color: #5672ff;
+}
+
+.profile-menu .logout {
+    color: #ff6b6b;
+    border-top: 1px solid rgba(255,255,255,0.05);
+}
+
 /* =========================================
-   3. HERO SECTION
+   4. HERO SECTION
    ========================================= */
 .hero {
+    margin: auto;
     width: 80%;
-    max-width: 1200px;
-    margin: auto; /* Letak di tengah secara vertical & horizontal */
-    padding: 100px 0;
+    padding-top: 100px; /* Ruang untuk navbar */
     text-align: left;
 }
 
 .hero h1 {
-    font-size: clamp(32px, 5vw, 60px); /* Responsive font size */
-    line-height: 1.2;
+    font-size: 55px;
+    line-height: 1.1;
     margin-bottom: 20px;
 }
 
 .par {
-    max-width: 600px;
     font-size: 18px;
-    line-height: 1.6;
-    color: #e0e0e0;
+    max-width: 600px;
+    color: #ccc;
+    margin-bottom: 35px;
 }
 
 .hero-buttons {
-    margin-top: 40px;
     display: flex;
-    gap: 20px;
-    flex-wrap: wrap; /* Elak butang bertindih di skrin kecil */
+    gap: 15px;
 }
 
 .browse-btn, .signup-btn2 {
-    display: inline-flex;
+    width: 170px;
+    height: 50px;
+    border-radius: 30px;
+    display: flex;
     align-items: center;
     justify-content: center;
-    width: 180px;
-    height: 55px;
-    border-radius: 30px;
     text-decoration: none;
-    font-size: 16px;
     font-weight: bold;
-    transition: all 0.3s ease;
+    transition: 0.3s;
 }
 
-.browse-btn {
-    background: #5672ff;
-    color: #fff;
-    border: none;
-}
+.browse-btn { background: #5672ff; color: #fff; border: none; }
+.signup-btn2 { background: transparent; color: #fff; border: 2px solid #9f5bff; }
 
-.signup-btn2 {
-    background: transparent;
-    color: #fff;
-    border: 2px solid #9f5bff;
-}
-
-.browse-btn:hover, .signup-btn2:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(86, 114, 255, 0.3);
-}
+.browse-btn:hover, .signup-btn2:hover { transform: scale(1.05); }
 
 /* =========================================
-   4. CONTENT SECTIONS (COURSES & INSTRUCTORS)
-   ========================================= */
-section {
-    padding: 80px 10%;
-    text-align: center;
-}
-
-section h2 {
-    font-size: 32px;
-    margin-bottom: 50px;
-    position: relative;
-}
-
-/* Container untuk Card */
-.course-container {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap; /* PENTING: Supaya card turun ke bawah jika skrin sempit */
-}
-
-.course-card {
-    flex: 1;
-    min-width: 280px;
-    max-width: 350px;
-    padding: 40px 30px;
-    background: #1a1a2e;
-    border-radius: 20px;
-    border: 1px solid rgba(255,255,255,0.05);
-    transition: 0.4s ease;
-}
-
-.course-card:hover {
-    transform: translateY(-10px);
-    background: #252547;
-    border-color: #5672ff;
-}
-
-/* Instructor Grid */
-.instructor-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Lebih flexible dari repeat(3, 1fr) */
-    gap: 40px;
-    max-width: 1100px;
-    margin: 0 auto;
-}
-
-.instructor-card img {
-    width: 140px;
-    height: 140px;
-    border-radius: 50%;
-    border: 4px solid #5672ff;
-    object-fit: cover;
-    margin-bottom: 20px;
-}
-
-/* =========================================
-   5. TESTIMONY & FOOTER
-   ========================================= */
-.testimony-box {
-    max-width: 600px;
-    margin: 40px auto;
-    background: #1a1a2e;
-    border-left: 6px solid #5672ff;
-    padding: 40px;
-    border-radius: 15px;
-    font-style: italic;
-}
-
-footer {
-    background: #000;
-    color: #777;
-    padding: 30px;
-    text-align: center;
-    border-top: 1px solid #111;
-}
-
-/* =========================================
-   6. MOBILE RESPONSIVE FIX
+   5. MOBILE FIX
    ========================================= */
 @media (max-width: 768px) {
-    nav {
-        padding: 20px 5%;
-    }
-
-    .hero {
-        width: 90%;
-        text-align: center;
-        padding-top: 120px;
-    }
-
-    .hero h1 {
-        font-size: 36px;
-    }
-
-    .hero-buttons {
-        justify-content: center;
-    }
-
-    .instructor-container {
-        grid-template-columns: 1fr; /* Satu kolum sahaja di phone */
-    }
-
-    .chip-name {
-        display: none; /* Sembunyi nama di phone untuk jimat ruang */
-    }
-
-    .course-card {
-        max-width: 100%;
-    }
+    nav { padding: 20px 5%; }
+    .hero { width: 90%; text-align: center; }
+    .hero h1 { font-size: 35px; }
+    .hero-buttons { justify-content: center; }
+    .chip-name { display: none; } /* Sembunyi nama di phone */
+    .dropdown-wrapper { right: -50px; } /* Adjust kedudukan dropdown di phone */
 }
-    .browse-btn,
-    .signup-btn2 {
-        width: 150px;
-        height: 46px;
-        font-size: 15px;
-    }
-}
-
