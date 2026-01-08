@@ -177,72 +177,65 @@ body {
 }
 
 @media (max-width: 768px) {
-
     .navbar {
-        padding: 0 10px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between; /* 🔑 logo left, profile right */
+        padding: 0 15px;
+        justify-content: space-between;
     }
 
-    /* Logo kiri */
     .logo {
-        font-size: 18px;
-        flex-shrink: 0;
+        font-size: 20px; 
+        min-width: auto;
+        flex: 0 0 auto;
     }
 
-    /* Menu tengah / scrollable */
+
     .menu {
-        flex: 1;
-        display: flex;
+        margin: 0 15px;
         overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        min-width: 0;
-        justify-content: flex-start; /* 🔑 start dari kiri, tak center */
-        margin: 0 10px; /* optional spacing antara logo & menu */
+        scrollbar-width: none;
+        -ms-overflow-style: none;
     }
 
-    .menu ul {
-        display: flex;
-        gap: 12px;
-        padding: 0;
-        margin: 0;
-        list-style: none;
-        white-space: nowrap;
-    }
-
-    .menu ul li a {
-        font-size: 12px;
-        white-space: nowrap;
-        text-decoration: none;
-        color: #d1d9ff;
-        font-weight: bold;
-    }
-
-    .profile-chip {
-        padding: 0;
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        justify-content: center;
-        background: transparent;
-    }
-
-    .chip-avatar {
-        width: 40px;
-        height: 40px;
-        font-size: 14px;
-    }
-    
-    .chip-name {
+    .menu::-webkit-scrollbar {
         display: none;
     }
 
+    .menu ul {
+        gap: 20px;
+        padding: 10px 0;
+    }
+
+    .menu ul li a {
+        font-size: 13px;
+        letter-spacing: 0.5px;
+        text-transform: uppercase; 
+        opacity: 0.8;
+    }
+
+    .profile-wrapper {
+        min-width: auto;
+    }
+
+    .profile-chip {
+        width: 38px;
+        height: 38px;
+        border: 2px solid rgba(108, 99, 255, 0.3); 
+        background: rgba(255, 255, 255, 0.05);
+    }
+
+    .chip-avatar {
+        width: 100%;
+        height: 100%;
+    }
+
     .profile-dropdown {
-        position: fixed;
-        top: 65px;
-        left: 5%;
-        right: 5%;
-        width: 90%;
+        position: absolute; 
+        top: 55px;
+        right: 0;
+        left: auto;
+        width: 280px;
+        max-width: 90vw;
+        border-radius: 12px;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.6);
     }
 }
