@@ -12,6 +12,12 @@ const proceedBtn = document.querySelector(".enroll-btn");
 const badge = document.getElementById("courseBadge");
 const paymentMenu = document.getElementById("paymentMenu");
 
+if (courses.length === 0) {
+        noResults.style.display = "block";
+    } else {
+        noResults.style.display = "none";
+    }
+
 /* ================= SESSION DATA (STANDARD) ================= */
 const name = localStorage.getItem("loggedInUser");
 const matrix = localStorage.getItem("lms_matrix");
@@ -127,6 +133,11 @@ function applyFilters() {
     const searchValue = searchInput.value.toLowerCase();
     const instructorValue = instructorFilter.value;
 
+    if (courses.length === 0) {
+        noResults.style.display = "block"; // tiada data langsung
+        return;
+    }
+
     courses.forEach(card => {
         const title = card.querySelector("h3").innerText;
         const text = card.innerText.toLowerCase();
@@ -239,3 +250,4 @@ proceedBtn.onclick = function(){
 };
 
 });
+
