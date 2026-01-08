@@ -189,13 +189,15 @@ body {
     }
 
     .menu {
+        flex: 1;
+        justify-content: flex-start;
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
     }
 
     .menu ul {
-        gap: 10px;
-        padding: 0 5px;
+        gap: 12px;
+        padding: 0 8px;
     }
 
     .menu ul li a {
